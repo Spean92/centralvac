@@ -1,0 +1,29 @@
+section.thesa_section {
+  position: relative;
+  height: 680px;
+  .bg{
+    position: absolute;
+    height:100%;
+    width: 100%;
+    left:0;
+    top:0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  .container {
+    height: 100%;
+    .row {
+      height:100%;
+      align-items: center;
+    }
+  }
+  .thesa {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    line-height: 1.1em;
+    font-size: 31px;
+    letter-spacing: 3px;
+  }
+}
