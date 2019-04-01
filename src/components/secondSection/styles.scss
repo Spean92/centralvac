@@ -1,0 +1,15 @@
+
+.secondSection {
+  padding-top: 20px;
+}
+.topFilters, .sideFilters {
+  .filterCondition {
+    display: inline-block;
+  }
+}
+.topFilters {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin: 10px 0 20px 0;
+}
