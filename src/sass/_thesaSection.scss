@@ -11,6 +11,14 @@ section.thesa_section {
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
+    &:before {
+      background-color: rgba(0, 0, 0, 0.4);
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
   }
   .container {
     height: 100%;

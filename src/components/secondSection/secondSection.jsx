@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 
+import ScrollableAnchor from 'react-scrollable-anchor'
 
 import {Col, Container, Row, FormGroup, Label, Input} from "reactstrap";
 import Slider from "react-slick/lib";
 import './styles.scss'
 import ModalItem from "../modalItem/modalItem";
+import FirstSection from "../firstSection/firstSection";
 
 class SecondSection extends Component {
     constructor(props) {
@@ -29,92 +31,95 @@ class SecondSection extends Component {
             easing: `ease-in-out`
         }
         return (
-            <section className="secondSection">
-                <Container>
-                    <Row>
-                        <Col md="3">
-                            <ModalItem ref={(ref) => {
+            <ScrollableAnchor id={'section2'}>
+                <section className="secondSection">
+                    <Container>
+                        <Row>
+                            <Col md="3">
+                                <ModalItem ref={(ref) => {
                                     this.modal = ref
                                 }}
                                 />
-                        </Col>
-                        <Col md="9">
-                            <div className="topFilters">
-                                <FormGroup check className="filterCondition">
-                                    <Label check>
-                                        <Input type="checkbox" />{' '}
-                                        Агрегаты HUSKY
-                                    </Label>
-                                </FormGroup>
-                                <FormGroup check className="filterCondition">
-                                    <Label check>
-                                        <Input type="checkbox" />{' '}
-                                        Агрегаты DUOVAC
-                                    </Label>
-                                </FormGroup>
-                                <FormGroup check className="filterCondition">
-                                    <Label check>
-                                        <Input type="checkbox" />{' '}
-                                        Агрегаты SOLUVAC
-                                    </Label>
-                                </FormGroup>
+                            </Col>
+                            <Col md="9">
+                                <div className="topFilters">
+                                    <FormGroup check className="filterCondition">
+                                        <Label check>
+                                            <Input type="checkbox" />{' '}
+                                            Агрегаты HUSKY
+                                        </Label>
+                                    </FormGroup>
+                                    <FormGroup check className="filterCondition">
+                                        <Label check>
+                                            <Input type="checkbox" />{' '}
+                                            Агрегаты DUOVAC
+                                        </Label>
+                                    </FormGroup>
+                                    <FormGroup check className="filterCondition">
+                                        <Label check>
+                                            <Input type="checkbox" />{' '}
+                                            Агрегаты SOLUVAC
+                                        </Label>
+                                    </FormGroup>
+                                </div>
+
+                            </Col>
+                            <div>
+
                             </div>
 
-                        </Col>
-                        <div>
+                        </Row>
+                        <Row>
+                            <Col md="3">
+                                <div className="sideFilters">
+                                    <FormGroup check className="filterCondition">
+                                        <Label check>
+                                            <Input type="checkbox" />{' '}
+                                            Сухая уборка
+                                        </Label>
+                                    </FormGroup>
+                                    <FormGroup check className="filterCondition">
+                                        <Label check>
+                                            <Input type="checkbox" />{' '}
+                                            Сухая тихая уборка 50дБ
+                                        </Label>
+                                    </FormGroup>
+                                    <FormGroup check className="filterCondition">
+                                        <Label check>
+                                            <Input type="checkbox" />{' '}
+                                            Комбинированная уборка
+                                        </Label>
+                                    </FormGroup>
+                                    <FormGroup check className="filterCondition">
+                                        <Label check>
+                                            <Input type="checkbox" />{' '}
+                                            Автосброс в канализацию
+                                        </Label>
+                                    </FormGroup>
+                                </div>
+                            </Col>
+                            <Col md="9">
+                                <Slider {...filterSlider}>
+                                    <div className="oneProduct" onClick={this.toggleModal}>
+                                        <img src={tempIng} alt="placeholder"/>
+                                    </div>
+                                    <div className="oneProduct" onClick={this.toggleModal}>
+                                        <img src={tempIng} alt="placeholder"/>
+                                    </div>
+                                    <div className="oneProduct" onClick={this.toggleModal}>
+                                        <img src={tempIng} alt="placeholder"/>
+                                    </div>
+                                    <div className="oneProduct" onClick={this.toggleModal}>
+                                        <img src={tempIng} alt="placeholder"/>
+                                    </div>
 
-                        </div>
+                                </Slider>
+                            </Col>
+                        </Row>
+                    </Container>
+                </section>
+            </ScrollableAnchor>
 
-                    </Row>
-                    <Row>
-                        <Col md="3">
-                            <div className="sideFilters">
-                                <FormGroup check className="filterCondition">
-                                    <Label check>
-                                        <Input type="checkbox" />{' '}
-                                        Сухая уборка
-                                    </Label>
-                                </FormGroup>
-                                <FormGroup check className="filterCondition">
-                                    <Label check>
-                                        <Input type="checkbox" />{' '}
-                                        Сухая тихая уборка 50дБ
-                                    </Label>
-                                </FormGroup>
-                                <FormGroup check className="filterCondition">
-                                    <Label check>
-                                        <Input type="checkbox" />{' '}
-                                        Комбинированная уборка
-                                    </Label>
-                                </FormGroup>
-                                <FormGroup check className="filterCondition">
-                                    <Label check>
-                                        <Input type="checkbox" />{' '}
-                                        Автосброс в канализацию
-                                    </Label>
-                                </FormGroup>
-                            </div>
-                        </Col>
-                        <Col md="9">
-                            <Slider {...filterSlider}>
-                                <div onClick={this.toggleModal}>
-                                    <img src={tempIng} alt="placeholder"/>
-                                </div>
-                                <div onClick={this.toggleModal}>
-                                    <img src={tempIng} alt="placeholder"/>
-                                </div>
-                                <div onClick={this.toggleModal}>
-                                    <img src={tempIng} alt="placeholder"/>
-                                </div>
-                                <div onClick={this.toggleModal}>
-                                    <img src={tempIng} alt="placeholder"/>
-                                </div>
-
-                            </Slider>
-                        </Col>
-                    </Row>
-                </Container>
-            </section>
         )
     }
 }

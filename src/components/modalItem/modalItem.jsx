@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 class ModalItem extends Component{
     constructor(props) {
         super(props);
-        console.log(props);
         this.state = {
             modal: false
         };
@@ -22,7 +21,6 @@ class ModalItem extends Component{
 
     render() {
         if(!this.props.show) {
-            console.log(`hi`);
         }
         return (
             <div>
