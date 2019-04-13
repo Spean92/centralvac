@@ -6,7 +6,6 @@ import {Col, Container, Row, FormGroup, Label, Input} from "reactstrap";
 import Slider from "react-slick/lib";
 import './styles.scss'
 import ModalItem from "../modalItem/modalItem";
-import FirstSection from "../firstSection/firstSection";
 
 class SecondSection extends Component {
     constructor(props) {
@@ -17,7 +16,7 @@ class SecondSection extends Component {
         this.modal.toggleModal();
     };
     render() {
-        let tempIng = `https://via.placeholder.com/200x150`;
+        let tempIng = `https://via.placeholder.com/180x230`;
         let filterSlider = {
             dots: true,
             accessibility: false,
@@ -41,7 +40,7 @@ class SecondSection extends Component {
                                 }}
                                 />
                             </Col>
-                            <Col md="9">
+                            <Col md="6">
                                 <div className="topFilters">
                                     <FormGroup check className="filterCondition">
                                         <Label check>
@@ -62,15 +61,10 @@ class SecondSection extends Component {
                                         </Label>
                                     </FormGroup>
                                 </div>
-
                             </Col>
-                            <div>
-
-                            </div>
-
                         </Row>
                         <Row>
-                            <Col md="3">
+                            <Col md="2">
                                 <div className="sideFilters">
                                     <FormGroup check className="filterCondition">
                                         <Label check>
@@ -98,7 +92,7 @@ class SecondSection extends Component {
                                     </FormGroup>
                                 </div>
                             </Col>
-                            <Col md="9">
+                            <Col md="7">
                                 <Slider {...filterSlider}>
                                     <div className="oneProduct" onClick={this.toggleModal}>
                                         <img src={tempIng} alt="placeholder"/>
@@ -112,8 +106,21 @@ class SecondSection extends Component {
                                     <div className="oneProduct" onClick={this.toggleModal}>
                                         <img src={tempIng} alt="placeholder"/>
                                     </div>
-
                                 </Slider>
+                            </Col>
+                            <Col md="3">
+                                <div className="slideDescription">
+                                    <h4>Husky Flex</h4>
+                                    <ul>
+                                        <li>Сухая ультратихая уборка 50дБ</li>
+                                        <li>Макс. площадь уборки 300м2</li>
+                                        <li>Макс. Кол-во пневморозеток 7шт</li>
+                                    </ul>
+                                    <p>Мощный , тихий и доступный центральный пылесос. Очень компактный и простой в установке, идеально подходит для квартир и средних домов.</p>
+                                <button className="fullInfo">
+                                     Полная информация
+                                </button>
+                                </div>
                             </Col>
                         </Row>
                     </Container>

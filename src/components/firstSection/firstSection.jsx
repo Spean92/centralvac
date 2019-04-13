@@ -18,7 +18,7 @@ class FirstSection extends Component{
             arrows: false,
             infinite: true,
             dotsClass: `slick-dots custom-dots`,
-            speed: 1000,
+            speed: 2000,
             slidesToShow: 1,
             slidesToScroll: 1,
             // autoplay: true,
@@ -32,11 +32,10 @@ class FirstSection extends Component{
 
                             <div className="sliderBgImg" style={{ backgroundImage: `url(${slide1}` }}/>
                             <div className="textBlock">
-                                <p> Вы цените практичность и комфорт, заботитесь о своем здоровье<br/>
-                                    <b>Установив встроенный пылесос в своем доме, у вас всегда будет тихо и чисто.<br />
-                                        В дальнейшем это станет нормой и вы перестанете это замечать</b><br/>
-                                    Присоединитесь к 4000+ счестливым клиентам :)
-                                </p>
+                                <p className="textTop"> Вы цените практичнось ,комфорт и экологичность</p>
+                                <p className="textBig">УСТАНОВИТЕ ЦЕНТРАЛЬНЫЙ ПЫЛЕСОС</p>
+                                <p className="textBottom">Узнайте как это работает <br/>
+                                    и присоединитесь к 4000+ счастливым клиентам</p>
                                 <a href="#section2">Узнать больше</a>
                             </div>
                         </div>
@@ -44,12 +43,9 @@ class FirstSection extends Component{
 
                             <div className="sliderBgImg" style={{ backgroundImage: `url(${slide2}` }}/>
                             <div className="textBlock">
-                                <p>
-                                    Вы заинтересованы в профессиональном монтаже с гарантией <br/>
-                                    <b>Специалисты нашей компании запроектируют, выполнят монтаж коммуникаций<br />
-                                        встроенного пылесоа и установку оборудования по всем правилам</b><br/>
-                                    Предоставьте исходные данные, остальное мы выполним сами
-                                </p>
+                                <p className="textTop">интересует проффесиональный монтаж с гарантией?</p>
+                                <p className="textBig">ПРОЕКТ, МОНТАЖ С ГАРАНТИЕЙ 25 ЛЕТ </p>
+                                <p className="textBottom">Предоставьте исходные данные, остальное мы выполним сами</p>
                                 <a href="#section5">Начать сейчас</a>
                             </div>
                         </div>
@@ -57,12 +53,8 @@ class FirstSection extends Component{
 
                             <div className="sliderBgImg" style={{ backgroundImage: `url(${slide3}` }}/>
                             <div className="textBlock">
-                                <p>
-                                    Вы хотите продлить срок службы системы центрального пылесоса<br/>
-                                    <b>Наша сервисная служба гарантирует своевременный приезд специалиса, диагностику, аккуратное<br />
-                                        и профессиональное выполнение сервисного обслуживания для длительной эксплуатации</b><br/>
-                                    Ознакомьтесь с нашими вариантами и предложениями
-                                </p>
+                                <p className="textBig">СЕРВИС РЕМОНТ ОБСЛУЖИВАНИЕ</p>
+                                <p className="textBottom">продлите срок эксплуатации системы пылеудаления до 35 лет</p>
                                 <a href="#section7">Начать сейчас</a>
                             </div>
                         </div>

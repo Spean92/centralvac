@@ -13,6 +13,7 @@ import slide2 from "./images/bg_slide2.jpg"
 import slide3 from "./images/bg_slide3.jpg"
 import FirstSection from "./components/firstSection/firstSection";
 import SecondSection from "./components/secondSection/secondSection";
+import SideSocials from "./components/sideSocials/sideSocials";
 
 class App extends Component {
     constructor(props) {
@@ -37,6 +38,7 @@ class App extends Component {
             Learn React
           </a>
         </header>*/}
+                <SideSocials/>
                 <Header />
                 <main>
                     <FirstSection />
