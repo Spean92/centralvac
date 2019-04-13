@@ -14,6 +14,7 @@ import slide3 from "./images/bg_slide3.jpg"
 import FirstSection from "./components/firstSection/firstSection";
 import SecondSection from "./components/secondSection/secondSection";
 import SideSocials from "./components/sideSocials/sideSocials";
+import HowItWorks from "./components/howItWorks/howItWorks";
 
 class App extends Component {
     constructor(props) {
@@ -42,6 +43,7 @@ class App extends Component {
                 <Header />
                 <main>
                     <FirstSection />
+                    <HowItWorks/>
                     <SecondSection />
                     <ScrollableAnchor id={'section3'}>
                         <section className="thesa_section">

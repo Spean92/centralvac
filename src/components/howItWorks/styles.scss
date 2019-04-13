@@ -1,0 +1,68 @@
+.line {
+  padding: 20px 0 0 0;
+  //background-color: #000;
+  background-color: #08c;
+  .leftText {
+    p {
+      margin: 0;
+
+      &.bigText {
+        font-family: "Shadows Into lighter";
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+
+      }
+      &.smallText {
+        font-size: 16px;
+        color: rgba(#fff, 0.7);
+      }
+
+    }
+  }
+  .previewButton {
+    display: inline-block;
+    padding: 1.15em 1.8em;
+    border: 1px solid transparent;
+    border-color: #212529 #212529 #0b0c0d;
+    border-radius: 6px;
+    background-color: #212529;
+    vertical-align: middle;
+    font-size: 1em;
+    line-height: 1.3333;
+    color: #FFF;
+    font-weight: 600;
+    white-space: nowrap;
+    text-align: center;
+    transition: all 0.1s;
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+      color: #fff;
+      background-color: #31373d;
+      border-color: #383f46 #383f46 #212529;
+    }
+    &:focus, &:active {
+      background-color: #000;
+      box-shadow: 0 0 0 0.2rem rgba(29,33,39,.5);
+    }
+  }
+  .dropDown-container {
+    margin-top: 25px;
+    background-color: aquamarine;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 350ms ease-in-out;
+    &.shown {
+      max-height: 900px;
+    }
+    img {
+      float: left;
+      max-width: 50%;
+      margin: 15px;
+    }
+    p {
+      padding: 15px 0 10px 0;
+    }
+  }
+}

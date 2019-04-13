@@ -191,28 +191,4 @@ section.first_section {
       }
     }
   }
-
-  .line {
-    padding: 20px 0;
-    //background-color: #000;
-    background-color: #08c;
-    .leftText {
-      p {
-        margin: 0;
-
-        &.bigText {
-          font-family: "Shadows Into lighter";
-          font-size: 20px;
-          font-weight: bold;
-          color: #fff;
-
-        }
-        &.smallText {
-          font-size: 16px;
-          color: rgba(#fff, 0.7);
-        }
-
-      }
-    }
-  }
 }

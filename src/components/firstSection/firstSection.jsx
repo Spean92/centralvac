@@ -81,20 +81,6 @@ class FirstSection extends Component{
                             </div>
                         </div>
                     </Slider>
-
-
-                    <div className="line">
-                        <div className="container">
-                            <div className="d-flex justify-content-between align-items-center">
-                                <div className="leftText">
-                                    <p className="bigText"><i>Наша миссия внести в Ваш дом чистоту и комфорт</i></p>
-                                    <p className="smallText">Мы предлагаем только лучшее для Вас</p>
-                                </div>
-
-                                <button className="">Как это работает</button>
-                            </div>
-                        </div>
-                    </div>
                 </section>
             </ScrollableAnchor>
 
