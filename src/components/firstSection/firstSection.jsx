@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Slider from "react-slick/lib";
 import ScrollableAnchor from 'react-scrollable-anchor'
-
+import {Animated} from "react-animated-css";
 
 import './styles.scss';
 
@@ -18,7 +18,7 @@ class FirstSection extends Component{
             arrows: false,
             infinite: true,
             dotsClass: `slick-dots custom-dots`,
-            speed: 2000,
+            speed: 1500,
             slidesToShow: 1,
             slidesToScroll: 1,
             // autoplay: true,
@@ -32,30 +32,52 @@ class FirstSection extends Component{
 
                             <div className="sliderBgImg" style={{ backgroundImage: `url(${slide1}` }}/>
                             <div className="textBlock">
-                                <p className="textTop"> Вы цените практичнось ,комфорт и экологичность</p>
-                                <p className="textBig">УСТАНОВИТЕ ЦЕНТРАЛЬНЫЙ ПЫЛЕСОС</p>
-                                <p className="textBottom">Узнайте как это работает <br/>
-                                    и присоединитесь к 4000+ счастливым клиентам</p>
-                                <a href="#section2">Узнать больше</a>
+                                <Animated animationIn="fadeIn" animationInDelay={500} animationInDuration={1500}>
+                                    <p className="textTop"> Вы цените практичнось ,комфорт и экологичность</p>
+                                </Animated>
+                                <Animated animationIn="fadeIn" animationInDelay={1500} animationInDuration={1500}>
+                                    <p className="textBig">УСТАНОВИТЕ ЦЕНТРАЛЬНЫЙ ПЫЛЕСОС</p>
+                                </Animated>
+                                <Animated animationIn="fadeIn" animationInDelay={2500} animationInDuration={1500}>
+                                    <p className="textBottom">Узнайте как это работает <br/>
+                                        и присоединитесь к 4000+ счастливым клиентам</p>
+                                </Animated>
+                                <Animated animationIn="zoomIn" animationInDelay={4000} animationInDuration={1800}>
+                                    <a href="#section2"><span>Узнать больше</span></a>
+                                </Animated>
                             </div>
                         </div>
                         <div className="slide">
 
                             <div className="sliderBgImg" style={{ backgroundImage: `url(${slide2}` }}/>
                             <div className="textBlock">
-                                <p className="textTop">интересует проффесиональный монтаж с гарантией?</p>
-                                <p className="textBig">ПРОЕКТ, МОНТАЖ С ГАРАНТИЕЙ 25 ЛЕТ </p>
-                                <p className="textBottom">Предоставьте исходные данные, остальное мы выполним сами</p>
-                                <a href="#section5">Начать сейчас</a>
+                                <Animated animationIn="fadeIn" animationInDelay={500} animationInDuration={1500}>
+                                    <p className="textTop">интересует проффесиональный монтаж с гарантией?</p>
+                                </Animated>
+                                <Animated animationIn="fadeIn" animationInDelay={1500} animationInDuration={1500}>
+                                    <p className="textBig">ПРОЕКТ, МОНТАЖ С ГАРАНТИЕЙ 25 ЛЕТ </p>
+                                </Animated>
+                                <Animated animationIn="fadeIn" animationInDelay={2500} animationInDuration={1500}>
+                                    <p className="textBottom">Предоставьте исходные данные, остальное мы выполним сами</p>
+                                </Animated>
+                                <Animated animationIn="zoomIn" animationInDelay={4000} animationInDuration={1800}>
+                                    <a href="#section5"> <span>Начать сейчас</span></a>
+                                </Animated>
                             </div>
                         </div>
                         <div className="slide">
 
                             <div className="sliderBgImg" style={{ backgroundImage: `url(${slide3}` }}/>
                             <div className="textBlock">
-                                <p className="textBig">СЕРВИС РЕМОНТ ОБСЛУЖИВАНИЕ</p>
-                                <p className="textBottom">продлите срок эксплуатации системы пылеудаления до 35 лет</p>
-                                <a href="#section7">Начать сейчас</a>
+                                <Animated animationIn="fadeIn" animationInDelay={500} animationInDuration={1500}>
+                                    <p className="textBig">СЕРВИС РЕМОНТ ОБСЛУЖИВАНИЕ</p>
+                                </Animated>
+                                <Animated animationIn="fadeIn" animationInDelay={1500} animationInDuration={1500}>
+                                    <p className="textBottom">продлите срок эксплуатации системы пылеудаления до 35 лет</p>
+                                </Animated>
+                                <Animated animationIn="zoomIn" animationInDelay={2500} animationInDuration={1800}>
+                                    <a href="#section7"><span>Начать сейчас</span></a>
+                                </Animated>
                             </div>
                         </div>
                     </Slider>

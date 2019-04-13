@@ -35,8 +35,14 @@ section.first_section {
       align-items: center;
       flex-wrap: wrap;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(0, 0, 0, 0.5);
       p {
+        width: 100%;
+        margin: 5px auto 10px auto;
+        font-size: 20px;
+        line-height: 20px;
+        font-weight: 300;
+        color: rgb(255, 255, 255);
         text-align: center;
         &.textTop {
           z-index: 9;
@@ -49,7 +55,6 @@ section.first_section {
           transition: none 0s ease 0s;
           text-align: center;
           border-width: 0px;
-          margin: 0px;
           padding: 0px;
           letter-spacing: 0px;
           min-height: 0px;
@@ -73,7 +78,6 @@ section.first_section {
           transition: none 0s ease 0s;
           text-align: center;
           border-width: 0px;
-          margin: 0px;
           padding: 0px;
           min-height: 0px;
           min-width: 0px;
@@ -94,7 +98,6 @@ section.first_section {
           visibility: inherit;
           transition: none 0s ease 0s;
           border-width: 0px;
-          margin: 0px;
           padding: 0px;
           letter-spacing: 0px;
           min-height: 0px;
@@ -106,18 +109,10 @@ section.first_section {
           transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
         }
       }
-      p {
-        width: 100%;
-        margin: 0 0 30px;
-        font-size: 20px;
-        line-height: 20px;
-        font-weight: 300;
-        color: rgb(255, 255, 255);
-        text-align: center;
-      }
       a {
+        position: relative;
         display: inline-block;
-        margin: 10px auto;
+        margin: 20px auto 0 auto;
         font-size: 22px;
         line-height: 22px;
         font-weight: 600;
@@ -135,6 +130,36 @@ section.first_section {
         max-height: none;
         max-width: none;
         opacity: 1;
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          opacity: 0;
+          border-radius: 6px;
+          background-color: rgba(255,255,255,0.5);
+          -webkit-transition: all 0.4s;
+          -moz-transition: all 0.4s;
+          -o-transition: all 0.4s;
+          transition: all 0.4s;
+          -webkit-transform: scale(0.5, 1);
+          transform: scale(0.5, 1);
+        }
+        &:hover {
+          color: #000;
+          &:before {
+            opacity: 1;
+            -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+          }
+        }
+        span {
+          position: relative;
+          z-index: 2;
+        }
       }
     }
 
