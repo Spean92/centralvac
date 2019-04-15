@@ -4,7 +4,7 @@ import logo from './logo.svg';
 
 import './sass/main.scss';
 import Slider from "react-slick";
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Card, CardTitle } from 'reactstrap';
 import ScrollableAnchor from 'react-scrollable-anchor'
 
 import Footer from "./components/footer/footer";
@@ -60,6 +60,31 @@ class App extends Component {
                                                 здоровье и здоровье
                                                 Ваших близких</p>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
+                    </ScrollableAnchor>
+                    <ScrollableAnchor id={'section6'}>
+                        <section className="six_section">
+                            <div className="line">
+                                <div className="container">
+                                    <div className="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h2 style={{color: `#ffffff`}}
+                                                className="vc_custom_heading m-b-none m-t-sm align-left">
+                                                Вы хотите знать сколько стоит центральный пылесос в ваш дом?
+
+                                            </h2>
+                                            <p style={{fontSize: `17px`}}
+                                               className="vc_custom_heading lead align-left">Закажите расчет стоимости
+                                                встроенного пылесоса
+                                                ответив всего на несколько вопросов</p>
+                                        </div>
+
+
+                                        <button className="">Перейти в раздел</button>
                                     </div>
                                 </div>
                             </div>
@@ -190,6 +215,8 @@ class App extends Component {
                             </div>
                         </section>
                     </ScrollableAnchor>
+
+
                     <ScrollableAnchor id={'section5'}>
                         <section className="fifth_section">
                             <div className="container">
@@ -245,31 +272,7 @@ class App extends Component {
                             </div>
                         </section>
                     </ScrollableAnchor>
-                    <ScrollableAnchor id={'section6'}>
-                        <section className="six_section">
-                            <div className="line">
-                                <div className="container">
-                                    <div className="d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <h2 style={{color: `#ffffff`}}
-                                                className="vc_custom_heading m-b-none m-t-sm align-left">
-                                                Вы хотите знать сколько стоит центральный пылесос в ваш дом?
 
-                                            </h2>
-                                            <p style={{fontSize: `17px`}}
-                                               className="vc_custom_heading lead align-left">Закажите расчет стоимости
-                                                встроенного пылесоса
-                                                ответив всего на несколько вопросов</p>
-                                        </div>
-
-
-                                        <button className="">Перейти в раздел</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </section>
-                    </ScrollableAnchor>
 
                     <ScrollableAnchor id={'section7'}>
                         <section className="seven_section">
@@ -396,7 +399,60 @@ class App extends Component {
                             </div>
                         </div>
                     </section>
-
+                    <section>
+                        <Container>
+                            <Row style={{alignItems: 'flex-end'}}>
+                                <Col md={4}>
+                                    <h5>Принцип работы системы пылеудаления</h5>
+                                    <Card>
+                                        <CardTitle>
+                                            Видео
+                                        </CardTitle>
+                                    </Card>
+                                </Col>
+                                <Col md={4}>
+                                    <h5>Основные преимущества</h5>
+                                    <Card>
+                                        <CardTitle>
+                                            Видео
+                                        </CardTitle>
+                                    </Card>
+                                </Col>
+                                <Col md={4}>
+                                    <h5>Ролик Duovac</h5>
+                                    <Card>
+                                        <CardTitle>
+                                            Видео
+                                        </CardTitle>
+                                    </Card>
+                                </Col>
+                                <Col md={4}>
+                                    <h5>Vroom </h5>
+                                    <Card>
+                                        <CardTitle>
+                                            Видео
+                                        </CardTitle>
+                                    </Card>
+                                </Col>
+                                <Col md={4}>
+                                    <h5>Wally Flex</h5>
+                                    <Card>
+                                        <CardTitle>
+                                            Видео
+                                        </CardTitle>
+                                    </Card>
+                                </Col>
+                                <Col md={4}>
+                                    <h5>Hide-A-Hose</h5>
+                                    <Card>
+                                        <CardTitle>
+                                            Видео
+                                        </CardTitle>
+                                    </Card>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </section>
                 </main>
 
                 <Footer />
