@@ -1,0 +1,15 @@
+.bottom-align {
+  align-items: flex-end;
+  padding-bottom: 20px;
+  .itemText {
+    text-align: center;
+  }
+  .previewImg {
+    width: 100%;
+  }
+}
+.collapse-img {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+}

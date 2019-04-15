@@ -2,16 +2,10 @@
 .secondSection {
   padding: 20px 0 30px 0;
 }
-.topFilters, .sideFilters {
+.modelFilters, .typeFilters {
   .filterCondition {
     display: inline-block;
   }
-}
-.topFilters {
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-  margin: 10px 0 20px 0;
 }
 
 .oneProduct {

@@ -15,6 +15,7 @@ import FirstSection from "./components/firstSection/firstSection";
 import SecondSection from "./components/secondSection/secondSection";
 import SideSocials from "./components/sideSocials/sideSocials";
 import HowItWorks from "./components/howItWorks/howItWorks";
+import ThirdSection from "./components/thirdSection/thirdSection";
 
 class App extends Component {
     constructor(props) {
@@ -45,6 +46,8 @@ class App extends Component {
                     <FirstSection />
                     <HowItWorks/>
                     <SecondSection />
+                    <ThirdSection/>
+
                     <ScrollableAnchor id={'section3'}>
                         <section className="thesa_section">
                             <div className="bg" style={{backgroundImage: `url('/img/bg/Husky_aspirationPlancher_1.jpg')`}}>

@@ -32,16 +32,19 @@ class SecondSection extends Component {
         return (
             <ScrollableAnchor id={'section2'}>
                 <section className="secondSection">
+                    <ModalItem ref={(ref) => {
+                        this.modal = ref
+                    }}
+                    />
                     <Container>
                         <Row>
-                            <Col md="3">
-                                <ModalItem ref={(ref) => {
-                                    this.modal = ref
-                                }}
-                                />
-                            </Col>
                             <Col md="6">
-                                <div className="topFilters">
+
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md="2">
+                                <div className="modelFilters">
                                     <FormGroup check className="filterCondition">
                                         <Label check>
                                             <Input type="checkbox" />{' '}
@@ -61,11 +64,7 @@ class SecondSection extends Component {
                                         </Label>
                                     </FormGroup>
                                 </div>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col md="2">
-                                <div className="sideFilters">
+                                <div className="typeFilters">
                                     <FormGroup check className="filterCondition">
                                         <Label check>
                                             <Input type="checkbox" />{' '}
