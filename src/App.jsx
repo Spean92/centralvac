@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
+
+
 import './sass/main.scss';
 import Slider from "react-slick";
 import { Container, Row, Col } from 'reactstrap';

@@ -11,24 +11,36 @@ class SecondSection extends Component {
     constructor(props) {
         super(props);
         this.toggleModal = this.toggleModal.bind(this);
+        this.state = {
+            allSlider   : '',
+            sliderClass : '',
+            leftSlider  : '',
+            rightSlider : '',
+            slideCurrent: 0,
+            slideTotal  : 6
+        }
     }
     toggleModal() {
         this.modal.toggleModal();
     };
+
+    componentDidMount() {
+
+    }
+
+
     render() {
-        let tempIng = `https://via.placeholder.com/180x230`;
-        let filterSlider = {
-            dots: true,
-            accessibility: false,
-            // arrows: false,
+        let tempImg = `https://via.placeholder.com/180x200`;
+
+        var settings = {
+            className: "center",
+            centerMode: true,
             infinite: true,
-            dotsClass: `slick-dots custom-dots`,
-            speed: 1000,
+            centerPadding: "10px",
             slidesToShow: 3,
-            slidesToScroll: 1,
-            // autoplay: true,
-            easing: `ease-in-out`
-        }
+            speed: 500
+        };
+
         return (
             <ScrollableAnchor id={'section2'}>
                 <section className="secondSection">
@@ -38,33 +50,21 @@ class SecondSection extends Component {
                     />
                     <Container>
                         <Row>
-                            <Col md="6">
 
+                            <Col md="2">
+
+                            </Col>
+                            <Col md="10">
+                                <div className="topFilters">
+                                    <div className="previewButton">Агрегаты HUSKY</div>
+                                    <div className="previewButton">Агрегаты DUOVAC</div>
+                                    <div className="previewButton">Агрегаты SOLUVAC</div>
+                                </div>
                             </Col>
                         </Row>
                         <Row>
                             <Col md="2">
-                                <div className="modelFilters">
-                                    <FormGroup check className="filterCondition">
-                                        <Label check>
-                                            <Input type="checkbox" />{' '}
-                                            Агрегаты HUSKY
-                                        </Label>
-                                    </FormGroup>
-                                    <FormGroup check className="filterCondition">
-                                        <Label check>
-                                            <Input type="checkbox" />{' '}
-                                            Агрегаты DUOVAC
-                                        </Label>
-                                    </FormGroup>
-                                    <FormGroup check className="filterCondition">
-                                        <Label check>
-                                            <Input type="checkbox" />{' '}
-                                            Агрегаты SOLUVAC
-                                        </Label>
-                                    </FormGroup>
-                                </div>
-                                <div className="typeFilters">
+                                <div className="sideFilters">
                                     <FormGroup check className="filterCondition">
                                         <Label check>
                                             <Input type="checkbox" />{' '}
@@ -92,33 +92,55 @@ class SecondSection extends Component {
                                 </div>
                             </Col>
                             <Col md="7">
-                                <Slider {...filterSlider}>
-                                    <div className="oneProduct" onClick={this.toggleModal}>
-                                        <img src={tempIng} alt="placeholder"/>
+                                <Slider {...settings}>
+                                    <div className="single">
+                                        <div className="slider-single-image">
+                                            <img src={tempImg} alt=""/>
+                                        </div>
                                     </div>
-                                    <div className="oneProduct" onClick={this.toggleModal}>
-                                        <img src={tempIng} alt="placeholder"/>
+                                    <div className="single">
+                                        <div className="slider-single-image">
+                                            <img src={tempImg} alt=""/>
+
+                                        </div>
                                     </div>
-                                    <div className="oneProduct" onClick={this.toggleModal}>
-                                        <img src={tempIng} alt="placeholder"/>
+                                    <div className="single">
+                                        <div className="slider-single-image">
+                                            <img src={tempImg} alt=""/>
+
+                                        </div>
                                     </div>
-                                    <div className="oneProduct" onClick={this.toggleModal}>
-                                        <img src={tempIng} alt="placeholder"/>
+                                    <div className="single">
+                                        <div className="slider-single-image">
+                                            <img src={tempImg} alt=""/>
+
+                                        </div>
+                                    </div>
+                                    <div className="single">
+                                        <div className="slider-single-image">
+                                            <img src={tempImg} alt=""/>
+
+                                        </div>
                                     </div>
                                 </Slider>
+
                             </Col>
                             <Col md="3">
                                 <div className="slideDescription">
                                     <h4>Husky Flex</h4>
-                                    <ul>
+                                    <ul className="unmark">
                                         <li>Сухая ультратихая уборка 50дБ</li>
                                         <li>Макс. площадь уборки 300м2</li>
                                         <li>Макс. Кол-во пневморозеток 7шт</li>
                                     </ul>
                                     <p>Мощный , тихий и доступный центральный пылесос. Очень компактный и простой в установке, идеально подходит для квартир и средних домов.</p>
-                                <button className="fullInfo">
-                                     Полная информация
-                                </button>
+
+                                    <div className="buttonWrapper">
+                                        <div className="fullInfo" onClick={this.toggleModal}>
+                                            <span>Полная информация</span>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </Col>
                         </Row>

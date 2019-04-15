@@ -1,6 +1,44 @@
+$time: 500ms;
+$delay: $time/2;
+$mode: cubic-bezier(.17, .67, .55, 1);
+
 
 .secondSection {
   padding: 20px 0 30px 0;
+  background: rgba(0,0,0,0.4);
+
+}
+.previewButton {
+  display: inline-block;
+  padding: 15px 10px;
+  border: 1px solid transparent;
+  border-color: #212529 #212529 #0b0c0d;
+  border-radius: 6px;
+  background-color: #212529;
+  vertical-align: middle;
+  font-size: 1em;
+  line-height: 1.3333;
+  color: #FFF;
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: center;
+  transition: all 0.1s;
+  cursor: pointer;
+  user-select: none;
+  &:hover {
+    color: #fff;
+    background-color: #31373d;
+    border-color: #383f46 #383f46 #212529;
+  }
+  &:focus, &:active {
+    background-color: #000;
+    box-shadow: 0 0 0 0.2rem rgba(29,33,39,.5);
+  }
+}
+.topFilters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 .modelFilters, .typeFilters {
   .filterCondition {
@@ -18,8 +56,128 @@
   }
 }
 .slideDescription {
-  border: 1px solid black;
+  //border: 1px solid black;
   height: 100%;
   width: 100%;
+  .unmark {
+    padding: 0;
+    list-style: none;
+  }
 
+}
+.single {
+  img {
+    max-width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    transform-origin: center;
+    transition: transform .350s ease;
+  }
+}
+.center {
+  .slick-center  {
+    .single {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+.slick-arrow {
+  z-index: 20;
+  height: 100%;
+  &.slick-next {
+    right: calc(50% - 120px);
+  }
+  &.slick-prev {
+    left: calc(50% - 120px);
+  }
+}
+div.slider {
+  .slider-container {
+
+
+    .slider-left {
+      position: absolute;
+      z-index: 3;
+      display: block;
+      right: 101%;
+      top: 50%;
+      color: black;
+      transform: translateY(-50%);
+      padding: 21px 11px;
+      background-image: url("/img/left-angle.png");
+      background-size: cover;
+      background-position: center;
+    }
+    .slider-right {
+      position: absolute;
+      z-index: 3;
+      display: block;
+      left: 101%;
+      top: 50%;
+      color: black;
+      transform: translateY(-50%);
+      padding: 21px 11px;
+      background-image: url("/img/right-angle.png");
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
+.buttonWrapper {
+  text-align: center;
+}
+.fullInfo{
+  position: relative;
+  display: inline-block;
+  margin: 20px auto 0 auto;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 136, 204);
+  border-radius: 6px;
+  text-decoration: none;
+  visibility: inherit;
+  transition: none;
+  text-align: left;
+  padding: 13px 20px;
+  letter-spacing: 0px;
+  min-height: 0px;
+  min-width: 0px;
+  max-height: none;
+  max-width: none;
+  opacity: 1;
+  cursor: pointer;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    border-radius: 6px;
+    background-color: rgba(255,255,255,0.5);
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+    -webkit-transform: scale(0.5, 1);
+    transform: scale(0.5, 1);
+  }
+  &:hover {
+    color: #000;
+    &:before {
+      opacity: 1;
+      -webkit-transform: scale(1, 1);
+      transform: scale(1, 1);
+    }
+  }
+  span {
+    position: relative;
+    z-index: 2;
+  }
 }

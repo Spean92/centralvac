@@ -1,0 +1,15 @@
+
+.modal-dialog {
+  &.big_modal {
+    width: 90%;
+    max-width: none;
+    height: 90vh;
+    .modal-content {
+      height: 100%;
+    }
+    iframe {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
