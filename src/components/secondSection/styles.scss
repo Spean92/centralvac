@@ -87,44 +87,17 @@ $mode: cubic-bezier(.17, .67, .55, 1);
   z-index: 20;
   height: 100%;
   &.slick-next {
-    right: calc(50% - 120px);
+    right: 0;
+    width: 30%;
+    text-align: left;
   }
   &.slick-prev {
-    left: calc(50% - 120px);
+    left: 0;
+    width: 30%;
+    text-align: right;
   }
 }
-div.slider {
-  .slider-container {
 
-
-    .slider-left {
-      position: absolute;
-      z-index: 3;
-      display: block;
-      right: 101%;
-      top: 50%;
-      color: black;
-      transform: translateY(-50%);
-      padding: 21px 11px;
-      background-image: url("/img/left-angle.png");
-      background-size: cover;
-      background-position: center;
-    }
-    .slider-right {
-      position: absolute;
-      z-index: 3;
-      display: block;
-      left: 101%;
-      top: 50%;
-      color: black;
-      transform: translateY(-50%);
-      padding: 21px 11px;
-      background-image: url("/img/right-angle.png");
-      background-size: cover;
-      background-position: center;
-    }
-  }
-}
 .buttonWrapper {
   text-align: center;
 }

@@ -24,11 +24,6 @@ class SecondSection extends Component {
         this.modal.toggleModal();
     };
 
-    componentDidMount() {
-
-    }
-
-
     render() {
         let tempImg = `https://via.placeholder.com/180x200`;
 

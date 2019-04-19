@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './styles.scss'
-import {Col, Container, Row, Collapse} from "reactstrap";
+import {Col, Container, Row} from "reactstrap";
 import ListComponent from "./listComponent/listComponent";
 
 class ThirdSection extends Component {

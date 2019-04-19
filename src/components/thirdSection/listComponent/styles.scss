@@ -1,12 +1,24 @@
 .bottom-align {
   align-items: flex-end;
   padding-bottom: 20px;
-  .itemText {
-    text-align: center;
+  .item-wrapper {
+    cursor: pointer;
+    transition: all .250s ease-in-out;
+    .itemText {
+      text-align: center;
+    }
+    .previewImg {
+      width: 100%;
+      transition: all .250s ease-in-out;
+    }
+    &:hover {
+      .previewImg {
+        transform-origin: center;
+        transform: scale(1.1);
+      }
+    }
   }
-  .previewImg {
-    width: 100%;
-  }
+
 }
 .collapse-img {
   display: flex;

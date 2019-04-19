@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-import PropTypes from 'prop-types';
 
 import './styles.scss'
 class ModalItem extends Component{
@@ -24,14 +23,14 @@ class ModalItem extends Component{
         if(!this.props.show) {
         }
         return (
-            <div>
+            <div className="modal-item">
                 <Modal isOpen={this.state.modal}
                        toggle={this.toggleModal}
                        className="big_modal"
                 >
                     <ModalHeader toggle={this.toggle}>Модель товара</ModalHeader>
                     <ModalBody>
-                        <iframe src="/files/husky_flex.pdf" frameborder="0">
+                        <iframe title="Модель товара" src="/files/husky_flex.pdf" frameborder="0" height="100%" width="100%">
 
                         </iframe>
                     </ModalBody>

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './styles.scss'
-import {Col, Container, Row, Collapse} from "reactstrap";
+import {Col, Row, Collapse} from "reactstrap";
 
 
 class ListComponent extends Component{
@@ -22,8 +22,10 @@ class ListComponent extends Component{
             <Row className="bottom-align">
                 {text.map((val, index) => {
                     return (<Col md={2} onClick={this.toggle} key={index}>
-                        <div className="itemText">{val}</div>
-                        <img className="previewImg" src={tempImg} alt="alt"/>
+                        <div className="item-wrapper">
+                            <div className="itemText">{val}</div>
+                            <img className="previewImg" src={tempImg} alt="alt"/>
+                        </div>
                     </Col>)
                 })}
                 <Col md={12} >

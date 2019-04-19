@@ -1,0 +1,48 @@
+section.nine_section{
+  padding: 30px 0;
+  ul {
+    position: relative;
+    background: url(/img/bg/bg-your-advantages.png) repeat-y center top;
+    list-style: none;
+    padding:0;
+    padding-top: 89px;
+    padding-bottom: 112px;
+    li {
+      display: block;
+      margin-bottom: 140px;
+
+      .ball {
+        position: relative;
+        width: 46px;
+        height: 46px;
+        display: block;
+        margin: auto;
+        background: #f77b42;
+        border-radius: 130px;
+      }
+      &.left {
+        .ball {
+          .bullet {
+            position: absolute;
+            left: 106px;
+            top: 0;
+            width: 400px;
+            background-color: #ffffff;
+          }
+        }
+      }
+      &.right {
+        .ball {
+          .bullet {
+            position: absolute;
+            right: 106px !important;
+            top: 0;
+            width: 400px;
+            background-color: #ffffff !important;
+          }
+        }
+      }
+
+    }
+  }
+}

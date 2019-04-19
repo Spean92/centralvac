@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import {Animated} from "react-animated-css";
 
 import './styles.scss';
-import { Container, Row, Col } from 'reactstrap';
+import { Container } from 'reactstrap';
 
 
 class HowItWorks extends Component{

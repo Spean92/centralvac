@@ -5,9 +5,6 @@ import { SocialIcon } from 'react-social-icons';
 
 
 class SideSocials extends Component{
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (

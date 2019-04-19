@@ -82,7 +82,7 @@ class Header extends Component {
     }
 
     render() {
-        const menuItems = [`Как это работает`, [`Пылесосы`, `Husky`, `Duovac`, `Soluvac`], `Аксесуары`, `Примеры расчетов`, `Заказать расчет`, `Сервис`, `Видео`, `Контакты`];
+        const menuItems = [`Как это работает`, [`Пылесосы`, `Husky`, `Duovac`, `Soluvac`], `Аксесуары`, `Примеры расчетов`, `Сервис`, `Заказать расчет`, `Видео`, `Контакты`];
         return (
             <header >
                 <nav>
