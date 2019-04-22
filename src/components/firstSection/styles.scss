@@ -1,19 +1,6 @@
 section.first_section {
   min-height: 700px;
   background-color: rgba(0,0,0,0.8);
-  .swiper-container {
-    min-height: 700px;
-    .swiper-slide {
-      min-height:700px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-  }
-
-
-
   .slide {
     position: relative;
     .sliderBgImg {
@@ -168,15 +155,16 @@ section.first_section {
     &.slick-dots {
       bottom: 10px;
       li {
-
+        margin: 0 2px;
         button {
+          padding: 4px;
           &:before {
             content: '';
-            color: rgba(#ffffff, 0.3);
-            background-color: rgba(#ffffff, 0.3);
+            color: rgba(#ffffff, 1);
+            background-color: rgba(#ffffff, 1);
             left: 6px;
-            width: 8px;
-            height: 8px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
           }
         }
@@ -187,6 +175,36 @@ section.first_section {
               background-color: #fff;
             }
           }
+        }
+      }
+    }
+  }
+  .slick-arrow {
+    &.slick-next {
+      &.arrowRight {
+        &:before {
+          content: '';
+          width: 60px;
+          height: 60px;
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          background-image: url("/img/right-arrow.svg");
+        }
+      }
+    }
+    &.slick-prev {
+      &.arrowLeft {
+        &:before {
+          content: '';
+          width: 60px;
+          height: 60px;
+          position: absolute;
+          left: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          background-image: url("/img/left-arrow.svg");
         }
       }
     }

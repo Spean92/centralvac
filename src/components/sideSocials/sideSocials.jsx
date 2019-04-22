@@ -10,13 +10,13 @@ class SideSocials extends Component{
         return (
             <div className="social-wrapper">
                 <div>
-                    <SocialIcon target="_blank" url="https://www.facebook.com/centralvac.shop/" />
+                    <SocialIcon target="_blank" url="https://www.facebook.com/centralvac.shop/" style={{ height: 30, width: 30 }}/>
                 </div>
                 <div>
-                    <SocialIcon target="_blank" url="https://www.youtube.com/channel/UCHa08DiQokwW1RXlGElA4jw?view_as=subscribert" />
+                    <SocialIcon target="_blank" url="https://www.youtube.com/channel/UCHa08DiQokwW1RXlGElA4jw?view_as=subscribert" style={{ height: 30, width: 30 }}/>
                 </div>
                 <div>
-                    <SocialIcon target="_blank" url="https://www.instagram.com/interkonuskiev/" />
+                    <SocialIcon target="_blank" url="https://www.instagram.com/interkonuskiev/" style={{ height: 30, width: 30 }} />
                 </div>
             </div>
         )

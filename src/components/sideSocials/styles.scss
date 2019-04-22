@@ -1,14 +1,16 @@
 .social-wrapper {
+  display: inline-block;
   background-color: #fff;
-  position: fixed;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  z-index: 10;
-  border-radius: 10px 0 0 10px;
+  margin: 0 0 0 5px;
+  //position: fixed;
+  //top: 50%;
+  //right: 0;
+  //transform: translateY(-50%);
+  //z-index: 10;
+  //border-radius: 10px 0 0 10px;
   > div {
-    display: block;
-    margin: 10px 5px 10px 5px;
+    display: inline-block;
+    margin: 0 2px;
     a {
       transition: all .250s ease-in-out;
       &:hover {

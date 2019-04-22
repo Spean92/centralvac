@@ -1,3 +1,5 @@
+@import "../../sass/variables";
+
 $time: 500ms;
 $delay: $time/2;
 $mode: cubic-bezier(.17, .67, .55, 1);
@@ -39,6 +41,11 @@ $mode: cubic-bezier(.17, .67, .55, 1);
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+}
+.bottom-filter {
+  width: 100%;
+  margin-top: 20px;
+
 }
 .modelFilters, .typeFilters {
   .filterCondition {

@@ -1,7 +1,8 @@
+@import "../../sass/variables";
 .line {
   padding: 20px 0 0 0;
   //background-color: #000;
-  background-color: #08c;
+  background-color: $main-blue;
   .leftText {
     p {
       margin: 0;
@@ -10,7 +11,7 @@
         font-family: "Shadows Into lighter";
         font-size: 20px;
         font-weight: bold;
-        color: #fff;
+        color: $main-white;
 
       }
       &.smallText {
@@ -26,11 +27,11 @@
     border: 1px solid transparent;
     border-color: #212529 #212529 #0b0c0d;
     border-radius: 6px;
-    background-color: #212529;
+    background-color: $main-black;
     vertical-align: middle;
     font-size: 1em;
     line-height: 1.3333;
-    color: #FFF;
+    color: $main-white;
     font-weight: 600;
     white-space: nowrap;
     text-align: center;
@@ -38,7 +39,7 @@
     cursor: pointer;
     user-select: none;
     &:hover {
-      color: #fff;
+      color: $main-white;
       background-color: #31373d;
       border-color: #383f46 #383f46 #212529;
     }
@@ -48,8 +49,9 @@
     }
   }
   .dropDown-container {
+    border-top: 1px solid $main-white;
     margin-top: 25px;
-    background-color: aquamarine;
+    background-color: $main-blue;
     overflow: hidden;
     max-height: 0;
     transition: max-height 350ms ease-in-out;
@@ -58,11 +60,12 @@
     }
     img {
       float: left;
-      max-width: 50%;
+      max-width: 30%;
       margin: 15px;
     }
     p {
       padding: 15px 0 10px 0;
+      color: $main-white;
     }
   }
 }

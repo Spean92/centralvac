@@ -9,20 +9,44 @@ import slide1 from "../../images/bg_slide1.jpg";
 import slide2 from "../../images/bg_slide2.jpg";
 import slide3 from "../../images/bg_slide3.jpg";
 
+function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <div
+            className={className + ' arrowRight'}
+            style={{ ...style}}
+            onClick={onClick}
+        />
+    );
+}
+
+function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <div
+            className={className + ' arrowLeft'}
+            style={{ ...style}}
+            onClick={onClick}
+        />
+    );
+}
+
 class FirstSection extends Component{
 
     render() {
         const firstSectionSlider = {
             dots: true,
             accessibility: false,
-            arrows: false,
+            // arrows: false,
             infinite: true,
             dotsClass: `slick-dots custom-dots`,
             speed: 1500,
             slidesToShow: 1,
             slidesToScroll: 1,
             // autoplay: true,
-            easing: `ease-in-out`
+            easing: `ease-in-out`,
+            nextArrow: <SampleNextArrow />,
+            prevArrow: <SamplePrevArrow />
         };
         return (
             <ScrollableAnchor id={'section1'}>

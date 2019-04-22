@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './header.scss';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Container, Row, Col } from 'reactstrap';
+import SideSocials from "../sideSocials/sideSocials";
 
 
 class Header extends Component {
@@ -47,14 +48,22 @@ class Header extends Component {
     }
     createMenu = (menuItems) => {
         let menu = [];
-        for (let i = 0; i <= menuItems.length; i++) {
+        for (let i = 0; i < menuItems.length; i++) {
             menu = [
                 ...menu,
                 (<li key={i}>
-                    <a className={this.state.hash === `#section${i+1}` ? `active` : null}
-                        href={`#section${i+1}`}>
-                        {Array.isArray(menuItems[i]) ? this.createDropDown(menuItems[i]) : menuItems[i]}
-                    </a>
+                    {Array.isArray(menuItems[i]) ?
+                        <a className={(this.state.hash === `#section${i+1}` ? `active` : null)}
+                           href={`#section${i+1}`}>
+                            {this.createDropDown(menuItems[i])}
+                        </a>
+                         :
+                        <a className={`menu-item ` + (this.state.hash === `#section${i+1}` ? `active` : null)}
+                           href={`#section${i+1}`}>
+                            {menuItems[i]}
+                        </a>
+                        }
+
                 </li>)
             ]
         }
@@ -62,7 +71,7 @@ class Header extends Component {
     };
     createDropDown(subMenuItems) {
         let subMenu = [];
-        for(let j = 1; j<= subMenuItems.length; j++) {
+        for(let j = 1; j< subMenuItems.length; j++) {
             subMenu = [
                 ...subMenu,
                 (<DropdownItem key={j}>
@@ -97,6 +106,7 @@ class Header extends Component {
                             <Col md="12">
                                 <ul className="nav">
                                     {this.createMenu(menuItems)}
+                                    <SideSocials />
                                 </ul>
                             </Col>
                         </Row>
