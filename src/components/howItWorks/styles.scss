@@ -8,7 +8,6 @@
       margin: 0;
 
       &.bigText {
-        font-family: "Shadows Into lighter";
         font-size: 20px;
         font-weight: bold;
         color: $main-white;
@@ -16,6 +15,7 @@
       }
       &.smallText {
         font-size: 16px;
+        line-height: 1.2;
         color: rgba(#fff, 0.7);
       }
 
