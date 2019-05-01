@@ -47,21 +47,8 @@ $mode: cubic-bezier(.17, .67, .55, 1);
   margin-top: 20px;
 
 }
-.modelFilters, .typeFilters {
-  .filterCondition {
-    display: inline-block;
-  }
-}
 
-.oneProduct {
-  img {
-    cursor: pointer;
-    transition: all .3s ease-in-out;
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
-}
+
 .slideDescription {
   //border: 1px solid black;
   height: 100%;
@@ -72,25 +59,37 @@ $mode: cubic-bezier(.17, .67, .55, 1);
   }
 
 }
-.single {
-  img {
-    max-width: 100%;
-    margin: 0 auto;
-    transform: scale(0.8);
-    transform-origin: center;
-    transition: transform .350s ease;
-  }
-}
+
 .center {
   .slick-slide {
     opacity: 0.4;
     transition: opacity .350s ease;
     will-change: opacity;
+    .single {
+      .slider-single-image {
+        margin: 0 auto;
+        width: 300px;
+        height: 400px;
+        position: relative;
+        overflow: hidden;
+        img{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          max-width: 100%;
+          transform: translate3d(-50%, -50%, 0) scale(0.8);
+          transform-origin: center;
+          transition: transform .350s ease;
+        }
+      }
+    }
     &.slick-center  {
       opacity: 1;
       .single {
-        img {
-          transform: scale(1.1);
+        .slider-single-image {
+          img {
+            transform: translate3d(-50%, -50%, 0) scale(1);
+          }
         }
       }
     }
@@ -101,14 +100,38 @@ $mode: cubic-bezier(.17, .67, .55, 1);
   z-index: 20;
   height: 100%;
   &.slick-next {
-    right: 0;
-    width: 30%;
-    text-align: left;
+    &.arrowRight {
+      right: 0;
+      width: 45%;
+      text-align: center;
+      &:before {
+        content: '';
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        right: 35%;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url("/img/right-arrow.svg");
+      }
+    }
   }
   &.slick-prev {
-    left: 0;
-    width: 30%;
-    text-align: right;
+    &.arrowLeft {
+      left: 0;
+      width: 45%;
+      text-align: center;
+      &:before {
+        content: '';
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        left: 35%;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url("/img/left-arrow.svg");
+      }
+    }
   }
 }
 
@@ -168,4 +191,17 @@ $mode: cubic-bezier(.17, .67, .55, 1);
     position: relative;
     z-index: 2;
   }
+}
+#skuTitle {
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+#skuAdvantages {
+  padding: 0;
+  li {
+    font-size: 14px;
+  }
+}
+#skuDescription {
+
 }

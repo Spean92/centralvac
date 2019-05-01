@@ -1,7 +1,12 @@
+@import "../../sass/variables.scss";
+@import "../../sass/buttons.scss";
 section.fifth_section {
   padding: 50px 0;
 
   img {
     max-width: 100%;
+  }
+  h3 {
+    color: $main-blue;
   }
 }

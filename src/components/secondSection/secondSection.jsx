@@ -9,6 +9,28 @@ import axios from 'axios';
 import './styles.scss';
 import ModalItem from "../modalItem/modalItem";
 
+function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <div
+            className={className + ' arrowRight'}
+            style={{ ...style}}
+            onClick={onClick}
+        />
+    );
+}
+
+function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <div
+            className={className + ' arrowLeft'}
+            style={{ ...style}}
+            onClick={onClick}
+        />
+    );
+}
+
 class SecondSection extends Component {
     constructor(props) {
         super(props);
@@ -24,6 +46,8 @@ class SecondSection extends Component {
             currentSlideAdv: '',
             currentSlideDescription: '',
             currentSlideLink: '',
+            currentSlideBrand: '',
+            currentSlideModel: '',
             sku: []
         }
     }
@@ -36,6 +60,8 @@ class SecondSection extends Component {
                     skuData : res.map((item) => item)
                 });
                 this.setState({
+                    currentSlideBrand: this.state.skuData[0].brand,
+                    currentSlideModel: this.state.skuData[0].model,
                     currentSlideTitle: this.state.skuData[0].title,
                     currentSlideAdv: this.state.skuData[0].advantages,
                     currentSlideDescription: this.state.skuData[0].short_description,
@@ -46,8 +72,23 @@ class SecondSection extends Component {
     }
 
     toggleModal() {
-        this.modal.toggleModal();
-    };
+        const brand = this.state.currentSlideBrand;
+        const model = this.state.currentSlideModel;
+        axios
+            .get(`data/fullData.json`)
+            .then(res => res.data)
+            .then(res =>  res.filter((item) => (item.model == model && item.brand == brand)))
+            .then(res =>  {
+                this.setState({
+                    skuFullData: res[0]
+                })
+            })
+            .then(() => {
+                this.modal.toggleModal();
+            })
+            .catch(err => console.error(err));
+    }
+
     createSlides() {
         const images = this.state.skuData.map(item => item.image);
         const sliderItems = images.map((item, iterator) =>
@@ -61,6 +102,8 @@ class SecondSection extends Component {
     }
     changeSliderDetector(next) {
         this.setState({
+            currentSlideBrand: this.state.skuData[next].brand,
+            currentSlideModel: this.state.skuData[next].model,
             currentSlideTitle: this.state.skuData[next].title,
             currentSlideAdv: this.state.skuData[next].advantages,
             currentSlideDescription: this.state.skuData[next].short_description,
@@ -68,30 +111,42 @@ class SecondSection extends Component {
         })
         // const nextSlider = document.querySelector(`[data-slide-id="${next}"]`);
     }
+    renderAdvantages(advantages) {
+        return advantages.map((value) => <li key={value.id}>{value.text}</li>)
+    }
+    arrowLeft() {
+        return(<div className="lol">left</div>)
+    }
+    arrowRight() {
+        return(<div className="lol">right</div>)
+    }
     render() {
         let tempImg = `https://via.placeholder.com/180x250`;
         var settings = {
             className: "center",
             centerMode: true,
             infinite: true,
-            centerPadding: "10px",
-            slidesToShow: 3,
+            centerPadding: "150px",
+            slidesToShow: 1,
             speed: 500,
             beforeChange: (current, next) => {
                 // this.changeSliderDetector(current, next);
             },
             afterChange: (current) => {
-                // console.log(current);
                 this.changeSliderDetector(current);
-            }
+            },
+            nextArrow: <SampleNextArrow />,
+            prevArrow: <SamplePrevArrow />
         };
 
         return (
             <ScrollableAnchor id={'section2'}>
                 <section className="secondSection">
                     <ModalItem ref={(ref) => {
-                        this.modal = ref
-                    }}
+                                this.modal = ref
+                               }}
+                               sku={this.state.skuFullData}
+
                     />
                     <Container>
                         <Row>
@@ -115,8 +170,11 @@ class SecondSection extends Component {
                             <Col md="5">
                                 <div className="slideDescription">
                                     <h4 id="skuTitle">{this.state.currentSlideTitle}</h4>
-                                    <p id="skuAdvantages">{this.state.currentSlideAdv}</p>
-                                    <p id="skuDescription">{this.state.currentSlideDescription}</p>
+                                    <ul id="skuAdvantages">{this.state.currentSlideAdv && this.renderAdvantages(this.state.currentSlideAdv)}</ul>
+                                    {/*<p id="skuDescription">{this.state.currentSlideDescription}</p>*/}
+                                    <p id="skuDescription">{((this.state.currentSlideDescription).length > 100) ?
+                                        (((this.state.currentSlideDescription).substring(0,100-3)) + '...') :
+                                        this.state.currentSlideDescription}</p>
 
                                     <div className="buttonWrapper">
                                         <a className="where-to-buy" id="skuLink" href={this.state.currentSlideLink}>

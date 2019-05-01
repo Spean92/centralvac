@@ -21,7 +21,7 @@ class ListComponent extends Component{
         return (
             <Row className="bottom-align">
                 {text.map((val, index) => {
-                    return (<Col md={2} onClick={this.toggle} key={index}>
+                    return (<Col md={2} key={index}>
                         <div className="item-wrapper">
                             <div className="itemText">{val}</div>
                             <img className="previewImg" src={tempImg} alt="alt"/>

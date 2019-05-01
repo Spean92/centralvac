@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './styles.scss'
 import ScrollableAnchor from "react-scrollable-anchor";
+import {Col, Container, Row, FormGroup, Label, Input} from "reactstrap";
 
 
 class OurConfidence extends Component{
@@ -9,12 +10,12 @@ class OurConfidence extends Component{
         return(
             <ScrollableAnchor id={'section5'}>
                 <section className="fifth_section">
-                    <div className="container">
-                        <div className="row">
+                    <Container>
+                        <Row>
 
-                            <div className="col-md-4 text-md-right">
+                            <Col md={4} className="text-md-right">
                                 <div>
-                                    <h3><a href="/">Гарантия</a></h3>
+                                    <h3>Гарантия</h3>
                                     <p>
                                         Гарантия на оборудование 5 лет
                                         Срок службы до 30 лет
@@ -22,7 +23,7 @@ class OurConfidence extends Component{
                                     </p>
                                 </div>
                                 <div>
-                                    <h3><a href="/">Вызов специалиста</a></h3>
+                                    <h3>Вызов специалиста</h3>
                                     <p>
                                         Вы хотите знать стоимость системы пылеудаления,
                                         Вы не увенены в своем выборе, Вы сомневаетесь
@@ -30,15 +31,15 @@ class OurConfidence extends Component{
                                         и предоставит расчет стоимости в течении 1-го дня
                                     </p>
                                 </div>
-                            </div>
-                            <div className="col-md-4">
+                            </Col>
+                            <Col md={4}>
                                 <div className="vc_single_image-wrapper   vc_box_border_grey">
                                     <img className="vc_single_image-img" src="/img/duovac.jpg" alt="1" />
                                 </div>
-                            </div>
-                            <div className="col-md-4">
+                            </Col>
+                            <Col md={4}>
                                 <div>
-                                    <h3><a href="/">Ремонт</a></h3>
+                                    <h3>Ремонт</h3>
                                     <p>
                                         В течении 1-го дня мы выполним диагностику
                                         вашей системы, в случае ремонта установим
@@ -47,7 +48,7 @@ class OurConfidence extends Component{
                                     </p>
                                 </div>
                                 <div>
-                                    <h3><a href="/">Сервис</a></h3>
+                                    <h3>Сервис</h3>
                                     <p>
                                         Система центральный пылесос не требует
                                         "регулярного сервиса, но периодическое обслуживание
@@ -55,10 +56,12 @@ class OurConfidence extends Component{
                                         продлит срок службы вашей системы
                                     </p>
                                 </div>
-                            </div>
-
-                        </div>
-                    </div>
+                            </Col>
+                            <Col md={12} className="text-md-right">
+                                <a href="https://www.centralvac.com.ua/uslugi/" className="button"><span>Услуги</span></a>
+                            </Col>
+                        </Row>
+                    </Container>
                 </section>
             </ScrollableAnchor>
         )

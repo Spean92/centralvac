@@ -1,21 +1,67 @@
-
+@import "../../sass/buttons";
 .modal-dialog {
   &.big_modal {
     width: 90%;
     max-width: none;
-    height: 90vh;
+    //height: 90vh;
     .modal-content {
       height: 100%;
     }
-    iframe {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      z-index: 1;
+    .modal-header {
+      font-size: 20px;
+      padding: 1em;
+      .modal-title {
+        font-size: 22px;
+        font-weight: bold;
+      }
+      .close {
+        padding: 1em 1em;
+        margin: -1em -1em -1em auto;
+      }
+    }
+
+    .block1, .block2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .description {
+      width: 48%;
+      p {
+        font-size: 14px;
+      }
+    }
+    .advantages {
+      width: 48%;
+      ul {
+        padding: 0;
+        li {
+          font-size: 13px;
+        }
+      }
+    }
+    .characteristics {
+      width: 48%;
+      .table {
+        td {
+          padding: 5px;
+        }
+      }
+
+    }
+    .image {
+      display: block;
+      width: auto;
+      max-width: 48%;
+      margin: 0 auto;
+    }
+    #skuLinkModal {
+      @extend .button;
+      margin-right: 0;
+      margin-top: 0;
+      padding: 10px 15px;
+      font-size: 1em;
+
     }
   }
 }
