@@ -1,3 +1,106 @@
+@import "../../sass/variables";
+@import "../../sass/buttons";
+.thirdSection {
+  background-color: $main-blue;
+  padding-bottom: 25px;
+}
 .regular-header {
-  margin-bottom: 20px;
+  margin: 20px auto;
+  font-weight: bold;
+  text-align: center;
+  color: $main-white;
+}
+.slick-slide {
+  .one_slide {
+    &_wrapper{
+      margin: 10px;
+      .item_title {
+        color: $main-white;
+        text-align: center;
+        font-weight: bold;
+        height: 1.5em;
+        overflow: hidden;
+      }
+      .item_image_block {
+        position: relative;
+        .hover_block {
+          opacity: 0;
+          will-change: opacity;
+          transition: opacity .250s ease-in-out;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0,0,0,0.5);
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          .info_button, .link_button{
+            @extend .button;
+            margin: 15px auto;
+            padding: 15px 20px;
+          }
+        }
+        .item_image {
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+
+      &:hover {
+        .item_image_block {
+          .hover_block {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+  }
+}
+.slick-arrow {
+  z-index: 20;
+  height: 100%;
+  &.slick-next {
+    &.arrow_right {
+      right: -50px;
+      width: 60px;
+      text-align: center;
+      &:before {
+        content: '';
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transition: all .300s ease;
+        transform: translateY(-50%);
+        background-image: url("/img/right-arrow.svg");
+      }
+    }
+  }
+  &.slick-prev {
+    &.arrow_left {
+      left: -50px;
+      width: 60px;
+      text-align: center;
+      &:before {
+        content: '';
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transition: all .300s ease;
+        transform: translateY(-50%);
+        background-image: url("/img/left-arrow.svg");
+      }
+    }
+  }
 }

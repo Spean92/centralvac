@@ -1,63 +1,142 @@
 import React, {Component} from 'react'
 import './styles.scss'
 import {Col, Container, Row} from "reactstrap";
-import ListComponent from "./listComponent/listComponent";
+import axios from "axios";
+import Slider from "react-slick/lib";
+import ScrollableAnchor from "react-scrollable-anchor";
+import ModalAccessory from "../modalAccessory/modalAccessory";
 
+function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <div
+            className={className + ' arrow_right'}
+            style={{ ...style}}
+            onClick={onClick}
+        />
+    );
+}
+
+function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <div
+            className={className + ' arrow_left'}
+            style={{ ...style}}
+            onClick={onClick}
+        />
+    );
+}
 class ThirdSection extends Component {
     constructor(props) {
         super(props);
-        this.toggle = this.toggle.bind(this);
-        this.state = { collapseFirst: false };
-        this.state = { collapseSecond: false };
+        this.toggleModal = this.toggleModal.bind(this);
+        this.state = {
+
+        }
     }
-
-    toggle(top) {
-        // if(top ===  `first`) {
-        //     this.setState(state => ({collapseFirst : !state.collapseFirst}))
-        // } else {
-            this.setState(state => ({collapseSecond: !state.collapseSecond}))
-        // }
+    componentWillMount() {
+        axios
+            .get(`data/accessories.json`)
+            .then(res => res.data)
+            .then(res => {
+                this.setState({
+                    accessories : res.map((item) => item)
+                });
+            })
+            .catch(err => console.error(err));
     }
+    toggleModal() {
+        this.modal.toggleModal();
+    }
+    openModal(id, type){
+        const one_accessory = this.state.accessories.filter((item) => (item.id == id && item.type == type));
+        this.setState({accessory: one_accessory[0]});
+        this.toggleModal();
+    }
+    createSlides() {
+        return this.state.accessories.map((item, iterator) => {
+            return(
+                <div className="one_slide" key={iterator}>
+                    <div className="one_slide_wrapper">
+                        <p className="item_title">{item.title}</p>
+                        <div className="item_image_block">
+                            <div className="hover_block">
+                                <div className="info_button" onClick={(e) => this.openModal(item.id, item.type)}><span>Подробнее</span></div>
+                                <a href={item.link} className="link_button"><span>Где купить</span></a>
+                            </div>
+                            <div className="item_image">
+                                <img src={item.image} alt=""/>
+                            </div>
+                        </div>
 
-
-
+                    </div>
+                </div>
+                )
+        });
+    }
     render() {
-        const data = [
-            [
-                'Уборочные наборы',
-                'Ваккумые пневморозетки',
-                'Уборочные насадки',
-                'Монтажные наборы',
-                'Трубы и фитинги',
-                'Фильтры и запчасти'
-            ],
-            [
-                'Vroom',
-                'Vally Flex',
-                'VacPan',
-                'Hide-A-Hose',
-                'LeoVac',
-                'Сепараторы'
-            ]
-            ];
-
-        return(
-            <section>
-                <Container>
-                    <Row>
-                        <Col md={12}>
-                            <h3 className="regular-header">Аксессуары и принадлежности</h3>
-                        </Col>
-                    </Row>
-                    {data.map((val, index) =>
-                    <ListComponent text={val} key={index} />
-                    )
+        const settings = {
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            speed: 500,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
                     }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ],
+            nextArrow: <SampleNextArrow />,
+            prevArrow: <SamplePrevArrow />
+        };
+        return(
+            <ScrollableAnchor id={'section3'}>
+                <section className="thirdSection">
+                    <ModalAccessory ref={(ref) => {
+                                        this.modal = ref
+                                    }}
+                                    accessory={this.state.accessory}
+                    />
+                    <Container>
+                        <Row>
+                            <Col md={12}>
+                                <h3 className="regular-header">Аксессуары и принадлежности</h3>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md={12}>
 
-                </Container>
+                                <Slider {...settings}>
+                                    {this.state.accessories && this.createSlides()}
+
+                                </Slider>
+                            </Col>
+
+                        </Row>
+
+                    </Container>
 
 
-            </section>
+                </section>
+            </ScrollableAnchor>
         )
     }
 }

@@ -75,7 +75,7 @@ class SecondSection extends Component {
         const brand = this.state.currentSlideBrand;
         const model = this.state.currentSlideModel;
         axios
-            .get(`data/fullData.json`)
+            .get(`data/full_data.json`)
             .then(res => res.data)
             .then(res =>  res.filter((item) => (item.model == model && item.brand == brand)))
             .then(res =>  {
@@ -114,14 +114,7 @@ class SecondSection extends Component {
     renderAdvantages(advantages) {
         return advantages.map((value) => <li key={value.id}>{value.text}</li>)
     }
-    arrowLeft() {
-        return(<div className="lol">left</div>)
-    }
-    arrowRight() {
-        return(<div className="lol">right</div>)
-    }
     render() {
-        let tempImg = `https://via.placeholder.com/180x250`;
         var settings = {
             className: "center",
             centerMode: true,
@@ -149,6 +142,11 @@ class SecondSection extends Component {
 
                     />
                     <Container>
+                        <Row>
+                            <Col md={12}>
+                                <h3 className="regular-header">Агрегаты</h3>
+                            </Col>
+                        </Row>
                         <Row>
                             <Col md="12">
                                 <div className="topFilters">

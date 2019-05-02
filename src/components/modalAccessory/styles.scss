@@ -1,0 +1,66 @@
+@import "../../sass/buttons";
+.modal-dialog {
+  &.accessory_modal {
+    width: 90%;
+    max-width: none;
+    .modal-content {
+      height: 100%;
+    }
+    .modal-header {
+      font-size: 20px;
+      padding: 1em;
+      .modal-title {
+        font-size: 22px;
+        font-weight: bold;
+      }
+      .close {
+        padding: 1em 1em;
+        margin: -1em -1em -1em auto;
+      }
+    }
+    .modal_wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      .block1, .block2 {
+        width: 49%;
+      }
+    }
+
+    .description {
+      p {
+        font-size: 14px;
+      }
+    }
+    .advantages {
+      ul {
+        padding: 0;
+        li {
+          font-size: 13px;
+        }
+      }
+    }
+    .characteristics {
+      .table {
+        td {
+          padding: 5px;
+        }
+      }
+
+    }
+    .image {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    #skuLinkModal {
+      @extend .button;
+      margin-right: 0;
+      margin-top: 0;
+      padding: 10px 15px;
+      font-size: 1em;
+
+    }
+  }
+}
