@@ -28,7 +28,7 @@ class Footer extends Component {
 
                                     </aside>
                                 </div>
-                                <Col md={6}>
+                                <Col md={5}>
                                     <div className="contact-info contact-info-block">
                                         <ul className="contact-details">
                                             <li><i className="fa fa-map-marker"></i>
@@ -46,7 +46,7 @@ class Footer extends Component {
 
 
                                 </Col>
-                                <Col md={6}>
+                                <Col md={3}>
                                     <div className="contact-info contact-info-block">
                                         <ul className="contact-details">
                                             <li><i className="fa fa-phone"></i>
@@ -54,15 +54,39 @@ class Footer extends Component {
                                                 <span>(044) 223-50-46 <br/> (067) 502-05-24 <br/> (066) 282-04-40</span>
                                             </li>
                                             <li><i className="fa fa-envelope"></i>
-                                                <strong>EMAIL::</strong><br/>
+                                                <strong>EMAIL:</strong><br/>
                                                 <span><a
                                                     href="mailto:interkonus@gmail.com">interkonus@gmail.com</a></span>
                                             </li>
                                         </ul>
                                     </div>
                                 </Col>
-
-
+                                <Col md={4}>
+                                    <strong>УСЛУГИ:</strong>
+                                    <ul>
+                                        <li><a title="Доставка и оплата"
+                                               href="https://www.centralvac.com.ua/oplata-i-dostavka/">Оплата
+                                            и доставка
+                                        </a></li>
+                                        <li><a title="Гарантии"
+                                               href="https://www.centralvac.com.ua/uslugi/#guarantees">Гарантии
+                                        </a></li>
+                                        <li><a title="Расчет цены "
+                                               href="https://www.centralvac.com.ua/raschet-ceny/">Расчет
+                                            цены
+                                        </a></li>
+                                        <li><a title="Сервис"
+                                               href="https://www.centralvac.com.ua/uslugi/#services">Сервис
+                                        </a></li>
+                                        <li><a title="Монтаж"
+                                               href="https://www.centralvac.com.ua/montazh-sistemy/">Монтаж
+                                        </a></li>
+                                        <li><a title="Частые вопросы "
+                                               href="https://www.centralvac.com.ua/faqs/">Частые
+                                            вопросы
+                                        </a></li>
+                                    </ul>
+                                </Col>
 
                             </div>
 

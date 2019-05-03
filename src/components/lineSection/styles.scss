@@ -26,6 +26,9 @@ section.six_section {
   }
   form {
     padding: 25px 0;
+    .form-control {
+      max-width: 400px;
+    }
   }
   .form-check {
     display: inline-block;
