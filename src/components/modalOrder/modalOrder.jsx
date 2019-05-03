@@ -35,37 +35,7 @@ class ModalOrder extends Component{
                 >
                     <ModalHeader toggle={this.toggle}>Оставьте свои данные</ModalHeader>
                     <ModalBody>
-                        <Form>
-                            <FormGroup>
-                                <Label for="exampleName">Имя</Label>
-                                <Input type="text" name="name" id="exampleName" placeholder="Введите ваше Имя" />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label for="exampleEmail">Email</Label>
-                                <Input type="email" name="email" id="exampleEmail" placeholder="Введите ваш email" />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label for="exampleSelect">Выберите что-то</Label>
-                                <Input type="select" name="select" id="exampleSelect">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </Input>
-                            </FormGroup>
-                            <FormGroup>
-                                <Label for="exampleText">Напишите описание</Label>
-                                <Input type="textarea" name="text" id="exampleText" />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label for="exampleFile">Прикрепите файл</Label>
-                                <Input type="file" name="file" id="exampleFile" />
-                                <FormText color="muted">
-                                    Краткое описание требований по файлу
-                                </FormText>
-                            </FormGroup>
-                        </Form>
+
                     </ModalBody>
                     <ModalFooter>
                         <Button color="primary" onClick={this.toggle}>Отправить</Button>

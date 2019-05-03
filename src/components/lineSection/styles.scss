@@ -1,8 +1,43 @@
+@import "../../sass/variables";
 section.six_section {
   .line {
     padding: 30px 0;
     background-color: #000;
     color: #fff;
+  }
+  .dropDown-container {
+    border-top: 1px solid $main-blue;
+    border-bottom: 1px solid $main-blue;
+    background-color: $main-white;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 350ms ease-in-out;
+    &.shown {
+      max-height: 1900px;
+    }
+    img {
+      float: left;
+      max-width: 30%;
+      margin: 15px;
+    }
+    p {
+      color: $main-black;
+    }
+  }
+  form {
+    padding: 25px 0;
+  }
+  .form-check {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .form-check-input {
+    margin-top: .1rem;
+  }
+  .buildInfo {
+    .form-check {
+      display: block;
+    }
   }
 }
 .order {
