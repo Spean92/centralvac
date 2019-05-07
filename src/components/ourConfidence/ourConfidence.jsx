@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import './styles.scss'
-import ScrollableAnchor from "react-scrollable-anchor";
+import ScrollableAnchor, {configureAnchors} from "react-scrollable-anchor";
 import {Col, Container, Row, FormGroup, Label, Input} from "reactstrap";
 
 
 class OurConfidence extends Component{
+    componentWillMount() {
+        configureAnchors({offset: -70});
+    }
 
     render() {
         return(

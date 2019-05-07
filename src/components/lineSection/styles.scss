@@ -27,12 +27,18 @@ section.six_section {
   form {
     padding: 25px 0;
     .form-control {
-      max-width: 400px;
+      //max-width: 400px;
+    }
+    .active {
+      display: block;
+    }
+    .hidden {
+      display: none;
     }
   }
   .form-check {
-    display: inline-block;
-    margin-right: 20px;
+    //display: inline-block;
+    //margin-right: 20px;
   }
   .form-check-input {
     margin-top: .1rem;

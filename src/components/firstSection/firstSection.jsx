@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Slider from "react-slick/lib";
-import ScrollableAnchor from 'react-scrollable-anchor'
+import ScrollableAnchor, {configureAnchors} from 'react-scrollable-anchor'
 import {Animated} from "react-animated-css";
 
 import './styles.scss';
@@ -32,6 +32,9 @@ function SamplePrevArrow(props) {
 }
 
 class FirstSection extends Component{
+    componentWillMount() {
+        configureAnchors({offset: -70});
+    }
 
     render() {
         const firstSectionSlider = {

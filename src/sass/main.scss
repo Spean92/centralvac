@@ -1,5 +1,11 @@
+@import "variables";
 body {
   main {
     padding: 50px 0;
+    .regular-header {
+      &--black {
+        color: $main-black;
+      }
+    }
   }
 }

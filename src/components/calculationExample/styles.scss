@@ -1,0 +1,11 @@
+@import "../../sass/variables";
+.seven_section {
+  border-top: 1px solid $main-blue;
+  padding: 25px 0;
+  .regular-header {
+    margin: 20px auto;
+    font-weight: bold;
+    text-align: center;
+    color: $main-black;
+  }
+}

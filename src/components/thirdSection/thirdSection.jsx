@@ -3,7 +3,7 @@ import './styles.scss'
 import {Col, Container, Row} from "reactstrap";
 import axios from "axios";
 import Slider from "react-slick/lib";
-import ScrollableAnchor from "react-scrollable-anchor";
+import ScrollableAnchor, { configureAnchors } from "react-scrollable-anchor";
 import ModalAccessory from "../modalAccessory/modalAccessory";
 
 function SampleNextArrow(props) {
@@ -45,6 +45,7 @@ class ThirdSection extends Component {
                 });
             })
             .catch(err => console.error(err));
+        configureAnchors({offset: -70});
     }
     toggleModal() {
         this.modal.toggleModal();

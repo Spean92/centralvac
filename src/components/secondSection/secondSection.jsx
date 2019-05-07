@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import ScrollableAnchor from 'react-scrollable-anchor'
+import ScrollableAnchor, {configureAnchors} from 'react-scrollable-anchor'
 
 import {Col, Container, Row, FormGroup, Label, Input} from "reactstrap";
 import Slider from "react-slick/lib";
@@ -69,6 +69,8 @@ class SecondSection extends Component {
                 })
             })
             .catch(err => console.error(err));
+        configureAnchors({offset: -70});
+
     }
 
     toggleModal() {
