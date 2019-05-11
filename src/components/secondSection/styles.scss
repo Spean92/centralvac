@@ -53,6 +53,14 @@ $mode: cubic-bezier(.17, .67, .55, 1);
   //border: 1px solid black;
   height: 100%;
   width: 100%;
+  will-change: opacity;
+  transition: opacity .250s ease-in-out;
+  &.show {
+    opacity: 1;
+  }
+  &.hidden {
+    opacity: 0;
+  }
   .unmark {
     padding: 0;
     list-style: none;

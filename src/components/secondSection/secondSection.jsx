@@ -48,24 +48,28 @@ class SecondSection extends Component {
             currentSlideLink: '',
             currentSlideBrand: '',
             currentSlideModel: '',
-            sku: []
+            transition: 'show',
+            sku: [],
+            sliderData: []
         }
     }
     componentWillMount() {
+        console.log('hi');
         axios
-            .get(`data/sku.json`)
+            .get(`data/agregats_data.json`)
             .then(res => res.data)
             .then(res => {
                 this.setState({
-                    skuData : res.map((item) => item)
+                    argegatsData : res.map((item) => item),
+                    sliderData: res.map((item) => item)
                 });
                 this.setState({
-                    currentSlideBrand: this.state.skuData[0].brand,
-                    currentSlideModel: this.state.skuData[0].model,
-                    currentSlideTitle: this.state.skuData[0].title,
-                    currentSlideAdv: this.state.skuData[0].advantages,
-                    currentSlideDescription: this.state.skuData[0].short_description,
-                    currentSlideLink: this.state.skuData[0].link,
+                    currentSlideBrand: this.state.sliderData[0].brand,
+                    currentSlideModel: this.state.sliderData[0].model,
+                    currentSlideTitle: this.state.sliderData[0].title,
+                    currentSlideAdv: this.state.sliderData[0].advantages,
+                    currentSlideDescription: this.state.sliderData[0].short_description,
+                    currentSlideLink: this.state.sliderData[0].link
                 })
             })
             .catch(err => console.error(err));
@@ -76,23 +80,15 @@ class SecondSection extends Component {
     toggleModal() {
         const brand = this.state.currentSlideBrand;
         const model = this.state.currentSlideModel;
-        axios
-            .get(`data/full_data.json`)
-            .then(res => res.data)
-            .then(res =>  res.filter((item) => (item.model == model && item.brand == brand)))
-            .then(res =>  {
-                this.setState({
-                    skuFullData: res[0]
-                })
-            })
-            .then(() => {
-                this.modal.toggleModal();
-            })
-            .catch(err => console.error(err));
+        let current_agregat = this.state.argegatsData.filter((item) => (item.model == model && item.brand == brand));
+        this.setState({
+            currentAgregatData: current_agregat[0]
+        });
+        this.modal.toggleModal();
     }
 
     createSlides() {
-        const images = this.state.skuData.map(item => item.image);
+        const images = this.state.sliderData.map(item => item.image);
         const sliderItems = images.map((item, iterator) =>
                 <div className="single" data-slide-id={iterator.toString()} key={iterator}>
                     <div className="slider-single-image">
@@ -104,14 +100,38 @@ class SecondSection extends Component {
     }
     changeSliderDetector(next) {
         this.setState({
-            currentSlideBrand: this.state.skuData[next].brand,
-            currentSlideModel: this.state.skuData[next].model,
-            currentSlideTitle: this.state.skuData[next].title,
-            currentSlideAdv: this.state.skuData[next].advantages,
-            currentSlideDescription: this.state.skuData[next].short_description,
-            currentSlideLink: this.state.skuData[next].link,
+            currentSlideBrand: this.state.sliderData[next].brand,
+            currentSlideModel: this.state.sliderData[next].model,
+            currentSlideTitle: this.state.sliderData[next].title,
+            currentSlideAdv: this.state.sliderData[next].advantages,
+            currentSlideDescription: this.state.sliderData[next].short_description,
+            currentSlideLink: this.state.sliderData[next].link,
+            transition: "show"
         })
-        // const nextSlider = document.querySelector(`[data-slide-id="${next}"]`);
+    }
+    filterModel(brand) {
+        const slides = this.state.argegatsData.filter(item => item.brand === brand);
+        this.setState({
+            sliderData: slides,
+            currentSlideBrand: slides[0].brand,
+            currentSlideModel: slides[0].model,
+            currentSlideTitle: slides[0].title,
+            currentSlideAdv: slides[0].advantages,
+            currentSlideDescription: slides[0].short_description,
+            currentSlideLink: slides[0].link
+        });
+    }
+    filterArea(area) {
+        const slides = this.state.argegatsData.filter(item => item.area.indexOf(area) !== -1);
+        this.setState({
+            sliderData: slides,
+            currentSlideBrand: slides[0].brand,
+            currentSlideModel: slides[0].model,
+            currentSlideTitle: slides[0].title,
+            currentSlideAdv: slides[0].advantages,
+            currentSlideDescription: slides[0].short_description,
+            currentSlideLink: slides[0].link
+        });
     }
     renderAdvantages(advantages) {
         return advantages.map((value) => <li key={value.id}>{value.text}</li>)
@@ -125,7 +145,7 @@ class SecondSection extends Component {
             slidesToShow: 1,
             speed: 500,
             beforeChange: (current, next) => {
-                // this.changeSliderDetector(current, next);
+                setTimeout(() => this.setState({ transition: "hidden" }), 10);
             },
             afterChange: (current) => {
                 this.changeSliderDetector(current);
@@ -140,7 +160,7 @@ class SecondSection extends Component {
                     <ModalItem ref={(ref) => {
                                 this.modal = ref
                                }}
-                               sku={this.state.skuFullData}
+                               sku={this.state.currentAgregatData}
 
                     />
                     <Container>
@@ -152,9 +172,9 @@ class SecondSection extends Component {
                         <Row>
                             <Col md="12">
                                 <div className="topFilters">
-                                    <div className="previewButton">Агрегаты HUSKY</div>
-                                    <div className="previewButton">Агрегаты DUOVAC</div>
-                                    <div className="previewButton">Агрегаты SOLUVAC</div>
+                                    <div className="previewButton" onClick={(e) => this.filterModel(`husky`)}>Агрегаты HUSKY</div>
+                                    <div className="previewButton" onClick={(e) => this.filterModel(`duovac`)}>Агрегаты DUOVAC</div>
+                                    <div className="previewButton" onClick={(e) => this.filterModel(`soluvac`)}>Агрегаты SOLUVAC</div>
                                 </div>
                             </Col>
                         </Row>
@@ -162,13 +182,13 @@ class SecondSection extends Component {
 
                             <Col md="7">
                                 <Slider {...settings}>
-                                    {this.state.skuData && this.createSlides()}
+                                    {this.state.argegatsData && this.createSlides()}
 
                                 </Slider>
 
                             </Col>
                             <Col md="5">
-                                <div className="slideDescription">
+                                <div className={`${this.state.transition} slideDescription`}>
                                     <h4 id="skuTitle">{this.state.currentSlideTitle}</h4>
                                     <ul id="skuAdvantages">{this.state.currentSlideAdv && this.renderAdvantages(this.state.currentSlideAdv)}</ul>
                                     {/*<p id="skuDescription">{this.state.currentSlideDescription}</p>*/}
@@ -190,32 +210,32 @@ class SecondSection extends Component {
                         </Row>
                         <Row>
                             <Col md={2}>
-                                <div className="bottom-filter previewButton">
+                                <div className="bottom-filter previewButton" onClick={(e) => this.filterArea(100)}>
                                     100м2
                                 </div>
                             </Col>
                             <Col md={2}>
-                                <div className="bottom-filter previewButton">
+                                <div className="bottom-filter previewButton" onClick={(e) => this.filterArea(200)}>
                                     200м2
                                 </div>
                             </Col>
                             <Col md={2}>
-                                <div className="bottom-filter previewButton">
+                                <div className="bottom-filter previewButton" onClick={(e) => this.filterArea(300)}>
                                     300м2
                                 </div>
                             </Col>
                             <Col md={2}>
-                                <div className="bottom-filter previewButton">
+                                <div className="bottom-filter previewButton" onClick={(e) => this.filterArea(400)}>
                                     400м2
                                 </div>
                             </Col>
                             <Col md={2}>
-                                <div className="bottom-filter previewButton">
+                                <div className="bottom-filter previewButton" onClick={(e) => this.filterArea(700)}>
                                     700м2
                                 </div>
                             </Col>
                             <Col md={2}>
-                                <div className="bottom-filter previewButton">
+                                <div className="bottom-filter previewButton" onClick={(e) => this.filterArea(1000)}>
                                     1000м2
                                 </div>
                             </Col>
