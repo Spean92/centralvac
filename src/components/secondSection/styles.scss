@@ -14,9 +14,8 @@ $mode: cubic-bezier(.17, .67, .55, 1);
   display: inline-block;
   padding: 15px 10px;
   border: 1px solid transparent;
-  border-color: #212529 #212529 #0b0c0d;
+  background-color: rgba(91, 105, 118, 0.85);
   border-radius: 6px;
-  background-color: #212529;
   vertical-align: middle;
   font-size: 1em;
   line-height: 1.3333;
@@ -33,14 +32,30 @@ $mode: cubic-bezier(.17, .67, .55, 1);
     border-color: #383f46 #383f46 #212529;
   }
   &:focus, &:active {
-    background-color: #000;
+    background-color: #212529;
     box-shadow: 0 0 0 0.2rem rgba(29,33,39,.5);
+  }
+  &.active {
+    background-color: #000;
+    border-color: #212529 #212529 #0b0c0d;
+    &:hover {
+      color: #fff;
+      background-color: #31373d;
+      border-color: #383f46 #383f46 #212529;
+    }
   }
 }
 .topFilters {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  flex-wrap: wrap;
+  @media all and (max-width: 768px) {
+   & > div {
+      width: 100%;
+     margin: 10px auto;
+    }
+  }
 }
 .bottom-filter {
   width: 100%;
@@ -125,6 +140,12 @@ $mode: cubic-bezier(.17, .67, .55, 1);
         transform: translateY(-50%);
         background-image: url("/img/right-arrow.svg");
       }
+      @media all and (max-width: 768px) {
+        right: -15px;
+        &:before {
+          right: 0;
+        }
+      }
     }
   }
   &.slick-prev {
@@ -141,6 +162,12 @@ $mode: cubic-bezier(.17, .67, .55, 1);
         top: 50%;
         transform: translateY(-50%);
         background-image: url("/img/left-arrow.svg");
+      }
+      @media all and (max-width: 768px) {
+        left: -15px;
+        &:before {
+          left: 0;
+        }
       }
     }
   }
@@ -209,6 +236,9 @@ $mode: cubic-bezier(.17, .67, .55, 1);
 }
 #skuAdvantages {
   padding: 0;
+  @media all and (max-width: 768px){
+    padding-left: 30px;
+  }
   li {
     font-size: 14px;
   }

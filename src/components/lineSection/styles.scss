@@ -71,6 +71,11 @@ section.six_section {
   max-width: none;
   opacity: 1;
   cursor: pointer;
+  @media all and (max-width: 768px){
+    display: block;
+    margin: 20px auto 0 auto;
+    text-align: center;
+  }
   &:before {
     content: '';
     position: absolute;

@@ -242,8 +242,8 @@ class LineSection extends Component {
 
                     <div className="line">
                         <Container>
-                            <div className="d-flex justify-content-between align-items-center">
-                                <div>
+                            <Row>
+                                <Col md={9}>
                                     <h3 style={{color: `#ffffff`}}
                                         className="vc_custom_heading m-b-none m-t-sm align-left">
                                         Вы хотите знать сколько стоит центральный пылесос в ваш дом?
@@ -253,11 +253,13 @@ class LineSection extends Component {
                                        className="vc_custom_heading lead align-left">Закажите расчет стоимости
                                         встроенного пылесоса
                                         ответив всего на несколько вопросов</p>
-                                </div>
+                                </Col>
 
+                                <Col md={3}>
+                                    <div className="order" onClick={this.toggle}><span>Заказать расчет</span></div>
 
-                                <div className="order" onClick={this.toggle}><span>Заказать расчет</span></div>
-                            </div>
+                                </Col>
+                            </Row>
                         </Container>
                     </div>
 

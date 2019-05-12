@@ -72,6 +72,7 @@
       right: -50px;
       width: 60px;
       text-align: center;
+
       &:before {
         content: '';
         width: 60px;
@@ -82,6 +83,14 @@
         transition: all .300s ease;
         transform: translateY(-50%);
         background-image: url("/img/right-arrow.svg");
+        background-repeat: no-repeat;
+      }
+      @media all and (max-width: 768px) {
+        right: -15px;
+        &:before {
+          width: 30px;
+          height: 30px;
+        }
       }
     }
   }
@@ -100,6 +109,14 @@
         transition: all .300s ease;
         transform: translateY(-50%);
         background-image: url("/img/left-arrow.svg");
+        background-repeat: no-repeat;
+      }
+      @media all and (max-width: 768px) {
+        left: -15px;
+        &:before {
+          width: 30px;
+          height: 30px;
+        }
       }
     }
   }

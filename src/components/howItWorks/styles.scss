@@ -3,7 +3,18 @@
   padding: 20px 0 0 0;
   //background-color: #000;
   background-color: $main-blue;
+  .line-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media all and (max-width: 768px){
+      display: block;
+    }
+  }
   .leftText {
+    @media all and (max-width: 768px){
+      display: block;
+    }
     p {
       margin: 0;
 
@@ -46,6 +57,10 @@
     &:focus, &:active {
       background-color: #000;
       box-shadow: 0 0 0 0.2rem rgba(29,33,39,.5);
+    }
+    @media all and (max-width: 768px){
+      display: block;
+      margin: 20px auto 10px auto;
     }
   }
   .dropDown-container {

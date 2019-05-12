@@ -11,7 +11,8 @@ class Header extends Component {
 
         this.state = {
             hash: ``,
-            dropdownOpen: false
+            dropdownOpen: false,
+            mobileMenu: false
 
         };
         this.handleScroll = this.handleScroll.bind(this);
@@ -89,12 +90,17 @@ class Header extends Component {
                 <DropdownMenu>{subMenu}</DropdownMenu>
         </Dropdown>)
     }
-
+    menuToggle(){
+        this.setState(prevState => ({
+            mobileMenu: !prevState.mobileMenu
+        }))
+    }
     render() {
         const menuItems = [`Как это работает`, [`Пылесосы`, `Husky`, `Duovac`, `Soluvac`], `Аксесуары`, `Примеры расчетов`, `Сервис`, `Заказать расчет`, `Видео`, `Контакты`];
         return (
             <header >
-                <nav>
+                <div className={`menu__burger ${this.state.mobileMenu ? "active" : ""}`} onClick={e => this.menuToggle()}/>
+                <nav className={`${this.state.mobileMenu ? "active" : ""}`}>
                     {/*<Col md="1">*/}
                     {/*    <a href="/" className="logo">*/}
                     {/*        <img src="/img/logo.jpg" alt="centralvac"/>*/}

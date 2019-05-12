@@ -24,7 +24,7 @@ class HowItWorks extends Component{
             <div>
                 <div className="line">
                     <Container>
-                        <div className="d-flex justify-content-between align-items-center">
+                        <div className="line-wrapper ">
                             <div className="leftText">
                                 <p className="bigText">Встроенные пылесосы решают</p>
                                 <p className="smallText">проблему чистого воздуха, шума, веса, сокращает время на уборку</p>
