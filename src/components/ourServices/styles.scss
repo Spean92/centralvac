@@ -1,48 +1,26 @@
-section.nine_section{
+section.second_section{
+  margin-top: 120px;
   padding: 30px 0;
-  ul {
-    position: relative;
-    background: url(/img/bg/bg-your-advantages.png) repeat-y center top;
-    list-style: none;
-    padding:0;
-    padding-top: 89px;
-    padding-bottom: 112px;
-    li {
-      display: block;
-      margin-bottom: 140px;
+  h3 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    color: #333333;
+    text-transform: uppercase;
+  }
+  .ball {
+    text-align: center;
+  }
+  p {
+    margin-top: 15px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
 
-      .ball {
-        position: relative;
-        width: 46px;
-        height: 46px;
-        display: block;
-        margin: auto;
-        background: #f77b42;
-        border-radius: 130px;
-      }
-      &.left {
-        .ball {
-          .bullet {
-            position: absolute;
-            left: 106px;
-            top: 0;
-            width: 400px;
-            background-color: #ffffff;
-          }
-        }
-      }
-      &.right {
-        .ball {
-          .bullet {
-            position: absolute;
-            right: 106px !important;
-            top: 0;
-            width: 400px;
-            background-color: #ffffff !important;
-          }
-        }
-      }
-
-    }
+    color: #4074F8;
   }
 }

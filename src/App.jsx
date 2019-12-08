@@ -18,6 +18,7 @@ import OurConfidence from "./components/ourConfidence/ourConfidence";
 import LineSection from "./components/lineSection/lineSection";
 import HowSystemWorks from "./components/howSystemWorks/howSystemWorks";
 import CalculationExample from "./components/calculationExample/calculationExample";
+import {Col, Container, Row} from "reactstrap";
 
 class App extends Component {
     render() {
@@ -42,6 +43,24 @@ class App extends Component {
                 <Header />
                 <main>
                     <FirstSection />
+                    <NumbersSection />
+                    <section className="company_section">
+                        <Container>
+                            <Row>
+                                <Col md={12}>
+                                    <h3>Компания «Интерконус Киев» с 2000 г. является региональным<br/>
+                                        дистрибьютором встроенных пылесосов: HUSKY, DUOVAC, SOLUVAC в Украине.</h3>
+                                    <p>На протяжении этого времени реализовано более 4000 проектов, в 52 городах Украины<br/>
+                                        в тесной совместной работе не менее чем с 80-ю монтажными организациями.
+                                    </p>
+                                </Col>
+
+                            </Row>
+                        </Container>
+                    </section>
+
+                    <OurServices />
+
                     <HowItWorks/>
                     <SecondSection />
                     <ThirdSection/>
@@ -49,7 +68,6 @@ class App extends Component {
                     <ThesisSection {...{img: '/img/bg/Husky_aspirationPlancher_1.jpg', text: 'Вкладывая в встроенный пылесос, Вы вкладываете в свое здоровье и здоровье Ваших близких'}}/>
 
                     <LineSection />
-                    <NumbersSection />
 
 
                     <OurConfidence />
@@ -59,7 +77,6 @@ class App extends Component {
 
                     <ThesisSection {...{img: '/img/bg/Husky_aspirationCanape_2.jpg', text: 'Центральный пылесос - повышает оценочную стоимость и престиж Вашей недвижимости'}}/>
 
-                    <OurServices />
 
                     <HowSystemWorks />
                 </main>
