@@ -229,15 +229,15 @@ class SecondSection extends Component {
                     <Container>
                         <Row>
                             <Col md={12}>
-                                <h3 className="regular-header">Агрегаты</h3>
+                                <h3 className="regular-header">ПОДБОР ВАШЕГО ВСТРОЕННОГО ПЫЛЕСОСА</h3>
                             </Col>
                         </Row>
                         <Row>
                             <Col md="12">
                                 <div className="topFilters">
-                                    <div className={`previewButton ${modelHusky ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`brand`, `husky`)}>Агрегаты HUSKY</div>
-                                    <div className={`previewButton ${modelDuovac ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`brand`, `duovac`)}>Агрегаты DUOVAC</div>
-                                    <div className={`previewButton ${modelSoluvac ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`brand`, `soluvac`)}>Агрегаты SOLUVAC</div>
+                                    <div className={`filterButton ${modelHusky ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`brand`, `husky`)}>Агрегаты HUSKY</div>
+                                    <div className={`filterButton ${modelDuovac ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`brand`, `duovac`)}>Агрегаты DUOVAC</div>
+                                    <div className={`filterButton ${modelSoluvac ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`brand`, `soluvac`)}>Агрегаты SOLUVAC</div>
                                 </div>
                             </Col>
                         </Row>
@@ -273,32 +273,32 @@ class SecondSection extends Component {
                         </Row>
                         <Row>
                             <Col md={2}>
-                                <div className={`bottom-filter previewButton ${area100 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 100)}>
+                                <div className={`bottom-filter filterButton ${area100 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 100)}>
                                     100м2
                                 </div>
                             </Col>
                             <Col md={2}>
-                                <div className={`bottom-filter previewButton ${area200 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 200)}>
+                                <div className={`bottom-filter filterButton ${area200 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 200)}>
                                     200м2
                                 </div>
                             </Col>
                             <Col md={2}>
-                                <div className={`bottom-filter previewButton ${area300 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 300)}>
+                                <div className={`bottom-filter filterButton ${area300 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 300)}>
                                     300м2
                                 </div>
                             </Col>
                             <Col md={2}>
-                                <div className={`bottom-filter previewButton ${area400 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 400)}>
+                                <div className={`bottom-filter filterButton ${area400 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 400)}>
                                     400м2
                                 </div>
                             </Col>
                             <Col md={2}>
-                                <div className={`bottom-filter previewButton ${area700 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 700)}>
+                                <div className={`bottom-filter filterButton ${area700 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 700)}>
                                     700м2
                                 </div>
                             </Col>
                             <Col md={2}>
-                                <div className={`bottom-filter previewButton ${area1000 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 1000)}>
+                                <div className={`bottom-filter filterButton ${area1000 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 1000)}>
                                     1000м2
                                 </div>
                             </Col>

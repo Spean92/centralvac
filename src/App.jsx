@@ -18,6 +18,7 @@ import OurConfidence from "./components/ourConfidence/ourConfidence";
 import LineSection from "./components/lineSection/lineSection";
 import HowSystemWorks from "./components/howSystemWorks/howSystemWorks";
 import CalculationExample from "./components/calculationExample/calculationExample";
+import Advantages from "./components/advantages/advantages";
 import {Col, Container, Row} from "reactstrap";
 
 class App extends Component {
@@ -58,10 +59,10 @@ class App extends Component {
                             </Row>
                         </Container>
                     </section>
-
                     <OurServices />
-
                     <HowItWorks/>
+                    <Advantages/>
+
                     <SecondSection />
                     <ThirdSection/>
 
@@ -70,15 +71,14 @@ class App extends Component {
                     <LineSection />
 
 
+                    <CalculationExample />
                     <OurConfidence />
 
 
-                    <CalculationExample />
-
-                    <ThesisSection {...{img: '/img/bg/Husky_aspirationCanape_2.jpg', text: 'Центральный пылесос - повышает оценочную стоимость и престиж Вашей недвижимости'}}/>
+                    {/*<ThesisSection {...{img: '/img/bg/Husky_aspirationCanape_2.jpg', text: 'Центральный пылесос - повышает оценочную стоимость и престиж Вашей недвижимости'}}/>*/}
 
 
-                    <HowSystemWorks />
+                    {/*<HowSystemWorks />*/}
                 </main>
 
                 <Footer />

@@ -1,62 +1,62 @@
 @import "../../sass/variables";
 .line {
-  padding: 20px 0 0 0;
+  padding: 43px 0 0 0;
   //background-color: #000;
-  background-color: $main-blue;
+  background-color: #2F80ED;
   .line-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @media all and (max-width: 768px){
-      display: block;
-    }
   }
-  .leftText {
-    @media all and (max-width: 768px){
-      display: block;
-    }
-    p {
-      margin: 0;
-
-      &.bigText {
-        font-size: 20px;
-        font-weight: bold;
-        color: $main-white;
-
-      }
-      &.smallText {
-        font-size: 16px;
-        line-height: 1.2;
-        color: rgba(#fff, 0.7);
-      }
+  p {
+    margin: 0;
+    &.bigText {
+      margin-bottom: 17px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 28px;
+      text-align: center;
+      color: #FFFFFF;
 
     }
+    &.smallText {
+      font-size: 16px;
+      line-height: 1.2;
+      color: rgba(#fff, 0.7);
+    }
+
   }
   .previewButton {
-    display: inline-block;
-    padding: 1.15em 1.8em;
-    border: 1px solid transparent;
-    border-color: #212529 #212529 #0b0c0d;
-    border-radius: 6px;
-    background-color: $main-black;
-    vertical-align: middle;
-    font-size: 1em;
-    line-height: 1.3333;
-    color: $main-white;
-    font-weight: 600;
-    white-space: nowrap;
+    display: block;
+    width: 100%;
+    position: relative;
     text-align: center;
-    transition: all 0.1s;
-    cursor: pointer;
+    vertical-align: middle;
     user-select: none;
+    svg {
+      padding: 0 47px;
+      box-sizing: content-box;
+      width: 43px;
+      height: 43px;
+      display: block;
+      margin: 0 auto;
+      background-color: #2F80ED;
+      position: relative;
+      z-index: 1;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      background-color: #fff;
+      z-index: 0;
+    }
     &:hover {
-      color: $main-white;
-      background-color: #31373d;
-      border-color: #383f46 #383f46 #212529;
     }
     &:focus, &:active {
-      background-color: #000;
-      box-shadow: 0 0 0 0.2rem rgba(29,33,39,.5);
     }
     @media all and (max-width: 768px){
       display: block;
@@ -64,23 +64,81 @@
     }
   }
   .dropDown-container {
-    border-top: 1px solid $main-white;
-    margin-top: 25px;
-    background-color: $main-blue;
+    //border-top: 1px solid $main-white;
+    margin-top: 20px;
+    background-color: #2F80ED;
     overflow: hidden;
     max-height: 0;
-    transition: max-height 350ms ease-in-out;
+    transition: all 350ms ease-in-out;
     &.shown {
+      padding: 40px 0 150px 0;
       max-height: 900px;
     }
     img {
-      float: left;
-      max-width: 30%;
-      margin: 15px;
     }
     p {
-      padding: 15px 0 10px 0;
-      color: $main-white;
+    }
+    .listName {
+      margin-bottom: 20px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 36px;
+      color: #FFFFFF;
+    }
+    .listOfWork {
+      font-style: normal;
+      font-size: 14px;
+      line-height: 20px;
+      color: #FFFFFF;
+      list-style: none;
+      padding-left: 56px;
+      li {
+        margin-bottom: 20px;
+        position: relative;
+        counter-increment: li;
+        &:before {
+          content: counter(li);
+          display: inline-block;
+          position: absolute;
+          left: -43px;
+          top: 50%;
+          font-size: 14px;
+          line-height: 20px;
+          color: #FFFFFF;
+          //text-align: right;
+          //direction: rtl;
+          transform: translateY(-50%);
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: -55px;
+          width: 30px;
+          height: 30px;
+          border: 2px solid #EF9514;
+          border-radius: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+    .fillButton {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      margin-top: 50px;
+      padding: 13px 23px;
+      border-radius: 2px;
+      text-decoration: none;
+      text-align: center;
+      opacity: 1;
+      font-size: 13px;
+      line-height: 15px;
+      color: #FFFFFF;
+      &--orange {
+        background: #EF9514;
+      }
     }
   }
 }

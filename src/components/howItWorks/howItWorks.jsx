@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 
 import './styles.scss';
-import { Container } from 'reactstrap';
+import { Container, Col, Row } from 'reactstrap';
+import house from "../../images/house.png";
 
 
 class HowItWorks extends Component{
@@ -23,20 +24,45 @@ class HowItWorks extends Component{
         return (
             <div>
                 <div className="line">
-                    <Container>
-                        <div className="line-wrapper ">
-                            <div className="leftText">
-                                <p className="bigText">Встроенные пылесосы решают</p>
-                                <p className="smallText">проблему чистого воздуха, шума, веса, сокращает время на уборку</p>
-                                <p className="smallText">И это время можно потратить на то что нравится</p>
-                            </div>
-                            <div className="previewButton" onClick={this.toggle}>Как это работает</div>
+                    <div className="line-wrapper ">
+                        <p className="bigText">КАК ЭТО РАБОТАЕТ</p>
+                        <div className="previewButton" onClick={this.toggle}>
+                            <svg width="43" height="43" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.293 30.707a1 1 0 001.414 0l6.364-6.364a1 1 0 00-1.414-1.414L22 28.586l-5.657-5.657a1 1 0 00-1.414 1.414l6.364 6.364zM21 13v17h2V13h-2z" fill="#fff"/><circle cx="21.5" cy="21.5" r="20.5" stroke="#fff" stroke-width="2"/></svg>
                         </div>
-                    </Container>
+                    </div>
                     <div className={`dropDown-container ${this.state.dropdownOpen ? `shown`: ''}`}>
                         <Container>
-                            <img src="/img/howItWorks.png" alt="Как это работает"/>
-                            <p>Вся система состоит из труб воздуховодов , которые скрываются в стенах , полу , за подвесным потолком или прячутся в декоративных коробах . Все трубы ведут к пылесосу ,который расположен вне жилого помещения . Это  обеспечивает максимальную тишину при уборке . Воздуховоды заканчиваются пневморозетками , которые вмонтированы в стену . Чтобы начать уборку , достаточно просто соединить шланг с пневморозеткой и нажать включатель на рукоятке шланга . Пыль и сор , поступающие в центральную установку , остаются в мусорном баке , а струя очищенного воздуха выбрасывается за пределы помещения . Таким образом , микрочастицы и бактерии , содержащиеся в воздухе , а также пыль полностью удаляются из жилища , причем в помещении возникает разряжение , которое привлекает приток свежего воздуха . Система пылеудаления HUSKY  долговечна : агрегаты рассчитаны на 15-20 лет эксплуатации, а срок службы трубопроводов приравнивается к сроку эксплуатации самого здания .</p>
+                            <Row>
+                                <Col md={6}>
+                                    <img src={house} alt="Как это работает"/>
+
+                                </Col>
+                                <Col md={6}>
+                                    <p className="listName">ВСТРОЕННАЯ ПЫЛЕСОСНАЯ <br/> СИСТЕМА</p>
+                                    <ol className="listOfWork">
+                                        <li>
+                                            <b>силовой агрегат</b> размещается в гараже, кладовой, подвале - отсутствие шума во время уборки
+                                        </li>
+                                        <li>
+                                            <b>трубопровод</b> соединяет пневморозетки с рабочим агрегатом и выпускным воздушным клапаном
+                                        </li>
+                                        <li>
+                                            <b>пневморозетки</b> в полах или на стенах - к ним подключается уборочный шланг
+                                        </li>
+                                        <li>
+                                            <b>управляющий</b> слаботочный кабель - соединяет контакты, находящиеся в пневморозетках с силовым агрегатом
+                                        </li>
+                                        <li>
+                                            <b>гибкий уборочный</b> шланг герметично присоединяется к пневморозеткам, длина 9 м, вес 2,5 кг
+                                        </li>
+                                        <li>
+                                            <b>выпускной клапан</b> обеспечивает выброс на улицу очищенного от пыли воздуха
+                                        </li>
+                                    </ol>
+                                    <a target="_blank" href="https://www.youtube.com/channel/UCHa08DiQokwW1RXlGElA4jw?view_as=subscribert" className="fillButton fillButton--orange">Смотреть видео</a>
+                                </Col>
+                            </Row>
+
                         </Container>
 
                     </div>
