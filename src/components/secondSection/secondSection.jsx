@@ -35,16 +35,22 @@ class SecondSection extends Component {
     constructor(props) {
         super(props);
         this.toggleModal = this.toggleModal.bind(this);
+        this.fetchShit = this.fetchShit.bind(this);
         this.state = {
-            husky: true,
-            duovac: true,
-            soluvac: true,
-            area100: true,
-            area200: true,
-            area300: true,
-            area400: true,
-            area700: true,
-            area1000: true,
+            brandFilters: [
+                `husky`,
+                `duovac`,
+                `soluvac`
+            ],
+            areaFilters: [
+                100,
+                200,
+                300,
+                400,
+                500,
+                700,
+                1000
+            ],
             allSlider   : '',
             sliderClass : '',
             leftSlider  : '',
@@ -62,7 +68,13 @@ class SecondSection extends Component {
             sliderData: []
         }
     }
-    componentWillMount() {
+    componentDidMount() {
+        this.fetchShit();
+        configureAnchors({offset: -70});
+
+    }
+
+    fetchShit() {
         axios
             .get(`data/agregats_data.json`)
             .then(res => res.data)
@@ -81,8 +93,10 @@ class SecondSection extends Component {
                 })
             })
             .catch(err => console.error(err));
-        configureAnchors({offset: -70});
+    }
 
+    componentWillUpdate(nextProps, nextState, nextContext) {
+        // console.log(`update`);
     }
 
     toggleModal() {
@@ -117,23 +131,29 @@ class SecondSection extends Component {
             transition: "show"
         })
     }
-    filterModel(brand) {
-        this.setState(prevState => ({
-            [brand]: !prevState[brand]
-        }),function() {
+    filterUpdate(type, newFilterArray) {
+        this.setState({[type]: newFilterArray}, function () {
+            let brandFilter = this.state.brandFilters;
+            let areaFilter = this.state.areaFilters;
+
             let slides = this.state.argegatsData.filter(item => {
-                switch (item.brand) {
-                    case `husky`:
-                        return this.state.husky;
+                let elementBrandMatch = false;
+                let elementAreaMatch = false;
+                for (let i of brandFilter) {
+                    if (item.brand === i) {
+                        elementBrandMatch = true;
                         break;
-                    case `duovac`:
-                        return this.state.duovac;
-                        break;
-                    case `soluvac`:
-                        return this.state.soluvac;
-                        break;
+                    }
                 }
+                for (let j of areaFilter) {
+                    if (item.area.indexOf(j) !== -1) {
+                        elementAreaMatch = true;
+                        break;
+                    }
+                }
+                return elementBrandMatch && elementAreaMatch;
             });
+            console.log(slides);
             this.setState({
                 sliderData: slides,
                 currentSlideBrand: slides[0].brand,
@@ -143,30 +163,26 @@ class SecondSection extends Component {
                 currentSlideDescription: slides[0].short_description,
                 currentSlideLink: slides[0].link
             })
-        });
+        })
 
     }
-    //TODO need to refactor logic of filters
-    filterArea(area) {
-        const areaState = `area${area}`;
-        const slides = this.state.argegatsData.filter(item => item.area.indexOf(area) !== -1);
-        // console.log(slides);
-        this.setState(prevState => ({
-            [areaState]: !prevState[areaState],
-            sliderData: slides,
-            currentSlideBrand: slides[0].brand,
-            currentSlideModel: slides[0].model,
-            currentSlideTitle: slides[0].title,
-            currentSlideAdv: slides[0].advantages,
-            currentSlideDescription: slides[0].short_description,
-            currentSlideLink: slides[0].link
-        }));
+    filterAgregats(type, value) {
+        let filterIndex = this.state[`${type}Filters`].indexOf(value);
+        let current = this.state[`${type}Filters`];
+        if (filterIndex !== -1) {
+            current.splice(filterIndex, 1);
+            this.filterUpdate(`${type}Filters`, current);
+        } else {
+            current.push(value);
+            this.filterUpdate(`${type}Filters`, current);
+        }
     }
     renderAdvantages(advantages) {
         return advantages.map((value) => <li key={value.id}>{value.text}</li>)
     }
     render() {
-        var settings = {
+        console.log(this.state.argegatsData);
+        let settings = {
             className: "center",
             centerMode: true,
             infinite: true,
@@ -190,6 +206,16 @@ class SecondSection extends Component {
             nextArrow: <SampleNextArrow />,
             prevArrow: <SamplePrevArrow />
         };
+        
+        let modelHusky = this.state.brandFilters.indexOf(`husky`) !== -1;
+        let modelDuovac = this.state.brandFilters.indexOf(`duovac`) !== -1;
+        let modelSoluvac = this.state.brandFilters.indexOf(`soluvac`) !== -1;
+        let area100 = this.state.areaFilters.indexOf(100) !== -1;
+        let area200 = this.state.areaFilters.indexOf(200) !== -1;
+        let area300 = this.state.areaFilters.indexOf(300) !== -1;
+        let area400 = this.state.areaFilters.indexOf(400) !== -1;
+        let area700 = this.state.areaFilters.indexOf(700) !== -1;
+        let area1000 = this.state.areaFilters.indexOf(1000) !== -1;
 
         return (
             <ScrollableAnchor id={'section2'}>
@@ -209,9 +235,9 @@ class SecondSection extends Component {
                         <Row>
                             <Col md="12">
                                 <div className="topFilters">
-                                    <div className={`previewButton ${this.state.husky ? 'active' : ''}`} onClick={(e) => this.filterModel(`husky`)}>Агрегаты HUSKY</div>
-                                    <div className={`previewButton ${this.state.duovac ? 'active' : ''}`} onClick={(e) => this.filterModel(`duovac`)}>Агрегаты DUOVAC</div>
-                                    <div className={`previewButton ${this.state.soluvac ? 'active' : ''}`} onClick={(e) => this.filterModel(`soluvac`)}>Агрегаты SOLUVAC</div>
+                                    <div className={`previewButton ${modelHusky ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`brand`, `husky`)}>Агрегаты HUSKY</div>
+                                    <div className={`previewButton ${modelDuovac ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`brand`, `duovac`)}>Агрегаты DUOVAC</div>
+                                    <div className={`previewButton ${modelSoluvac ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`brand`, `soluvac`)}>Агрегаты SOLUVAC</div>
                                 </div>
                             </Col>
                         </Row>
@@ -247,32 +273,32 @@ class SecondSection extends Component {
                         </Row>
                         <Row>
                             <Col md={2}>
-                                <div className={`bottom-filter previewButton ${this.state.area100 ? 'active' : ''}`} onClick={(e) => this.filterArea(100)}>
+                                <div className={`bottom-filter previewButton ${area100 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 100)}>
                                     100м2
                                 </div>
                             </Col>
                             <Col md={2}>
-                                <div className={`bottom-filter previewButton ${this.state.area200 ? 'active' : ''}`} onClick={(e) => this.filterArea(200)}>
+                                <div className={`bottom-filter previewButton ${area200 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 200)}>
                                     200м2
                                 </div>
                             </Col>
                             <Col md={2}>
-                                <div className={`bottom-filter previewButton ${this.state.area300 ? 'active' : ''}`} onClick={(e) => this.filterArea(300)}>
+                                <div className={`bottom-filter previewButton ${area300 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 300)}>
                                     300м2
                                 </div>
                             </Col>
                             <Col md={2}>
-                                <div className={`bottom-filter previewButton ${this.state.area400 ? 'active' : ''}`} onClick={(e) => this.filterArea(400)}>
+                                <div className={`bottom-filter previewButton ${area400 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 400)}>
                                     400м2
                                 </div>
                             </Col>
                             <Col md={2}>
-                                <div className={`bottom-filter previewButton ${this.state.area700 ? 'active' : ''}`} onClick={(e) => this.filterArea(700)}>
+                                <div className={`bottom-filter previewButton ${area700 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 700)}>
                                     700м2
                                 </div>
                             </Col>
                             <Col md={2}>
-                                <div className={`bottom-filter previewButton ${this.state.area1000 ? 'active' : ''}`} onClick={(e) => this.filterArea(1000)}>
+                                <div className={`bottom-filter previewButton ${area1000 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 1000)}>
                                     1000м2
                                 </div>
                             </Col>

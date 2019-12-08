@@ -52,7 +52,7 @@ class Header extends Component {
         for (let i = 0; i < menuItems.length; i++) {
             menu = [
                 ...menu,
-                (<li key={i}>
+                (<li key={i} className="oneMenuItem">
                     {Array.isArray(menuItems[i]) ?
                         <a className={(this.state.hash === `#section${i+1}` ? `active` : null)}
                            href={`#section${i+1}`}>
@@ -96,29 +96,34 @@ class Header extends Component {
         }))
     }
     render() {
-        const menuItems = [`Как это работает`, [`Пылесосы`, `Husky`, `Duovac`, `Soluvac`], `Аксесуары`, `Примеры расчетов`, `Сервис`, `Заказать расчет`, `Видео`, `Контакты`];
+        const menuItems = [
+            `Главная`,
+            `Услуги`,
+            `Cервис`,
+            `Агрегаты`,
+            `Аксессуары`,
+            `Стоимость`,
+            `Контакты`
+        ];
         return (
             <header >
                 <div className={`menu__burger ${this.state.mobileMenu ? "active" : ""}`} onClick={e => this.menuToggle()}/>
                 <nav className={`${this.state.mobileMenu ? "active" : ""}`}>
-                    {/*<Col md="1">*/}
-                    {/*    <a href="/" className="logo">*/}
-                    {/*        <img src="/img/logo.jpg" alt="centralvac"/>*/}
-                    {/*    </a>*/}
-                    {/*</Col>*/}
+                <a href="/" className="logo">
+                    <svg width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#2F80ED" d="M0 0h26v26H0z"/><path fill="#fff" d="M11 5h4v16h-4z"/><path fill="#fff" d="M8 5h10v4H8zM8 17h10v4H8z"/></svg>
+                </a>
                     <Container>
                         <Row>
-
-                            <Col md="12">
+                            <Col md={12}>
                                 <ul className="nav">
                                     {this.createMenu(menuItems)}
-                                    <SideSocials />
                                 </ul>
                             </Col>
                         </Row>
 
-
                     </Container>
+
+                <SideSocials />
                 </nav>
             </header>
         )

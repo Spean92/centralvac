@@ -1,6 +1,11 @@
 .social-wrapper {
-  display: inline-block;
-  background-color: #fff;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  display: block;
+  height: 80px;
+  line-height: 80px;
+  //background-color: #fff;
   margin: 0 0 0 5px;
   //position: fixed;
   //top: 50%;
@@ -12,9 +17,21 @@
     display: inline-block;
     margin: 0 2px;
     a {
-      transition: all .250s ease-in-out;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 20px;
+      svg {
+        transition: all .250s ease-in-out;
+        fill: #B6BAC7;
+      }
       &:hover {
-        opacity: 0.6;
+        svg {
+          fill: #2F80ED;
+          color: #2F80ED;
+        }
       }
     }
   }

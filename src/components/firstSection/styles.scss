@@ -1,6 +1,6 @@
 section.first_section {
-  min-height: 700px;
-  background-color: rgba(0,0,0,0.8);
+  min-height: 680px;
+  //background-color: rgba(0,0,0,0.8);
 
   .slide {
     position: relative;
@@ -11,70 +11,43 @@ section.first_section {
       height: 100%;
       width: 100%;
       z-index: -1;
-      background-position: center center;
+      background-position: right bottom;
       background-repeat: no-repeat;
       background-size: cover;
     }
     .textBlock {
-      min-height: 700px;
+      min-height: 680px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      //background-color: rgba(0, 0, 0, 0.5);
       p {
         width: 100%;
         margin: 5px auto 10px auto;
         font-size: 20px;
         line-height: 20px;
         font-weight: 300;
-        color: rgb(255, 255, 255);
-        text-align: center;
+        text-align: left;
         &.textTop {
           z-index: 9;
-          //white-space: nowrap;
-          font-size: 22px;
-          line-height: 25px;
-          font-weight: 400;
-          color: rgb(255, 255, 255);
-          visibility: inherit;
-          transition: none 0s ease 0s;
-          text-align: center;
-          border-width: 0px;
-          padding: 0px;
-          letter-spacing: 0px;
-          min-height: 0px;
-          min-width: 0px;
-          max-height: none;
-          max-width: none;
-          opacity: 1;
-          transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-          transform-origin: 50% 50% 0px;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 26px;
+          letter-spacing: 0.05em;
+          text-transform: capitalize;
+          color: #2F80ED;
         }
         &.textBig {
           z-index: 12;
-          //white-space: nowrap;
-          font-size: 50px;
-          line-height: 55px;
-          font-weight: 800;
-          color: rgb(255, 255, 255);
-          letter-spacing: -2px;
-          text-shadow: rgba(0, 0, 0, 0.15) 2px 2px 4px;
-          visibility: inherit;
-          transition: none 0s ease 0s;
-          text-align: center;
-          border-width: 0px;
-          padding: 0px;
-          min-height: 0px;
-          min-width: 0px;
-          max-height: none;
-          max-width: none;
-          filter: blur(0px);
-          opacity: 1;
-          transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-          transform-origin: 50% 50% 0px;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 48px;
+          line-height: 56px;
+          color: #333333;
           @media all and (max-width: 768px) {
             font-size: 30px;
             line-height: 1.2;
@@ -82,80 +55,55 @@ section.first_section {
         }
         &.textBottom {
           z-index: 13;
-          //white-space: nowrap;
+          font-style: normal;
+          font-weight: normal;
           font-size: 18px;
-          line-height: 20px;
-          font-weight: 300;
-          color: rgb(181, 181, 181);
-          visibility: inherit;
-          transition: none 0s ease 0s;
-          border-width: 0px;
-          padding: 0px;
-          letter-spacing: 0px;
-          min-height: 0px;
-          min-width: 0px;
-          max-height: none;
-          max-width: none;
-          opacity: 1;
-          transform-origin: 50% 50% 0px;
-          transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+          line-height: 191.02%;
+          letter-spacing: 0.03em;
+          color: #333333;
           @media all and (max-width: 768px) {
             font-size: 18px;
             line-height: 20px;
           }
         }
       }
-      a {
+      .fillButton {
         position: relative;
         display: inline-block;
-        margin: 20px auto 0 auto;
-        font-size: 22px;
-        line-height: 22px;
-        font-weight: 600;
-        color: rgb(255, 255, 255);
-        background-color: rgb(0, 136, 204);
-        border-radius: 6px;
+        vertical-align: top;
+        padding: 13px;
+        background-color: #2F80ED;
+        box-shadow: 0px 5px 15px rgba(188, 199, 255, 0.75);
+        border-radius: 2px;
         text-decoration: none;
-        visibility: inherit;
-        transition: none;
-        text-align: left;
-        padding: 20px 25px;
-        letter-spacing: 0px;
-        min-height: 0px;
-        min-width: 0px;
-        max-height: none;
-        max-width: none;
+        text-align: center;
         opacity: 1;
-        &:before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 1;
-          opacity: 0;
-          border-radius: 6px;
-          background-color: rgba(255,255,255,0.5);
-          -webkit-transition: all 0.4s;
-          -moz-transition: all 0.4s;
-          -o-transition: all 0.4s;
-          transition: all 0.4s;
-          -webkit-transform: scale(0.5, 1);
-          transform: scale(0.5, 1);
-        }
-        &:hover {
-          color: #000;
-          &:before {
-            opacity: 1;
-            -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-          }
-        }
-        span {
-          position: relative;
-          z-index: 2;
-        }
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 15px;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+      .borderedButton {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 20px;
+        padding: 11px;
+        border: 2px solid #2F80ED;
+        box-sizing: border-box;
+        box-shadow: 0px 5px 15px rgba(188, 199, 255, 0.75);
+        border-radius: 2px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0.03em;
+        color: #2F80ED;
+        text-transform: uppercase;
+        text-decoration: none;
+
       }
     }
 
@@ -172,24 +120,27 @@ section.first_section {
     &.slick-dots {
       bottom: 10px;
       li {
-        margin: 0 2px;
+        margin: 0 3px;
+        width: 8px;
+
         button {
           padding: 4px;
+          width: 8px;
           &:before {
             content: '';
-            color: rgba(#ffffff, 1);
-            background-color: rgba(#ffffff, 1);
-            left: 6px;
-            width: 12px;
-            height: 12px;
+            color: #D1D6E3;
+            background-color: #D1D6E3;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
+            opacity: 1;
           }
         }
         &.slick-active {
           button {
             &:before {
-              color: #fff;
-              background-color: #fff;
+              color: #5283FF;
+              background-color: #5283FF;
             }
           }
         }
