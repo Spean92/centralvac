@@ -58,17 +58,18 @@ class ThirdSection extends Component {
     createSlides() {
         return this.state.accessories.map((item, iterator) => {
             return(
-                <div className="one_slide" key={iterator}>
-                    <div className="one_slide_wrapper">
-                        <p className="item_title">{item.title}</p>
+                <div className="one_accessory" key={iterator}>
+                    <div className="one_accessory_wrapper">
                         <div className="item_image_block">
-                            <div className="hover_block">
+                            {/*<div className="hover_block">
                                 <div className="info_button" onClick={(e) => this.openModal(item.id, item.type)}><span>Подробнее</span></div>
                                 <a href={item.link} className="link_button"><span>Где купить</span></a>
-                            </div>
+                            </div>*/}
                             <div className="item_image">
                                 <img src={item.image} alt=""/>
                             </div>
+                            <p className="item_title">{item.title}</p>
+
                         </div>
 
                     </div>
@@ -119,23 +120,17 @@ class ThirdSection extends Component {
                     <Container>
                         <Row>
                             <Col md={12}>
-                                <h3 className="regular-header">Аксессуары и принадлежности</h3>
+                                <h3 className="regular-header">АКСЕССУАРЫ И ПРИНАДЛЕЖНОСТИ</h3>
                             </Col>
                         </Row>
                         <Row>
                             <Col md={12}>
-
-                                <Slider {...settings}>
+                                <div className="accessory_list">
                                     {this.state.accessories && this.createSlides()}
-
-                                </Slider>
+                                </div>
                             </Col>
-
                         </Row>
-
                     </Container>
-
-
                 </section>
             </ScrollableAnchor>
         )

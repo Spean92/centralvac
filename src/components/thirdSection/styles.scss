@@ -1,27 +1,29 @@
 @import "../../sass/variables";
 @import "../../sass/buttons";
 .thirdSection {
-  background-color: $main-blue;
+  background-color: #FFFFFF;
   padding-bottom: 25px;
 }
 .regular-header {
   margin: 20px auto;
-  font-weight: bold;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+  color: #333333;
   text-align: center;
-  color: $main-white;
 }
-.slick-slide {
-  .one_slide {
+.accessory_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  .one_accessory {
+    margin-top: 10px;
+    width: 230px;
     &_wrapper{
-      margin: 10px;
-      .item_title {
-        color: $main-white;
-        text-align: center;
-        font-weight: bold;
-        height: 1.5em;
-        overflow: hidden;
-      }
       .item_image_block {
+        display: inline-block;
         position: relative;
         .hover_block {
           opacity: 0;
@@ -47,12 +49,28 @@
           }
         }
         .item_image {
+          width: 230px;
+          height: 193px;
+          border: 2px solid #DAE4FE;
+          box-sizing: border-box;
+          box-shadow: 0px 15px 100px #E5EBF8;
+          border-radius: 5px;
+          overflow: hidden;
           img {
             max-width: 100%;
           }
         }
       }
-
+      .item_title {
+        margin-top: 22px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+        color: #333333;
+        overflow: hidden;
+      }
       &:hover {
         .item_image_block {
           .hover_block {
@@ -64,6 +82,8 @@
 
   }
 }
+
+
 .slick-arrow {
   z-index: 20;
   height: 100%;

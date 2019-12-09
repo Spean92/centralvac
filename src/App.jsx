@@ -62,16 +62,13 @@ class App extends Component {
                     <OurServices />
                     <HowItWorks/>
                     <Advantages/>
-
                     <SecondSection />
                     <ThirdSection/>
-
-                    <ThesisSection {...{img: '/img/bg/Husky_aspirationPlancher_1.jpg', text: 'Вкладывая в встроенный пылесос, Вы вкладываете в свое здоровье и здоровье Ваших близких'}}/>
-
                     <LineSection />
-
-
                     <CalculationExample />
+
+
+
                     <OurConfidence />
 
 

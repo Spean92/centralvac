@@ -8,6 +8,9 @@ import axios from 'axios';
 
 import './styles.scss';
 import ModalItem from "../modalItem/modalItem";
+import huskyLogo from "../../images/husky.png";
+import duovacLogo from "../../images/duovac.png";
+import soluvacLogo from "../../images/soluvac.png";
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -87,6 +90,7 @@ class SecondSection extends Component {
                     currentSlideBrand: this.state.sliderData[0].brand,
                     currentSlideModel: this.state.sliderData[0].model,
                     currentSlideTitle: this.state.sliderData[0].title,
+                    currentSlideSubtext: this.state.sliderData[0].subtext,
                     currentSlideAdv: this.state.sliderData[0].advantages,
                     currentSlideDescription: this.state.sliderData[0].short_description,
                     currentSlideLink: this.state.sliderData[0].link
@@ -125,6 +129,7 @@ class SecondSection extends Component {
             currentSlideBrand: this.state.sliderData[next].brand,
             currentSlideModel: this.state.sliderData[next].model,
             currentSlideTitle: this.state.sliderData[next].title,
+            currentSlideSubtext: this.state.sliderData[next].subtext,
             currentSlideAdv: this.state.sliderData[next].advantages,
             currentSlideDescription: this.state.sliderData[next].short_description,
             currentSlideLink: this.state.sliderData[next].link,
@@ -159,6 +164,7 @@ class SecondSection extends Component {
                 currentSlideBrand: slides[0].brand,
                 currentSlideModel: slides[0].model,
                 currentSlideTitle: slides[0].title,
+                currentSlideSubtext: slides[0].subtext,
                 currentSlideAdv: slides[0].advantages,
                 currentSlideDescription: slides[0].short_description,
                 currentSlideLink: slides[0].link
@@ -235,74 +241,71 @@ class SecondSection extends Component {
                         <Row>
                             <Col md="12">
                                 <div className="topFilters">
-                                    <div className={`filterButton ${modelHusky ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`brand`, `husky`)}>Агрегаты HUSKY</div>
-                                    <div className={`filterButton ${modelDuovac ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`brand`, `duovac`)}>Агрегаты DUOVAC</div>
-                                    <div className={`filterButton ${modelSoluvac ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`brand`, `soluvac`)}>Агрегаты SOLUVAC</div>
+                                    <div className={`filterButton ${modelHusky ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`brand`, `husky`)}>
+                                        <img src={huskyLogo} alt="Агрегаты Husky"/>
+                                    </div>
+                                    <div className={`filterButton ${modelDuovac ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`brand`, `duovac`)}>
+                                        <img src={duovacLogo} alt="Агрегаты Duovac"/>
+                                    </div>
+                                    <div className={`filterButton ${modelSoluvac ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`brand`, `soluvac`)}>
+                                        <img src={soluvacLogo} alt="Агрегаты Soluvac"/>
+                                    </div>
                                 </div>
                             </Col>
                         </Row>
-                        <Row>
+                        <div className="slider-wrap">
+                            <Row>
+                                <Col md="7">
+                                    <Slider {...settings}>
+                                        {this.state.argegatsData && this.createSlides()}
 
-                            <Col md="7">
-                                <Slider {...settings}>
-                                    {this.state.argegatsData && this.createSlides()}
-
-                                </Slider>
-
-                            </Col>
-                            <Col md="5">
-                                <div className={`${this.state.transition} slideDescription`}>
-                                    <h4 id="skuTitle">{this.state.currentSlideTitle}</h4>
-                                    <ul id="skuAdvantages">{this.state.currentSlideAdv && this.renderAdvantages(this.state.currentSlideAdv)}</ul>
-                                    {/*<p id="skuDescription">{this.state.currentSlideDescription}</p>*/}
-                                    <p id="skuDescription">{((this.state.currentSlideDescription).length > 100) ?
-                                        (((this.state.currentSlideDescription).substring(0,100-3)) + '...') :
-                                        this.state.currentSlideDescription}</p>
-
-                                    <div className="buttonWrapper">
-                                        <a className="where-to-buy" id="skuLink" href={this.state.currentSlideLink}>
-                                            <span>Где купить</span>
-                                        </a>
-                                        <div className="fullInfo" onClick={this.toggleModal}>
-                                            <span>Полная информация</span>
+                                    </Slider>
+                                    <div className="areaFilters">
+                                        <div className={`bottom-filter filterButton ${area100 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 100)}>
+                                            100м2
+                                        </div>
+                                        <div className={`bottom-filter filterButton ${area200 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 200)}>
+                                            200м2
+                                        </div>
+                                        <div className={`bottom-filter filterButton ${area300 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 300)}>
+                                            300м2
+                                        </div>
+                                        <div className={`bottom-filter filterButton ${area400 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 400)}>
+                                            400м2
+                                        </div>
+                                        <div className={`bottom-filter filterButton ${area700 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 700)}>
+                                            700м2
+                                        </div>
+                                        <div className={`bottom-filter filterButton ${area1000 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 1000)}>
+                                            1000м2
                                         </div>
                                     </div>
+                                </Col>
+                                <Col md="5">
+                                    <div className={`${this.state.transition} slideDescription`}>
+                                        <h4 id="skuTitle">{this.state.currentSlideTitle}</h4>
+                                        <p id="skuSubtext">{this.state.currentSlideSubtext}</p>
+                                        <ul id="skuAdvantages">{this.state.currentSlideAdv && this.renderAdvantages(this.state.currentSlideAdv)}</ul>
+                                        {/*<p id="skuDescription">{this.state.currentSlideDescription}</p>*/}
+                                        {/*<p id="skuDescription">{((this.state.currentSlideDescription).length > 100) ?
+                                            (((this.state.currentSlideDescription).substring(0,100-3)) + '...') :
+                                            this.state.currentSlideDescription}</p>*/}
 
-                                </div>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col md={2}>
-                                <div className={`bottom-filter filterButton ${area100 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 100)}>
-                                    100м2
-                                </div>
-                            </Col>
-                            <Col md={2}>
-                                <div className={`bottom-filter filterButton ${area200 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 200)}>
-                                    200м2
-                                </div>
-                            </Col>
-                            <Col md={2}>
-                                <div className={`bottom-filter filterButton ${area300 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 300)}>
-                                    300м2
-                                </div>
-                            </Col>
-                            <Col md={2}>
-                                <div className={`bottom-filter filterButton ${area400 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 400)}>
-                                    400м2
-                                </div>
-                            </Col>
-                            <Col md={2}>
-                                <div className={`bottom-filter filterButton ${area700 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 700)}>
-                                    700м2
-                                </div>
-                            </Col>
-                            <Col md={2}>
-                                <div className={`bottom-filter filterButton ${area1000 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 1000)}>
-                                    1000м2
-                                </div>
-                            </Col>
-                        </Row>
+                                        <div className="buttonWrapper">
+                                            <div className="fullInfo" onClick={this.toggleModal}>
+                                                Подробнее
+                                            </div>
+                                            <a className="where-to-buy" id="skuLink" href={this.state.currentSlideLink}>
+                                                Перейти в магазин
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </Col>
+
+                            </Row>
+                        </div>
+
                     </Container>
                 </section>
             </ScrollableAnchor>

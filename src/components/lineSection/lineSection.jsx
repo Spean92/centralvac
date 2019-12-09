@@ -244,30 +244,15 @@ class LineSection extends Component {
                         <Container>
                             <Row>
                                 <Col md={9}>
-                                    <h3 style={{color: `#ffffff`}}
-                                        className="vc_custom_heading m-b-none m-t-sm align-left">
-                                        Вы хотите знать сколько стоит центральный пылесос в ваш дом?
-
-                                    </h3>
-                                    <p style={{fontSize: `17px`}}
-                                       className="vc_custom_heading lead align-left">Закажите расчет стоимости
-                                        встроенного пылесоса
-                                        ответив всего на несколько вопросов</p>
+                                    <p className="vc_custom_heading">
+                                        Вкладывая в встроенный пылесос, Вы вкладываете в свое здоровье и здоровье Ваших близких
+                                    </p>
                                 </Col>
-
                                 <Col md={3}>
-                                    <div className="order" onClick={this.toggle}><span>Заказать расчет</span></div>
-
+                                    <a className="order" href="#order_section">ЗАКАЗАТЬ ПРОСЧЕТ</a>
                                 </Col>
                             </Row>
                         </Container>
-                    </div>
-
-                    <div className={`dropDown-container ${this.state.dropdownOpen ? `shown`: ''}`}>
-                        <Container>
-                            {this.renderForm()}
-                        </Container>
-
                     </div>
                 </section>
             </ScrollableAnchor>
