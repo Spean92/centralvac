@@ -20,6 +20,7 @@ import HowSystemWorks from "./components/howSystemWorks/howSystemWorks";
 import CalculationExample from "./components/calculationExample/calculationExample";
 import Advantages from "./components/advantages/advantages";
 import {Col, Container, Row} from "reactstrap";
+import FeedbackForm from "./components/feedbackForm/feedbackForm";
 
 class App extends Component {
     render() {
@@ -71,7 +72,7 @@ class App extends Component {
 
                     <OurConfidence />
 
-
+                    <FeedbackForm/>
                     {/*<ThesisSection {...{img: '/img/bg/Husky_aspirationCanape_2.jpg', text: 'Центральный пылесос - повышает оценочную стоимость и престиж Вашей недвижимости'}}/>*/}
 
 
