@@ -13,45 +13,59 @@ export default class FeedbackForm extends Component {
                     <Container>
                         <Row>
                             <Col md={10}>
-                                <p>
+                                <p className="section_heading">
                                     КОНТАКТНАЯ ИНФОРМАЦИЯ
                                 </p>
                                 <Form>
-                                    <FormGroup>
-                                        <Label for="name">Ваше Имя*</Label>
-                                        <Input type="email" name="name" id="name" placeholder="with a placeholder" />
-                                    </FormGroup>
-                                    <FormGroup>
-                                        <Label for="address">Адрес Объекта</Label>
-                                        <Input type="email" name="address" id="address" placeholder="with a placeholder" />
-                                    </FormGroup>
-                                    <FormGroup>
-                                        <Label for="phone">Телефон*</Label>
-                                        <Input type="email" name="phone" id="phone" placeholder="with a placeholder" />
-                                    </FormGroup>
-                                    <FormGroup>
-                                        <Label for="email">E-mail*</Label>
-                                        <Input type="email" name="email" id="email" placeholder="with a placeholder" />
-                                    </FormGroup>
-                                    <FormGroup>
-                                        <Label for="exampleFile">Планы помещений</Label>
-                                        <Input type="file" name="plans" id="exampleFile" />
-                                    </FormGroup>
+                                    <Row>
+                                        <Col md="6">
+                                            <FormGroup>
+                                                <Label for="name">Ваше Имя*</Label>
+                                                <Input type="text" name="name" id="name" placeholder="" />
+                                            </FormGroup>
+                                            <FormGroup>
+                                                <Label for="phone">Телефон*</Label>
+                                                <Input type="text" name="phone" id="phone" placeholder="" />
+                                            </FormGroup>
+                                            <FormGroup>
+                                                <Label for="email">E-mail*</Label>
+                                                <Input type="email" name="email" id="email" placeholder="" />
+                                            </FormGroup>
+                                        </Col>
+                                        <Col md="6">
+                                            <FormGroup>
+                                                <Label for="address">Адрес Объекта</Label>
+                                                <Input type="text" name="address" id="address" placeholder="" />
+                                            </FormGroup>
+
+                                            <FormGroup>
+                                                <Label for="exampleFile">Планы помещений</Label>
+                                                <Input type="file" name="plans" id="exampleFile" />
+                                            </FormGroup>
+                                        </Col>
+                                    </Row>
                                     <FormGroup>
                                         <Label for="exampleText">Дополнительная информация</Label>
                                         <Input type="textarea" name="text" id="exampleText" />
                                     </FormGroup>
-                                    <FormGroup check>
-                                        <Label check>
-                                            <Input type="checkbox" />{' '}
-                                            Отправить копию формы заказа себе
-                                        </Label>
-                                        <a href="/">Пользовательское соглашение</a>
-                                        <FormText color="muted">
-                                            Оформление предварительного расчета не обязывает Вас к покупке. В случае возникновения вопросов наши специалисты свяжутся с Вами для уточнения деталей В ходе телефонного разговора можно внести изменения в расчет или отменить его
-                                        </FormText>
-                                    </FormGroup>
-                                    <Button>Отправить</Button>
+                                    <Row>
+                                        <Col md="7">
+                                            <FormGroup check>
+                                                <Label check>
+                                                    <Input type="checkbox" />{' '}
+                                                    Отправить копию формы заказа себе
+                                                </Label>
+                                                <FormText color="white" className="agreement_text">
+                                                    Оформление предварительного расчета не обязывает Вас к покупке. <br/>В случае возникновения вопросов наши специалисты свяжутся с Вами для <br/> уточнения деталей<br/> В ходе телефонного разговора можно внести изменения в расчет или отменить его
+                                                </FormText>
+                                            </FormGroup>
+                                            <Button>Отправить</Button>
+                                        </Col>
+                                        <Col md="5">
+                                            <a href="/">Пользовательское соглашение</a>
+                                        </Col>
+                                    </Row>
+
                                 </Form>
                             </Col>
                         </Row>

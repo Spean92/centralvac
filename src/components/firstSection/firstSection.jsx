@@ -48,7 +48,7 @@ class FirstSection extends Component{
             slidesToShow: 1,
             slidesToScroll: 1,
             fade: true,
-            autoplay: false,
+            // autoplay: false,
             easing: `ease-in-out`
         };
         return (

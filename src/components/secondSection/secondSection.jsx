@@ -241,13 +241,13 @@ class SecondSection extends Component {
                         <Row>
                             <Col md="12">
                                 <div className="topFilters">
-                                    <div className={`filterButton ${modelHusky ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`brand`, `husky`)}>
+                                    <div className={`filterButton ${modelHusky ? 'active' : ''}`} >
                                         <img src={huskyLogo} alt="Агрегаты Husky"/>
                                     </div>
-                                    <div className={`filterButton ${modelDuovac ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`brand`, `duovac`)}>
+                                    <div className={`filterButton ${modelDuovac ? 'active' : ''}`} >
                                         <img src={duovacLogo} alt="Агрегаты Duovac"/>
                                     </div>
-                                    <div className={`filterButton ${modelSoluvac ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`brand`, `soluvac`)}>
+                                    <div className={`filterButton ${modelSoluvac ? 'active' : ''}`} >
                                         <img src={soluvacLogo} alt="Агрегаты Soluvac"/>
                                     </div>
                                 </div>
