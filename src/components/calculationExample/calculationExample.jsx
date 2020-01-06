@@ -16,7 +16,7 @@ class CalculationExample extends Component {
 
     render() {
         return (
-            <ScrollableAnchor id={'section4'}>
+            <ScrollableAnchor id={'cost'}>
                 <section className="seven_section">
                     <Container>
                         <Row>

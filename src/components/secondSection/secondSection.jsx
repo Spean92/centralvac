@@ -224,7 +224,7 @@ class SecondSection extends Component {
         let area1000 = this.state.areaFilters.indexOf(1000) !== -1;
 
         return (
-            <ScrollableAnchor id={'section2'}>
+            <ScrollableAnchor id={'hoovers'}>
                 <section className="secondSection">
                     <ModalItem ref={(ref) => {
                                 this.modal = ref

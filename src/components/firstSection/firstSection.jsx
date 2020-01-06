@@ -6,8 +6,10 @@ import {Animated} from "react-animated-css";
 
 import './styles.scss';
 
-import slide1 from "../../images/slide1.png";
 import slide2 from "../../images/slide2.png";
+import slide3 from "../../images/slide1.png";
+import slide1_pic from "../../images/slide1_pic.png";
+import slide2_pic from "../../images/slide2_pic.png";
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -57,27 +59,33 @@ class FirstSection extends Component{
                     <Slider {...firstSectionSlider}>
                         <div className="slide">
 
-                            <div className="sliderBgImg" style={{ backgroundImage: `url(${slide1}` }}/>
+                            <div className="sliderBgImg" style={{ backgroundColor: `#FFF` }}/>
                             <div className="textBlock">
                                 <Container>
                                     <Row>
                                         <Col md={6}>
+                                            <Animated animationIn="fadeIn" animationInDelay={500} animationInDuration={1500}>
+                                                <p className="textTop">ВОЗДУХ БЕЗ ПЫЛИ И АЛЛЕРГЕНОВ В ВАШИХ ПРОСТРАНСТВАХ</p>
+                                            </Animated>
+                                            <Animated animationIn="fadeIn" animationInDelay={1000} animationInDuration={1500}>
+                                                <p className="textBig">ВСТРОЕННЫЕ ПЫЛЕСОСНЫЕ СИСТЕМЫ</p>
+                                            </Animated>
                                             <Animated animationIn="fadeIn" animationInDelay={1500} animationInDuration={1500}>
-                                                <p className="textBig">СЕРВИС РЕМОНТ ОБСЛУЖИВАНИЕ</p>
+                                                <p className="textBottom">Встроенные пылесосы решают проблему чистого воздуха, шума, веса, сохраняют время на уборку.
+                                                    Ведь это время можно потратить на то что нравится</p>
                                             </Animated>
-                                            <Animated animationIn="fadeIn" animationInDelay={2500} animationInDuration={1500}>
-                                                <p className="textBottom">Продлите срок эксплуатации системы <br/> пылеудаления до 35 лет</p>
-                                            </Animated>
-                                            <Animated animationIn="zoomIn" animationInDelay={4000} animationInDuration={1800}>
-                                                <a href="#section2" className="fillButton">НАЧАТЬ СЕЙЧАС</a>
+                                            <Animated animationIn="zoomIn" animationInDelay={2500} animationInDuration={1800}>
+                                                <a href="#section9" className="borderedButton">ЗАКАЗАТЬ ПРОСЧЕТ</a>
+                                                <a href="#section4" className="fillButton">КАК ЭТО РАБОТАЕТ</a>
                                             </Animated>
                                         </Col>
-                                        <Col md={6}>
-
+                                        <Col md={6} className="text-center">
+                                            <Animated animationIn="zoomIn" animationInDelay={500} animationInDuration={1500}>
+                                                <img src={slide1_pic} alt=""/>
+                                            </Animated>
                                         </Col>
                                     </Row>
                                 </Container>
-
 
                             </div>
                         </div>
@@ -98,10 +106,11 @@ class FirstSection extends Component{
                                                 <p className="textBottom">Предоставьте исходные данные, остальное мы выполним сами</p>
                                             </Animated>
                                             <Animated animationIn="zoomIn" animationInDelay={4000} animationInDuration={1800}>
-                                                <a href="#section5" className="fillButton">Начать сейчас</a>
+                                                <a href="#section9" className="fillButton">Начать сейчас</a>
                                             </Animated>
                                         </Col>
                                         <Col md={6}>
+                                            <img src={slide2_pic} alt=""/>
                                         </Col>
                                     </Row>
                                 </Container>
@@ -110,33 +119,31 @@ class FirstSection extends Component{
                         </div>
                         <div className="slide">
 
-                            <div className="sliderBgImg" style={{ backgroundColor: `#FFF` }}/>
+                            <div className="sliderBgImg" style={{ backgroundImage: `url(${slide3}` }}/>
                             <div className="textBlock">
                                 <Container>
                                     <Row>
                                         <Col md={6}>
-                                            <Animated animationIn="fadeIn" animationInDelay={500} animationInDuration={1500}>
-                                                <p className="textTop">ВОЗДУХ БЕЗ ПЫЛИ И АЛЛЕРГЕНОВ В ВАШИХ ПРОСТРАНСТВАХ</p>
-                                            </Animated>
-                                            <Animated animationIn="fadeIn" animationInDelay={500} animationInDuration={1500}>
-                                                <p className="textBig">ВСТРОЕННЫЕ ПЫЛЕСОСНЫЕ СИСТЕМЫ</p>
-                                            </Animated>
                                             <Animated animationIn="fadeIn" animationInDelay={1500} animationInDuration={1500}>
-                                                <p className="textBottom">Встроенные пылесосы решают проблему чистого воздуха, шума, веса, сохраняют время на уборку.
-                                                    Ведь это время можно потратить на то что нравится</p>
+                                                <p className="textBig">СЕРВИС РЕМОНТ ОБСЛУЖИВАНИЕ</p>
                                             </Animated>
-                                            <Animated animationIn="zoomIn" animationInDelay={2500} animationInDuration={1800}>
-                                                <a href="#section7" className="borderedButton">ЗАКАЗАТЬ ПРОСЧЕТ</a>
-                                                <a href="#section7" className="fillButton">КАК ЭТО РАБОТАЕТ</a>
+                                            <Animated animationIn="fadeIn" animationInDelay={2500} animationInDuration={1500}>
+                                                <p className="textBottom">Продлите срок эксплуатации системы <br/> пылеудаления до 35 лет</p>
+                                            </Animated>
+                                            <Animated animationIn="zoomIn" animationInDelay={4000} animationInDuration={1800}>
+                                                <a href="#section9" className="fillButton">НАЧАТЬ СЕЙЧАС</a>
                                             </Animated>
                                         </Col>
                                         <Col md={6}>
+
                                         </Col>
                                     </Row>
                                 </Container>
 
+
                             </div>
                         </div>
+
                     </Slider>
                 </section>
             </ScrollableAnchor>

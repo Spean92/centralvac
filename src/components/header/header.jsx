@@ -48,27 +48,14 @@ class Header extends Component {
         this.setState({dropdownOpen: false});
     }
     createMenu = (menuItems) => {
-        let menu = [];
-        for (let i = 0; i < menuItems.length; i++) {
-            menu = [
-                ...menu,
-                (<li key={i} className="oneMenuItem">
-                    {Array.isArray(menuItems[i]) ?
-                        <a className={(this.state.hash === `#section${i+1}` ? `active` : null)}
-                           href={`#section${i+1}`}>
-                            {this.createDropDown(menuItems[i])}
-                        </a>
-                         :
-                        <a className={`menu-item ` + (this.state.hash === `#section${i+1}` ? `active` : null)}
-                           href={`#section${i+1}`}>
-                            {menuItems[i]}
-                        </a>
-                        }
-
-                </li>)
-            ]
-        }
-        return menu
+        return menuItems.map((item, i) => {
+            return <li key={i} className="oneMenuItem">
+                    <a className={`menu-item ` + (this.state.hash === item.link ? `active` : null)}
+                       href={item.link}>
+                        {item.title}
+                    </a>
+            </li>
+        });
     };
     createDropDown(subMenuItems) {
         let subMenu = [];
@@ -97,14 +84,34 @@ class Header extends Component {
     }
     render() {
         const menuItems = [
-            `Главная`,
-            `Услуги`,
-            `Cервис`,
-            `Агрегаты`,
-            `Аксессуары`,
-            `Стоимость`,
-            `Контакты`
-        ];
+            {
+                title:`Главная`,
+                link  : `/`
+            },
+            {
+                title :`Услуги`,
+                link  : `#services`
+            },
+            {
+                title :`Cервис`,
+                link  : `#service`
+            },
+            {
+                title :`Агрегаты`,
+                link  : `#hoovers`
+            },
+            {
+                title :`Аксессуары`,
+                link  : `#accessories`
+            },
+            {
+                title :`Стоимость`,
+                link  : `#cost`
+            },
+            {
+                title :`Контакты`,
+                link  : `#contacts`
+            }];
         return (
             <header >
                 <div className={`menu__burger ${this.state.mobileMenu ? "active" : ""}`} onClick={e => this.menuToggle()}/>

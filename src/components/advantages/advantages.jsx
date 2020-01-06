@@ -53,7 +53,7 @@ class Advantages extends Component{
                                 </li>
                             </ol>
                             <p className="underlistText">Покупая встроенный пылесос<br/> Вы получаете БОЛЬШЕ!</p>
-                            <a href="#" className="fillButton">ЗАКАЗАТЬ ПРОСЧЕТ</a>
+                            <a href="#section9" className="fillButton">ЗАКАЗАТЬ ПРОСЧЕТ</a>
                         </Col>
                     </Row>
 

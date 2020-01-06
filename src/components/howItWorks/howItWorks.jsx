@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import './styles.scss';
 import { Container, Col, Row } from 'reactstrap';
 import house from "../../images/house.png";
+import ScrollableAnchor from "react-scrollable-anchor";
 
 
 class HowItWorks extends Component{
@@ -22,7 +23,7 @@ class HowItWorks extends Component{
 
     render(){
         return (
-            <div>
+            <ScrollableAnchor id={'section4'}>
                 <div className="line">
                     <div className="line-wrapper ">
                         <p className="bigText">КАК ЭТО РАБОТАЕТ</p>
@@ -67,7 +68,7 @@ class HowItWorks extends Component{
 
                     </div>
                 </div>
-            </div>
+            </ScrollableAnchor>
         )
     }
 

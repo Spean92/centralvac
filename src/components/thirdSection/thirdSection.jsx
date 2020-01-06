@@ -110,7 +110,7 @@ class ThirdSection extends Component {
             prevArrow: <SamplePrevArrow />
         };
         return(
-            <ScrollableAnchor id={'section3'}>
+            <ScrollableAnchor id={'accessories'}>
                 <section className="thirdSection">
                     <ModalAccessory ref={(ref) => {
                                         this.modal = ref

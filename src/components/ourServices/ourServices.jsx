@@ -12,7 +12,7 @@ class OurServices extends Component {
     render() {
         const tempImg = `https://via.placeholder.com/150x150` ;
         return (
-            <ScrollableAnchor>
+            <ScrollableAnchor  id={'services'}>
                 <section className="second_section">
                     <Container>
                         <Row>
