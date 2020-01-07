@@ -1,7 +1,12 @@
 @import "../../sass/buttons";
 .modal-dialog {
-  &.big_modal {
-    width: 90%;
+  &.absolute_modal {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    right: 5%;
+    bottom: 5%;
+    //width: 90%;
     max-width: none;
     //height: 90vh;
     .modal-content {
@@ -20,11 +25,6 @@
       }
     }
 
-    .block1, .block2 {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
     .description {
       width: 48%;
       p {
@@ -54,6 +54,24 @@
       width: auto;
       max-width: 48%;
       margin: 0 auto;
+    }
+    .block {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      iframe {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        height: 100%;
+        border: 0;
+      }
     }
     #skuLinkModal {
       @extend .button;

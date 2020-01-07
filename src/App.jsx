@@ -73,10 +73,6 @@ class App extends Component {
                     <OurConfidence />
 
                     <FeedbackForm/>
-                    {/*<ThesisSection {...{img: '/img/bg/Husky_aspirationCanape_2.jpg', text: 'Центральный пылесос - повышает оценочную стоимость и престиж Вашей недвижимости'}}/>*/}
-
-
-                    {/*<HowSystemWorks />*/}
                 </main>
 
                 <Footer />

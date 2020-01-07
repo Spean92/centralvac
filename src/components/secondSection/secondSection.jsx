@@ -19,7 +19,9 @@ function SampleNextArrow(props) {
             className={className + ' arrowRight'}
             style={{ ...style}}
             onClick={onClick}
-        />
+        >
+            <svg width="27" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9.5h23m0 0L17.189 2M25 9.5L17.189 17" stroke="#A8B4E5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
     );
 }
 
@@ -30,7 +32,9 @@ function SamplePrevArrow(props) {
             className={className + ' arrowLeft'}
             style={{ ...style}}
             onClick={onClick}
-        />
+        >
+            <svg width="27" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25 9.5H2m0 0L9.811 2M2 9.5L9.811 17" stroke="#A8B4E5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
     );
 }
 
@@ -47,10 +51,8 @@ class SecondSection extends Component {
             ],
             areaFilters: [
                 100,
-                200,
-                300,
+                250,
                 400,
-                500,
                 700,
                 1000
             ],
@@ -60,12 +62,13 @@ class SecondSection extends Component {
             rightSlider : '',
             slideCurrent: 0,
             slideTotal  : 6,
-            currentSlideTitle: '',
-            currentSlideAdv: '',
-            currentSlideDescription: '',
-            currentSlideLink: '',
             currentSlideBrand: '',
             currentSlideModel: '',
+            currentSlideTitle: '',
+            currentSlideSubtext: '',
+            currentSlideArea: '',
+            currentSlideDescription: '',
+            currentSlideLink: '',
             transition: 'show',
             sku: [],
             sliderData: []
@@ -91,8 +94,8 @@ class SecondSection extends Component {
                     currentSlideModel: this.state.sliderData[0].model,
                     currentSlideTitle: this.state.sliderData[0].title,
                     currentSlideSubtext: this.state.sliderData[0].subtext,
-                    currentSlideAdv: this.state.sliderData[0].advantages,
-                    currentSlideDescription: this.state.sliderData[0].short_description,
+                    currentSlideArea: this.state.sliderData[0].area[0],
+                    currentSlideDescription: this.state.sliderData[0].slide_description,
                     currentSlideLink: this.state.sliderData[0].link
                 })
             })
@@ -130,8 +133,8 @@ class SecondSection extends Component {
             currentSlideModel: this.state.sliderData[next].model,
             currentSlideTitle: this.state.sliderData[next].title,
             currentSlideSubtext: this.state.sliderData[next].subtext,
-            currentSlideAdv: this.state.sliderData[next].advantages,
-            currentSlideDescription: this.state.sliderData[next].short_description,
+            currentSlideArea: this.state.sliderData[next].area[0],
+            currentSlideDescription: this.state.sliderData[next].slide_description,
             currentSlideLink: this.state.sliderData[next].link,
             transition: "show"
         })
@@ -165,8 +168,8 @@ class SecondSection extends Component {
                 currentSlideModel: slides[0].model,
                 currentSlideTitle: slides[0].title,
                 currentSlideSubtext: slides[0].subtext,
-                currentSlideAdv: slides[0].advantages,
-                currentSlideDescription: slides[0].short_description,
+                currentSlideArea: slides[0].area[0],
+                currentSlideDescription: slides[0].slide_description,
                 currentSlideLink: slides[0].link
             })
         })
@@ -183,17 +186,14 @@ class SecondSection extends Component {
             this.filterUpdate(`${type}Filters`, current);
         }
     }
-    renderAdvantages(advantages) {
-        return advantages.map((value) => <li key={value.id}>{value.text}</li>)
-    }
     render() {
         console.log(this.state.argegatsData);
         let settings = {
             className: "center",
             centerMode: true,
-            infinite: true,
-            centerPadding: "150px",
-            slidesToShow: 1,
+            infinite: false,
+            centerPadding: "0",
+            slidesToShow: 3,
             speed: 500,
             responsive: [
                 {
@@ -217,8 +217,7 @@ class SecondSection extends Component {
         let modelDuovac = this.state.brandFilters.indexOf(`duovac`) !== -1;
         let modelSoluvac = this.state.brandFilters.indexOf(`soluvac`) !== -1;
         let area100 = this.state.areaFilters.indexOf(100) !== -1;
-        let area200 = this.state.areaFilters.indexOf(200) !== -1;
-        let area300 = this.state.areaFilters.indexOf(300) !== -1;
+        let area250 = this.state.areaFilters.indexOf(250) !== -1;
         let area400 = this.state.areaFilters.indexOf(400) !== -1;
         let area700 = this.state.areaFilters.indexOf(700) !== -1;
         let area1000 = this.state.areaFilters.indexOf(1000) !== -1;
@@ -230,7 +229,6 @@ class SecondSection extends Component {
                                 this.modal = ref
                                }}
                                sku={this.state.currentAgregatData}
-
                     />
                     <Container>
                         <Row>
@@ -256,40 +254,40 @@ class SecondSection extends Component {
                         <div className="slider-wrap">
                             <Row>
                                 <Col md="7">
-                                    <Slider {...settings}>
-                                        {this.state.argegatsData && this.createSlides()}
+                                    <div className="sliderWrapper">
+                                        <Slider {...settings}>
+                                            {this.state.argegatsData && this.createSlides()}
 
-                                    </Slider>
-                                    <div className="areaFilters">
-                                        <div className={`bottom-filter filterButton ${area100 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 100)}>
-                                            100м2
-                                        </div>
-                                        <div className={`bottom-filter filterButton ${area200 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 200)}>
-                                            200м2
-                                        </div>
-                                        <div className={`bottom-filter filterButton ${area300 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 300)}>
-                                            300м2
-                                        </div>
-                                        <div className={`bottom-filter filterButton ${area400 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 400)}>
-                                            400м2
-                                        </div>
-                                        <div className={`bottom-filter filterButton ${area700 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 700)}>
-                                            700м2
-                                        </div>
-                                        <div className={`bottom-filter filterButton ${area1000 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 1000)}>
-                                            1000м2
+                                        </Slider>
+                                        <div className="areaFilters">
+                                            <div className={`bottom-filter filterButton ${area100 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 100)}>
+                                                100м2
+                                            </div>
+                                            <div className={`bottom-filter filterButton ${area250 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 250)}>
+                                                250м2
+                                            </div>
+                                            <div className={`bottom-filter filterButton ${area400 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 400)}>
+                                                400м2
+                                            </div>
+                                            <div className={`bottom-filter filterButton ${area700 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 700)}>
+                                                700м2
+                                            </div>
+                                            <div className={`bottom-filter filterButton ${area1000 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 1000)}>
+                                                1000м2
+                                            </div>
                                         </div>
                                     </div>
                                 </Col>
                                 <Col md="5">
                                     <div className={`${this.state.transition} slideDescription`}>
-                                        <h4 id="skuTitle">{this.state.currentSlideTitle}</h4>
-                                        <p id="skuSubtext">{this.state.currentSlideSubtext}</p>
-                                        <ul id="skuAdvantages">{this.state.currentSlideAdv && this.renderAdvantages(this.state.currentSlideAdv)}</ul>
-                                        {/*<p id="skuDescription">{this.state.currentSlideDescription}</p>*/}
-                                        {/*<p id="skuDescription">{((this.state.currentSlideDescription).length > 100) ?
-                                            (((this.state.currentSlideDescription).substring(0,100-3)) + '...') :
-                                            this.state.currentSlideDescription}</p>*/}
+                                        <div>
+                                            <h4 id="skuTitle">{this.state.currentSlideTitle}</h4>
+                                            <p id="skuSubtext">{this.state.currentSlideSubtext}</p>
+                                            <div id="skuArea">{this.state.currentSlideArea}м <sup>2</sup></div>
+                                        </div>
+                                        <div>
+                                            <p id="skuDescription">{this.state.currentSlideDescription}</p>
+                                        </div>
 
                                         <div className="buttonWrapper">
                                             <div className="fullInfo" onClick={this.toggleModal}>
