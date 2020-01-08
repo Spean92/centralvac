@@ -2,31 +2,9 @@ import React, {Component} from 'react'
 import './styles.scss'
 import {Col, Container, Row} from "reactstrap";
 import axios from "axios";
-import Slider from "react-slick/lib";
 import ScrollableAnchor, { configureAnchors } from "react-scrollable-anchor";
 import ModalAccessory from "../modalAccessory/modalAccessory";
 
-function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className + ' arrow_right'}
-            style={{ ...style}}
-            onClick={onClick}
-        />
-    );
-}
-
-function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className + ' arrow_left'}
-            style={{ ...style}}
-            onClick={onClick}
-        />
-    );
-}
 class ThirdSection extends Component {
     constructor(props) {
         super(props);
@@ -67,6 +45,11 @@ class ThirdSection extends Component {
                             </div>*/}
                             <div className="item_image">
                                 <img src={item.image} alt=""/>
+                                <div className="accessory_buttons">
+                                    <div className="accessory_video" onClick={(e) => this.openModal(item.id, item.type)}><svg width="46" height="50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.636 1.102C4.128-1.483.474.635.474 5.83v38.336c0 5.2 3.654 7.316 8.162 4.733l33.508-19.217c4.51-2.586 4.51-6.777 0-9.363L8.636 1.102z" fill="#2F80ED"/></svg></div>
+                                    <div className="accessory_about" onClick={(e) => this.openModal(item.id, item.type)}>Подробнее</div>
+                                    <a className="accessory_link" href={item.link}>Купить</a>
+                                </div>
                             </div>
                             <p className="item_title">{item.title}</p>
 
@@ -78,37 +61,6 @@ class ThirdSection extends Component {
         });
     }
     render() {
-        const settings = {
-            infinite: true,
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            speed: 500,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ],
-            nextArrow: <SampleNextArrow />,
-            prevArrow: <SamplePrevArrow />
-        };
         return(
             <ScrollableAnchor id={'accessories'}>
                 <section className="thirdSection">
