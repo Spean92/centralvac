@@ -47,7 +47,7 @@ class ModalItem extends Component{
                         <ModalHeader toggle={this.toggleModal}>{title && title}</ModalHeader>
                         <ModalBody>
                             <div className="block">
-                                <iframe src="./files/husky_flex.pdf" frameborder="0"></iframe>
+                                <iframe src="./files/husky_flex.pdf" frameBorder="0"></iframe>
                             </div>
 
 

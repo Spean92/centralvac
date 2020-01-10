@@ -1,43 +1,36 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 
 import ScrollableAnchor, {configureAnchors} from 'react-scrollable-anchor'
 
 import {Col, Container, Row, FormGroup, Label, Input} from "reactstrap";
-import Slider from "react-slick/lib";
 import axios from 'axios';
-
+import Swiper from 'react-id-swiper';
+import 'swiper/css/swiper.min.css';
 import './styles.scss';
 import ModalItem from "../modalItem/modalItem";
 import huskyLogo from "../../images/husky.png";
 import duovacLogo from "../../images/duovac.png";
 import soluvacLogo from "../../images/soluvac.png";
 
-function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
+function SampleNextArrow() {
     return (
         <div
-            className={className + ' arrowRight'}
-            style={{ ...style}}
-            onClick={onClick}
+            className="arrowRight"
         >
-            <svg width="27" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9.5h23m0 0L17.189 2M25 9.5L17.189 17" stroke="#A8B4E5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="27" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9.5h23m0 0L17.189 2M25 9.5L17.189 17" stroke="#A8B4E5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </div>
     );
 }
 
-function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
+function SamplePrevArrow() {
     return (
         <div
-            className={className + ' arrowLeft'}
-            style={{ ...style}}
-            onClick={onClick}
+            className="arrowLeft"
         >
-            <svg width="27" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25 9.5H2m0 0L9.811 2M2 9.5L9.811 17" stroke="#A8B4E5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="27" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25 9.5H2m0 0L9.811 2M2 9.5L9.811 17" stroke="#A8B4E5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </div>
     );
 }
-
 class SecondSection extends Component {
     constructor(props) {
         super(props);
@@ -71,7 +64,8 @@ class SecondSection extends Component {
             currentSlideLink: '',
             transition: 'show',
             sku: [],
-            sliderData: []
+            sliderData: [],
+            swiper: null
         }
     }
     componentDidMount() {
@@ -79,7 +73,6 @@ class SecondSection extends Component {
         configureAnchors({offset: -70});
 
     }
-
     fetchShit() {
         axios
             .get(`data/agregats_data.json`)
@@ -186,33 +179,33 @@ class SecondSection extends Component {
             this.filterUpdate(`${type}Filters`, current);
         }
     }
+
+
     render() {
-        console.log(this.state.argegatsData);
-        let settings = {
-            className: "center",
-            centerMode: true,
-            infinite: false,
-            centerPadding: "0",
-            slidesToShow: 3,
-            speed: 500,
-            responsive: [
-                {
-                    breakpoint: 600,
-                    settings: {
-                        centerPadding: "10px"
-                    }
+        const sliderSettings = {
+            slidesPerView: 3,
+            centeredSlides: true,
+            pagination: {
+                el: '.swiper-custom-pagination',
+                type: 'progressbar'
+            },
+            navigation: {
+                nextEl: '.arrowRight',
+                prevEl: '.arrowLeft'
+            },
+            runCallbacksOnInit: true,
+            getSwiper: (swiper) => {
+                this.setState({swiper: swiper})
+            },
+            on: {
+                slideChange: () => {
+                    this.changeSliderDetector(this.state.swiper.activeIndex)
                 }
-            ],
-            beforeChange: (current, next) => {
-                setTimeout(() => this.setState({ transition: "hidden" }), 10);
             },
-            afterChange: (current) => {
-                this.changeSliderDetector(current);
-            },
-            nextArrow: <SampleNextArrow />,
-            prevArrow: <SamplePrevArrow />
+            renderPrevButton: () => <SampleNextArrow/>,
+            renderNextButton: () => <SamplePrevArrow/>
         };
-        
+
         let modelHusky = this.state.brandFilters.indexOf(`husky`) !== -1;
         let modelDuovac = this.state.brandFilters.indexOf(`duovac`) !== -1;
         let modelSoluvac = this.state.brandFilters.indexOf(`soluvac`) !== -1;
@@ -255,10 +248,11 @@ class SecondSection extends Component {
                             <Row>
                                 <Col md="7">
                                     <div className="sliderWrapper">
-                                        <Slider {...settings}>
-                                            {this.state.argegatsData && this.createSlides()}
-
-                                        </Slider>
+                                        {this.state.argegatsData &&
+                                            <Swiper {...sliderSettings} shouldSwiperUpdate>
+                                                {this.createSlides()}
+                                            </Swiper>
+                                        }
                                         <div className="areaFilters">
                                             <div className={`bottom-filter filterButton ${area100 ? 'active' : ''}`} onClick={(e) => this.filterAgregats(`area`, 100)}>
                                                 100м2

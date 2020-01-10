@@ -28,7 +28,7 @@ class HowItWorks extends Component{
                     <div className="line-wrapper ">
                         <p className="bigText">КАК ЭТО РАБОТАЕТ</p>
                         <div className="previewButton" onClick={this.toggle}>
-                            <svg width="43" height="43" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.293 30.707a1 1 0 001.414 0l6.364-6.364a1 1 0 00-1.414-1.414L22 28.586l-5.657-5.657a1 1 0 00-1.414 1.414l6.364 6.364zM21 13v17h2V13h-2z" fill="#fff"/><circle cx="21.5" cy="21.5" r="20.5" stroke="#fff" stroke-width="2"/></svg>
+                            <svg width="43" height="43" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.293 30.707a1 1 0 001.414 0l6.364-6.364a1 1 0 00-1.414-1.414L22 28.586l-5.657-5.657a1 1 0 00-1.414 1.414l6.364 6.364zM21 13v17h2V13h-2z" fill="#fff"/><circle cx="21.5" cy="21.5" r="20.5" stroke="#fff" strokeWidth="2"/></svg>
                         </div>
                     </div>
                     <div className={`dropDown-container ${this.state.dropdownOpen ? `shown`: ''}`}>
