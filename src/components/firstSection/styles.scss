@@ -1,7 +1,9 @@
 section.first_section {
   min-height: 680px;
   //background-color: rgba(0,0,0,0.8);
-
+  .slick-active {
+    z-index: 2;
+  }
   .slide {
     position: relative;
     .sliderBgImg {
@@ -144,48 +146,6 @@ section.first_section {
               color: #5283FF;
               background-color: #5283FF;
             }
-          }
-        }
-      }
-    }
-  }
-  .slick-arrow {
-    &.slick-next {
-      &.arrowRight {
-        &:before {
-          content: '';
-          width: 60px;
-          height: 60px;
-          position: absolute;
-          right: 20px;
-          top: 50%;
-          transform: translateY(-50%);
-          background-image: url("/img/right-arrow.svg");
-        }
-        @media all and (max-width: 768px) {
-          right: 0;
-          &:before {
-            right: 0;
-          }
-        }
-      }
-    }
-    &.slick-prev {
-      &.arrowLeft {
-        &:before {
-          content: '';
-          width: 60px;
-          height: 60px;
-          position: absolute;
-          left: 20px;
-          top: 50%;
-          transform: translateY(-50%);
-          background-image: url("/img/left-arrow.svg");
-        }
-        @media all and (max-width: 768px) {
-          left: 0;
-          &:before {
-            left: 0;
           }
         }
       }

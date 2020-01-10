@@ -4,6 +4,7 @@ import './styles.scss';
 import { Container, Col, Row } from 'reactstrap';
 import house from "../../images/house.png";
 import ScrollableAnchor from "react-scrollable-anchor";
+import ModalItem from "../modalItem/modalItem";
 
 
 class HowItWorks extends Component{
@@ -13,6 +14,8 @@ class HowItWorks extends Component{
             dropdownOpen: false,
         };
         this.toggle = this.toggle.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
+
 
     }
     toggle() {
@@ -20,11 +23,16 @@ class HowItWorks extends Component{
             dropdownOpen: !prevState.dropdownOpen
         }));
     }
-
+    toggleModal() {
+        this.modal.toggleModal();
+    }
     render(){
         return (
             <ScrollableAnchor id={'section4'}>
                 <div className="line">
+                    <ModalItem ref={(ref) => {this.modal = ref}}
+                               sku={{file: `https://www.youtube.com/embed/-o7DSSu6yIc`}}
+                    />
                     <div className="line-wrapper ">
                         <p className="bigText">КАК ЭТО РАБОТАЕТ</p>
                         <div className="previewButton" onClick={this.toggle}>
@@ -60,7 +68,7 @@ class HowItWorks extends Component{
                                             <b>выпускной клапан</b> обеспечивает выброс на улицу очищенного от пыли воздуха
                                         </li>
                                     </ol>
-                                    <a target="_blank" href="https://www.youtube.com/channel/UCHa08DiQokwW1RXlGElA4jw?view_as=subscribert" className="fillButton fillButton--orange">Смотреть видео</a>
+                                    <p className="fillButton fillButton--orange" onClick={this.toggleModal}>Смотреть видео</p>
                                 </Col>
                             </Row>
 

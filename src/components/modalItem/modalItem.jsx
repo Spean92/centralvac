@@ -37,27 +37,28 @@ class ModalItem extends Component{
 
     render() {
         if (this.state.modal && this.props.sku) {
-            const {title, description_title, description, advantages, characteristics, image, link} = this.props.sku;
+            const {title, file, link} = this.props.sku;
             return (
                 <div className="modal-item">
                     <Modal isOpen={this.state.modal}
                            toggle={this.toggleModal}
                            className="absolute_modal"
                     >
-                        <ModalHeader toggle={this.toggleModal}>{title && title}</ModalHeader>
+                        {title &&
+                        <ModalHeader toggle={this.toggleModal}>{title}</ModalHeader>
+                        }
                         <ModalBody>
                             <div className="block">
-                                <iframe src="./files/husky_flex.pdf" frameBorder="0"></iframe>
+                                <iframe src={file} frameBorder="0"/>
                             </div>
-
-
-
                         </ModalBody>
+                        {link &&
                         <ModalFooter>
                             <a className="where-to-buy" id="skuLinkModal" href={link}>
                                 <span>Где купить</span>
                             </a>
                         </ModalFooter>
+                        }
                     </Modal>
                 </div>
             )

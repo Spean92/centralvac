@@ -3,7 +3,7 @@ import './styles.scss'
 import {Col, Container, Row} from "reactstrap";
 import axios from "axios";
 import ScrollableAnchor, { configureAnchors } from "react-scrollable-anchor";
-import ModalAccessory from "../modalAccessory/modalAccessory";
+import ModalItem from "../modalItem/modalItem";
 
 class ThirdSection extends Component {
     constructor(props) {
@@ -33,7 +33,7 @@ class ThirdSection extends Component {
         this.setState({accessory: one_accessory[0]});
         this.toggleModal();
     }
-    createSlides() {
+    createPieces() {
         return this.state.accessories.map((item, iterator) => {
             return(
                 <div className="one_accessory" key={iterator}>
@@ -64,10 +64,8 @@ class ThirdSection extends Component {
         return(
             <ScrollableAnchor id={'accessories'}>
                 <section className="thirdSection">
-                    <ModalAccessory ref={(ref) => {
-                                        this.modal = ref
-                                    }}
-                                    accessory={this.state.accessory}
+                    <ModalItem ref={(ref) => {this.modal = ref}}
+                               sku={this.state.accessory}
                     />
                     <Container>
                         <Row>
@@ -78,7 +76,7 @@ class ThirdSection extends Component {
                         <Row>
                             <Col md={12}>
                                 <div className="accessory_list">
-                                    {this.state.accessories && this.createSlides()}
+                                    {this.state.accessories && this.createPieces()}
                                 </div>
                             </Col>
                         </Row>
