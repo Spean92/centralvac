@@ -31,45 +31,45 @@ section.advantages {
     line-height: 20px;
     color: #FFFFFF;
     list-style: none;
-    padding-left: 55px;
-    li {
-      margin-bottom: 40px;
+    position: relative;
+    .listNumber {
+      display: inline-block;
+      margin-right: 20px;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 64px;
+      line-height: 75px;
+      color: #2F80ED;
+    }
+    .listText {
+      display: inline-block;
+      margin-bottom: 25px;
       position: relative;
+      .listBigText {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 25px;
+        color: #2F80ED;
+      }
+      .listSmallText {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color: #333333;
+
+      }
+    }
+    div.list {
+
       counter-increment: li;
       &:before {
         content: counter(li);
-        display: inline-block;
-        position: absolute;
-        left: -53px;
-        top: 50%;
-        //text-align: right;
-        //direction: rtl;
-        transform: translateY(-50%);
-        font-style: normal;
-        font-weight: 900;
-        font-size: 64px;
-        line-height: 75px;
-        /* identical to box height */
 
-
-        color: #2F80ED;
       }
     }
-    .listBigText {
-      font-style: normal;
-      font-weight: bold;
-      font-size: 24px;
-      line-height: 25px;
-      color: #2F80ED;
-    }
-    .listSmallText {
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 16px;
-      color: #333333;
 
-    }
   }
   .underlistText {
     font-style: normal;

@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
-import './styles.scss'
 import {Col, Container, Row} from "reactstrap";
 import axios from "axios";
 import ScrollableAnchor, { configureAnchors } from "react-scrollable-anchor";
 import ModalItem from "../modalItem/modalItem";
+import './styles.scss'
 
 class ThirdSection extends Component {
     constructor(props) {
@@ -29,7 +29,7 @@ class ThirdSection extends Component {
         this.modal.toggleModal();
     }
     openModal(id, type){
-        const one_accessory = this.state.accessories.filter((item) => (item.id == id && item.type == type));
+        const one_accessory = this.state.accessories.filter((item) => (item.id === id && item.type === type));
         this.setState({accessory: one_accessory[0]});
         this.toggleModal();
     }
@@ -46,7 +46,11 @@ class ThirdSection extends Component {
                             <div className="item_image">
                                 <img src={item.image} alt=""/>
                                 <div className="accessory_buttons">
-                                    <div className="accessory_video" onClick={(e) => this.openModal(item.id, item.type)}><svg width="46" height="50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.636 1.102C4.128-1.483.474.635.474 5.83v38.336c0 5.2 3.654 7.316 8.162 4.733l33.508-19.217c4.51-2.586 4.51-6.777 0-9.363L8.636 1.102z" fill="#2F80ED"/></svg></div>
+                                    {item.video &&
+                                    <div className="accessory_video" onClick={(e) => this.openModal(item.id, item.type)}>
+                                        <svg width="46" height="50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.636 1.102C4.128-1.483.474.635.474 5.83v38.336c0 5.2 3.654 7.316 8.162 4.733l33.508-19.217c4.51-2.586 4.51-6.777 0-9.363L8.636 1.102z" fill="#2F80ED"/></svg>
+                                    </div>
+                                    }
                                     <div className="accessory_about" onClick={(e) => this.openModal(item.id, item.type)}>Подробнее</div>
                                     <a className="accessory_link" href={item.link}>Купить</a>
                                 </div>

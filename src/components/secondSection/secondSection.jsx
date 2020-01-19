@@ -1,16 +1,16 @@
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
 
 import ScrollableAnchor, {configureAnchors} from 'react-scrollable-anchor'
 
-import {Col, Container, Row, FormGroup, Label, Input} from "reactstrap";
+import {Col, Container, Row} from "reactstrap";
 import axios from 'axios';
 import Swiper from 'react-id-swiper';
-import 'swiper/css/swiper.min.css';
-import './styles.scss';
 import ModalItem from "../modalItem/modalItem";
 import huskyLogo from "../../images/husky.png";
 import duovacLogo from "../../images/duovac.png";
 import soluvacLogo from "../../images/soluvac.png";
+import 'swiper/css/swiper.min.css';
+import './styles.scss';
 
 function SampleNextArrow() {
     return (
@@ -42,13 +42,7 @@ class SecondSection extends Component {
                 `duovac`,
                 `soluvac`
             ],
-            areaFilters: [
-                100,
-                250,
-                400,
-                700,
-                1000
-            ],
+            areaFilters: 100,
             allSlider   : '',
             sliderClass : '',
             leftSlider  : '',
@@ -102,7 +96,7 @@ class SecondSection extends Component {
     toggleModal() {
         const brand = this.state.currentSlideBrand;
         const model = this.state.currentSlideModel;
-        let current_agregat = this.state.argegatsData.filter((item) => (item.model == model && item.brand == brand));
+        let current_agregat = this.state.argegatsData.filter((item) => (item.model === model && item.brand === brand));
         this.setState({
             currentAgregatData: current_agregat[0]
         });
@@ -146,15 +140,11 @@ class SecondSection extends Component {
                         break;
                     }
                 }
-                for (let j of areaFilter) {
-                    if (item.area.indexOf(j) !== -1) {
-                        elementAreaMatch = true;
-                        break;
-                    }
+                if (item.area.indexOf(areaFilter) !== -1) {
+                    elementAreaMatch = true;
                 }
                 return elementBrandMatch && elementAreaMatch;
             });
-            console.log(slides);
             this.setState({
                 sliderData: slides,
                 currentSlideBrand: slides[0].brand,
@@ -169,13 +159,9 @@ class SecondSection extends Component {
 
     }
     filterAgregats(type, value) {
-        let filterIndex = this.state[`${type}Filters`].indexOf(value);
         let current = this.state[`${type}Filters`];
-        if (filterIndex !== -1) {
-            current.splice(filterIndex, 1);
-            this.filterUpdate(`${type}Filters`, current);
-        } else {
-            current.push(value);
+        if (current !== value) {
+            current = value;
             this.filterUpdate(`${type}Filters`, current);
         }
     }
@@ -209,11 +195,11 @@ class SecondSection extends Component {
         let modelHusky = this.state.brandFilters.indexOf(`husky`) !== -1;
         let modelDuovac = this.state.brandFilters.indexOf(`duovac`) !== -1;
         let modelSoluvac = this.state.brandFilters.indexOf(`soluvac`) !== -1;
-        let area100 = this.state.areaFilters.indexOf(100) !== -1;
-        let area250 = this.state.areaFilters.indexOf(250) !== -1;
-        let area400 = this.state.areaFilters.indexOf(400) !== -1;
-        let area700 = this.state.areaFilters.indexOf(700) !== -1;
-        let area1000 = this.state.areaFilters.indexOf(1000) !== -1;
+        let area100 = this.state.areaFilters === 100;
+        let area250 = this.state.areaFilters === 250;
+        let area400 = this.state.areaFilters === 400;
+        let area700 = this.state.areaFilters === 700;
+        let area1000 = this.state.areaFilters === 1000;
 
         return (
             <ScrollableAnchor id={'hoovers'}>

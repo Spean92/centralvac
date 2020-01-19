@@ -3,96 +3,108 @@
     "id": 0,
     "type": "hose",
     "title": "Монтажный-комплект",
-    "image": "./img/accessories/Монтажный-комплект.jpg",
     "file": "./files/husky_flex.pdf",
-    "link": "https://www.centralvac.com.ua/shop/shlang-9m-v-vyklyuchatelem/"
+    "image": "./img/accessories/Монтажный-комплект.jpg",
+    "video": "",
+    "link": ""
   },
   {
     "id": 1,
     "type": "hose",
     "title": "Пневморозетки",
-    "file": "./files/husky_flex.pdf",
     "image": "./img/accessories/Пневморозетки.jpg",
-    "link": "https://www.centralvac.com.ua/shop/chehol-dlya-shlanga/"
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
   },
   {
     "id": 2,
     "type": "pneumatic",
     "title": "Сепаратор",
-    "file": "./files/husky_flex.pdf",
     "image": "./img/accessories/Сепаратор.jpg",
-    "link": "https://www.centralvac.com.ua/shop/pnevmosovoc-vacpan/"
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
   },
   {
     "id": 3,
     "type": "pneumatic",
     "title": "Трубы-и-фитинги",
-    "file": "./files/husky_flex.pdf",
     "image": "./img/accessories/Трубы-и-фитинги.jpg",
-    "link": "https://www.centralvac.com.ua/shop/pnevmosovok/"
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
   },
   {
     "id": 4,
     "type": "vroom",
     "title": "Уборочные наборы",
-    "file": "./files/husky_flex.pdf",
     "image": "./img/accessories/Уборочные_наборы.jpg",
-    "link": "https://www.centralvac.com.ua/shop/aksessuar-vroom-5-5m/"
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
   },
   {
     "id": 5,
     "type": "wallyflex",
     "title": "Уборочные-наборы",
-    "file": "./files/husky_flex.pdf",
     "image": "./img/accessories/Уборочные-наборы.jpg",
-    "link": "https://www.centralvac.com.ua/shop/wally-flex/"
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
   },
   {
     "id": 6,
     "type": "leovac",
     "title": "Уборочные-насадки",
-    "file": "./files/husky_flex.pdf",
     "image": "./img/accessories/Уборочные-насадки.jpg",
-    "link": "https://www.centralvac.com.ua/shop/leovac-pristennyj-sovok/"
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
   },
   {
     "id": 7,
     "type": "leovac",
     "title": "Фильтры-и-запчасти",
-    "file": "./files/husky_flex.pdf",
     "image": "./img/accessories/Фильтры-и-запчасти.jpg",
-    "link": "https://www.centralvac.com.ua/shop/adapter-lov-dlya-leovak/"
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
   },
   {
     "id": 8,
     "type": "separator",
     "title": "Шланг-в-стене",
-    "file": "./files/husky_flex.pdf",
     "image": "./img/accessories/Шланг-в-стене.jpg",
-    "link": "https://www.centralvac.com.ua/shop/separator-dlya-kamina/"
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
   },
   {
     "id": 9,
     "type": "separator",
     "title": "Vac-Pan",
-    "file": "./files/husky_flex.pdf",
     "image": "./img/accessories/Vac-Pan.jpg",
-    "link": "https://www.centralvac.com.ua/shop/separator-dlya-kamina/"
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
   },
   {
     "id": 10,
     "type": "separator",
     "title": "Vroom",
-    "file": "./files/husky_flex.pdf",
     "image": "./img/accessories/Vroom.jpg",
-    "link": "https://www.centralvac.com.ua/shop/separator-dlya-kamina/"
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
   },
   {
     "id": 11,
     "type": "separator",
     "title": "Wallyflex",
-    "file": "./files/husky_flex.pdf",
     "image": "./img/accessories/Wallyflex.jpg",
-    "link": "https://www.centralvac.com.ua/shop/separator-dlya-kamina/"
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
   }
 ]

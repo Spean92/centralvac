@@ -32,6 +32,14 @@
     vertical-align: middle;
     user-select: none;
     cursor: pointer;
+    &.true {
+      &:after {
+        content: none;
+      }
+      svg {
+        transform: rotate(180deg);
+      }
+    }
     svg {
       padding: 0 47px;
       box-sizing: content-box;
@@ -42,6 +50,18 @@
       background-color: #2F80ED;
       position: relative;
       z-index: 1;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 43px;
+      height: 43px;
+      transform: translate(-50%, -50%);
+      animation: pulse 2s infinite;
+      border-radius: 50%;
+      z-index: 2;
     }
     &:before {
       content: '';
@@ -141,5 +161,19 @@
         background: #EF9514;
       }
     }
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(255,255,255, 0.5);
+    box-shadow: 0 0 0 0 rgba(255,255,255, 0.5);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 20px rgba(255,255,255, 0);
+    box-shadow: 0 0 0 20px rgba(255,255,255, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(255,255,255, 0);
+    box-shadow: 0 0 0 0 rgba(255,255,255, 0);
   }
 }

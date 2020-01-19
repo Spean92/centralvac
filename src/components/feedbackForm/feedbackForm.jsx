@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ScrollableAnchor, {configureAnchors} from 'react-scrollable-anchor'
+import ScrollableAnchor from 'react-scrollable-anchor'
 import { Container, Row, Col, Form, FormGroup, Label, Input, FormText, Button } from 'reactstrap';
 
 import './feedbackForm.scss';

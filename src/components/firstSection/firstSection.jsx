@@ -11,28 +11,6 @@ import slide3 from "../../images/slide1.png";
 import slide1_pic from "../../images/slide1_pic.png";
 import slide2_pic from "../../images/slide2_pic.png";
 
-function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className + ' arrowRight'}
-            style={{ ...style}}
-            onClick={onClick}
-        />
-    );
-}
-
-function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className + ' arrowLeft'}
-            style={{ ...style}}
-            onClick={onClick}
-        />
-    );
-}
-
 class FirstSection extends Component{
     componentWillMount() {
         configureAnchors({offset: -80});

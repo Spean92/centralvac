@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import './header.scss';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Container, Row, Col } from 'reactstrap';
 import SideSocials from "../sideSocials/sideSocials";
-
+import './header.scss';
+import logo from '../../images/logo.jpg'
 
 class Header extends Component {
 
@@ -117,6 +117,7 @@ class Header extends Component {
                 <div className={`menu__burger ${this.state.mobileMenu ? "active" : ""}`} onClick={e => this.menuToggle()}/>
                 <nav className={`${this.state.mobileMenu ? "active" : ""}`}>
                 <a href="/" className="logo">
+                    {/*<img src={logo} alt="Встроенные пылесосы"/>*/}
                     <svg width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#2F80ED" d="M0 0h26v26H0z"/><path fill="#fff" d="M11 5h4v16h-4z"/><path fill="#fff" d="M8 5h10v4H8zM8 17h10v4H8z"/></svg>
                 </a>
                     <Container>

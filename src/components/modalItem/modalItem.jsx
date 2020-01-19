@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
 
-import { Button, Table, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-
-
+import {Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import './styles.scss'
+
 class ModalItem extends Component{
     constructor(props) {
         super(props);
@@ -18,23 +17,6 @@ class ModalItem extends Component{
             modal: !this.state.modal
         });
     }
-
-    renderAdvantages(advantages){
-        return advantages.map((value) => {
-            return (
-                <li key={value.id}>{value.text}</li>
-            )
-        })
-    }
-    renderCharacteristics(characteristics) {
-        let innerTable;
-        innerTable = characteristics.map((value) => {
-            return (<tr key={value.id}><td>{value.title}</td><td>{value.value}</td></tr>)
-        });
-
-        return (<Table><tbody>{innerTable}</tbody></Table>)
-    }
-
     render() {
         if (this.state.modal && this.props.sku) {
             const {title, file, link} = this.props.sku;
@@ -49,7 +31,7 @@ class ModalItem extends Component{
                         }
                         <ModalBody>
                             <div className="block">
-                                <iframe src={file} frameBorder="0"/>
+                                <iframe src={file} frameBorder="0" title={title ? title : 'sku'}/>
                             </div>
                         </ModalBody>
                         {link &&
