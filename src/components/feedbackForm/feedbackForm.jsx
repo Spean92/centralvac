@@ -5,12 +5,24 @@ import { Container, Row, Col, Form, FormGroup, Label, Input, FormText, Button } 
 import './feedbackForm.scss';
 
 export default class FeedbackForm extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            formState: true
+        }
+    }
 
+    formSubmit = (e) => {
+        this.setState(prevState => ({
+            formState: !prevState.formState
+        }))
+    }
     render() {
         return (
             <ScrollableAnchor id={'section9'}>
                 <section className="form_section">
                     <Container>
+                        {this.state.formState &&
                         <Row>
                             <Col md={10}>
                                 <p className="section_heading">
@@ -59,16 +71,26 @@ export default class FeedbackForm extends Component {
                                                     Оформление предварительного расчета не обязывает Вас к покупке. <br/>В случае возникновения вопросов наши специалисты свяжутся с Вами для <br/> уточнения деталей<br/> В ходе телефонного разговора можно внести изменения в расчет или отменить его
                                                 </FormText>
                                             </FormGroup>
-                                            <Button>Отправить</Button>
+                                            <Button onClick={this.formSubmit}>Отправить</Button>
                                         </Col>
                                         <Col md="5">
-                                            <a href="/">Пользовательское соглашение</a>
+                                            <a href="/" target="_blank" rel="noopener noreferrer">Пользовательское соглашение</a>
                                         </Col>
                                     </Row>
 
                                 </Form>
                             </Col>
                         </Row>
+                        }
+
+                        {!this.state.formState &&
+                        <Row>
+                            <Col md={12} className="text-center">
+                                <p>Спасибо.</p>
+                                <p>Мы свяжемся с вами в ближайшее время.</p>
+                            </Col>
+                        </Row>
+                        }
                     </Container>
                 </section>
             </ScrollableAnchor>

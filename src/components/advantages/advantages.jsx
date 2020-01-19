@@ -22,7 +22,7 @@ class Advantages extends Component{
     }
     renderList(data) {
         return data.map((item, i) => {
-            return <ScrollAnimation animateIn="fadeIn" delay={(i+1)*250} duration={1} animateOnce={true}>
+            return <ScrollAnimation animateIn="fadeIn" delay={(i+1)*250} duration={1} animateOnce={true} key={i}>
                 <div className="listNumber">{i+1}</div>
                 <div className="listText">
                     <p className="listBigText">{item.bigText}</p>
