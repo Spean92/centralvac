@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/centralvac/static/css/main.c37d755d.chunk.css",
+    "main.js": "/centralvac/static/js/main.b36e9d82.chunk.js",
+    "main.js.map": "/centralvac/static/js/main.b36e9d82.chunk.js.map",
+    "runtime-main.js": "/centralvac/static/js/runtime-main.ecfd7cbf.js",
+    "runtime-main.js.map": "/centralvac/static/js/runtime-main.ecfd7cbf.js.map",
+    "static/css/2.b0432c10.chunk.css": "/centralvac/static/css/2.b0432c10.chunk.css",
+    "static/js/2.f2807f2c.chunk.js": "/centralvac/static/js/2.f2807f2c.chunk.js",
+    "static/js/2.f2807f2c.chunk.js.map": "/centralvac/static/js/2.f2807f2c.chunk.js.map",
+    "index.html": "/centralvac/index.html",
+    "precache-manifest.bdfa29a37706eb2a7669be80719e0c40.js": "/centralvac/precache-manifest.bdfa29a37706eb2a7669be80719e0c40.js",
+    "service-worker.js": "/centralvac/service-worker.js",
+    "static/css/2.b0432c10.chunk.css.map": "/centralvac/static/css/2.b0432c10.chunk.css.map",
+    "static/css/main.c37d755d.chunk.css.map": "/centralvac/static/css/main.c37d755d.chunk.css.map",
+    "static/js/2.f2807f2c.chunk.js.LICENSE.txt": "/centralvac/static/js/2.f2807f2c.chunk.js.LICENSE.txt",
+    "static/media/house.png": "/centralvac/static/media/house.cdf15801.png",
+    "static/media/house100.jpg": "/centralvac/static/media/house100.bede0ddb.jpg",
+    "static/media/house250.jpg": "/centralvac/static/media/house250.4c83f3bb.jpg",
+    "static/media/house350.jpg": "/centralvac/static/media/house350.961e17f1.jpg",
+    "static/media/house500.jpg": "/centralvac/static/media/house500.cc38eb52.jpg",
+    "static/media/house70.jpg": "/centralvac/static/media/house70.6e982082.jpg",
+    "static/media/logo.jpg": "/centralvac/static/media/logo.62ed46ef.jpg",
+    "static/media/place.jpg": "/centralvac/static/media/place.6eac84e4.jpg",
+    "static/media/service_img.jpg": "/centralvac/static/media/service_img.0745dde4.jpg",
+    "static/media/slide1.png": "/centralvac/static/media/slide1.3d0ef049.png",
+    "static/media/slide1_pic.png": "/centralvac/static/media/slide1_pic.03696543.png",
+    "static/media/slide2.png": "/centralvac/static/media/slide2.c6df5954.png",
+    "static/media/slide2_pic.png": "/centralvac/static/media/slide2_pic.89b9668f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ecfd7cbf.js",
+    "static/css/2.b0432c10.chunk.css",
+    "static/js/2.f2807f2c.chunk.js",
+    "static/css/main.c37d755d.chunk.css",
+    "static/js/main.b36e9d82.chunk.js"
+  ]
+}

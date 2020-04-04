@@ -1,0 +1,110 @@
+[
+  {
+    "id": 0,
+    "type": "hose",
+    "title": "Монтажный-комплект",
+    "file": "./files/husky_flex.pdf",
+    "image": "./img/accessories/Монтажный-комплект.jpg",
+    "video": "",
+    "link": ""
+  },
+  {
+    "id": 1,
+    "type": "hose",
+    "title": "Пневморозетки",
+    "image": "./img/accessories/Пневморозетки.jpg",
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
+  },
+  {
+    "id": 2,
+    "type": "pneumatic",
+    "title": "Сепаратор",
+    "image": "./img/accessories/Сепаратор.jpg",
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
+  },
+  {
+    "id": 3,
+    "type": "pneumatic",
+    "title": "Трубы-и-фитинги",
+    "image": "./img/accessories/Трубы-и-фитинги.jpg",
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
+  },
+  {
+    "id": 4,
+    "type": "vroom",
+    "title": "Уборочные наборы",
+    "image": "./img/accessories/Уборочные_наборы.jpg",
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
+  },
+  {
+    "id": 5,
+    "type": "wallyflex",
+    "title": "Уборочные-наборы",
+    "image": "./img/accessories/Уборочные-наборы.jpg",
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
+  },
+  {
+    "id": 6,
+    "type": "leovac",
+    "title": "Уборочные-насадки",
+    "image": "./img/accessories/Уборочные-насадки.jpg",
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
+  },
+  {
+    "id": 7,
+    "type": "leovac",
+    "title": "Фильтры-и-запчасти",
+    "image": "./img/accessories/Фильтры-и-запчасти.jpg",
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
+  },
+  {
+    "id": 8,
+    "type": "separator",
+    "title": "Шланг-в-стене",
+    "image": "./img/accessories/Шланг-в-стене.jpg",
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
+  },
+  {
+    "id": 9,
+    "type": "separator",
+    "title": "Vac-Pan",
+    "image": "./img/accessories/Vac-Pan.jpg",
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
+  },
+  {
+    "id": 10,
+    "type": "separator",
+    "title": "Vroom",
+    "image": "./img/accessories/Vroom.jpg",
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
+  },
+  {
+    "id": 11,
+    "type": "separator",
+    "title": "Wallyflex",
+    "image": "./img/accessories/Wallyflex.jpg",
+    "file": "./files/husky_flex.pdf",
+    "video": "",
+    "link": ""
+  }
+]
