@@ -13,13 +13,14 @@
     "react-animated-number": "^0.4.4",
     "react-dom": "^16.8.4",
     "react-id-swiper": "^2.4.0",
-    "react-scripts": "2.1.8",
+    "react-scripts": "^3.4.1",
     "react-scrollable-anchor": "^0.6.1",
     "react-slick": "^0.23.2",
     "react-typing-animation": "^1.6.2",
     "reactstrap": "^7.1.0",
     "slick-carousel": "^1.8.1",
-    "swiper": "^5.2.1"
+    "swiper": "^5.2.1",
+    "tabletop": "^1.6.2"
   },
   "scripts": {
     "start": "react-scripts start",
