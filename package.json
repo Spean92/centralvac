@@ -2,7 +2,7 @@
   "name": "centralvac_v2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://spean92.github.io/centralvac",
+  "homepage": "http://Spean92.github.io/centralvac",
   "dependencies": {
     "axios": "^0.18.1",
     "bootstrap": "^4.3.1",
